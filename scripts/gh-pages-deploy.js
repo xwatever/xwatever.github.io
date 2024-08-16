@@ -2,7 +2,9 @@
 
 var os = require("os");
 const execa = require("execa");
+const rmrf = require("rmrf");
 const fs = require("fs");
+
 (async () => {
   try {
     await execa("git", ["checkout", "--orphan", "gh-pages"]);
@@ -15,12 +17,7 @@ const fs = require("fs");
     await execa("git", ["--work-tree", folderName, "commit", "-m", "gh-pages"]);
     console.log("Pushing to gh-pages...");
     await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
-    await execa(os.platform() == "win32" ? "Remove-Item" : "rm", [
-      os.platform() == "win32" ? "-Path" : "-r",
-      folderName,
-      os.platform() == "win32" ? "-Force" : "",
-      os.platform() == "win32" ? "-Recurse" : "",
-    ]);
+    await rmrf(folderName, { glob: false });
     await execa("git", ["checkout", "-f", "master"]);
     await execa("git", ["branch", "-D", "gh-pages"]);
     console.log("Successfully deployed, check your settings");
