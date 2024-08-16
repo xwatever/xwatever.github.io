@@ -1,4 +1,28 @@
 /* eslint-disable no-console */
+
+function getOS() {
+  var userAgent = window.navigator.userAgent,
+    platform = window.navigator.platform,
+    macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
+    windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"],
+    iosPlatforms = ["iPhone", "iPad", "iPod"],
+    os = null;
+
+  if (macosPlatforms.indexOf(platform)) {
+    os = "Mac OS";
+  } else if (iosPlatforms.indexOf(platform)) {
+    os = "iOS";
+  } else if (windowsPlatforms.indexOf(platform)) {
+    os = "Windows";
+  } else if (/Android/.test(userAgent)) {
+    os = "Android";
+  } else if (!os && /Linux/.test(platform)) {
+    os = "Linux";
+  }
+
+  return os;
+}
+
 const execa = require("execa");
 const fs = require("fs");
 (async () => {
@@ -13,7 +37,10 @@ const fs = require("fs");
     await execa("git", ["--work-tree", folderName, "commit", "-m", "gh-pages"]);
     console.log("Pushing to gh-pages...");
     await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
-    await execa("rm", ["-r", folderName]);
+    await execa(getOS() == "Windows" ? "del" : "rm", [
+      getOS() == "Windows" ? "/S" : "-r",
+      folderName,
+    ]);
     await execa("git", ["checkout", "-f", "master"]);
     await execa("git", ["branch", "-D", "gh-pages"]);
     console.log("Successfully deployed, check your settings");
