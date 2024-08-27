@@ -9,8 +9,10 @@
     "deploy": "node scripts/gh-pages-deploy.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-router": "^4.4.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
