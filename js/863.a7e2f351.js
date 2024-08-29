@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkxwatever_github_io"]=self["webpackChunkxwatever_github_io"]||[]).push([[863],{8863:function(e,t,r){r.r(t),r.d(t,{default:function(){return a}});var n=r(641);const u={id:"projects"};function i(e,t,r,i,c,o){return(0,n.uX)(),(0,n.CE)("div",u)}var c={methods:{}},o=r(6262);const s=(0,o.A)(c,[["render",i]]);var a=s}}]);
+//# sourceMappingURL=863.a7e2f351.js.map
