@@ -21,5 +21,14 @@ export default {
       width: window.innerWidth,
     };
   },
+  created() {
+    window.addEventListener("resize", this.handleResize);
+    this.handleResize();
+  },
+  methods: {
+    handleResize() {
+      this.width = window.innerWidth;
+    },
+  },
 };
 </script>

@@ -10,7 +10,12 @@
     >
     </i> -->
 
-    <div class="menu">
+    <div
+      class="menu"
+      :class="{
+        active: dropDownMenu,
+      }"
+    >
       <router-link
         title="My socials and contacts"
         to="/home"
@@ -54,6 +59,7 @@
         'fa-bars': mobileView,
       }"
       title="Menu dropdown"
+      @click="toggleDropdown"
     ></div>
   </nav>
 </template>
@@ -64,7 +70,17 @@ export default {
   watch: {
     $route: function (from, to) {
       if (to !== from) {
+        this.dropDownMenu = false;
         this.viewedPage = from.name;
+      }
+    },
+    width: function (oldItem, newItem) {
+      console.log(oldItem);
+      console.log(newItem);
+      if (oldItem < 550) {
+        this.mobileView = true;
+      } else if (oldItem > 550) {
+        this.mobileView = false;
       }
     },
   },
@@ -80,6 +96,10 @@ export default {
       viewedPage: "home",
     };
   },
-  methods: {},
+  methods: {
+    toggleDropdown() {
+      this.dropDownMenu = !this.dropDownMenu;
+    },
+  },
 };
 </script>

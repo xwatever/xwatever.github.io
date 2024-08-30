@@ -115,21 +115,21 @@ body {
 } */
 
 #home {
-  min-width: 100vh;
+  min-width: 100%;
   height: calc(100vh - 5em);
   background-color: #004c9c;
   color: white;
 }
 
 #about {
-  min-width: 100vh;
+  min-width: 100%;
   height: calc(100vh - 5em);
   background-color: #129c00;
   color: white;
 }
 
 #projects {
-  min-width: 100vh;
+  min-width: 100%;
   height: calc(100vh - 5em);
   background-color: #9c1700;
   color: white;
@@ -137,12 +137,33 @@ body {
 
 @media (max-width: 550px) {
   .menu {
-    display: none;
+    position: fixed;
+    /* top: 5em; */
+    left: -0.5em;
+    background-color: #000000;
+    z-index: 998;
+    width: 100%;
+    height: calc(100vh - 5em);
+    margin-top: -100%;
+    text-align: center;
+  }
+
+  .menu.active {
+    margin-top: 4em;
+    width: 100%;
+  }
+
+  .menu .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
   }
 }
 
 @media (min-width: 550px) {
   .mobile-config {
-    display: none !important;
+    display: none;
+    border: none;
   }
 }
