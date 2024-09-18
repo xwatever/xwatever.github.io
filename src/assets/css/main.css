@@ -135,6 +135,83 @@ body {
   color: white;
 }
 
+@media print {
+  body {
+    visibility: hidden;
+    background-color: #ffffff;
+  }
+  @page {
+    size: 8.5in 11in;
+    /* size: auto; */
+    margin: 0;
+    /* margin: 27mm 16mm 27mm 16mm; */
+  }
+  #resume {
+    display: block !important;
+  }
+  #resume #content {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 1.5em 3.5em;
+  }
+
+  span,
+  p,
+  b,
+  ul,
+  li {
+    font-size: 12pt;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  #resume #content .name {
+    display: block;
+    font-size: 20pt;
+    text-align: center;
+  }
+
+  #resume #content .contacts ul {
+    margin-top: 0.75em;
+    display: flex;
+    gap: 10%;
+    flex-direction: row;
+    font-size: 12pt;
+  }
+
+  #resume #content .contacts li {
+    width: 45%;
+  }
+
+  #resume #content .project-experience,
+  #resume #content .work-experience,
+  #resume #content .education,
+  #resume #content .interest {
+    margin-top: 1em;
+    font-weight: bold;
+  }
+
+  #resume #content ul {
+    font-weight: 100;
+  }
+
+  #resume #content .project-experience .project,
+  #resume #content .work-experience .project,
+  #resume #content .education .institute {
+    margin-top: 0.75em;
+  }
+
+  #resume #content .project-experience .project,
+  #resume #content .work-experience .project {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 @media (max-width: 550px) {
   .menu {
     position: fixed;

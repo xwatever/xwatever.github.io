@@ -46,10 +46,30 @@
       >
         PROJECTS
       </router-link>
-      <i
+      <router-link
+        title="More to come, probably still having my assignments from my college days as projects"
+        to="/cv"
+        class="link"
+        :class="{
+          active: viewedPage == 'cv',
+        }"
+      >
+        Curriculum Vitae
+      </router-link>
+      <router-link
+        title="More to come, probably still having my assignments from my college days as projects"
+        to="/resume"
+        class="link"
+        :class="{
+          active: viewedPage == 'resume',
+        }"
+      >
+        Resume
+      </router-link>
+      <!-- <i
         title="See my curriculum vitae or resume"
         class="view-button fa-solid fa-file"
-      ></i>
+      ></i> -->
     </div>
 
     <div
