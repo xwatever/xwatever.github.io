@@ -146,16 +146,6 @@ body {
     margin: 0;
     /* margin: 27mm 16mm 27mm 16mm; */
   }
-  #resume {
-    display: block !important;
-  }
-  #resume #content {
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin: 1.5em 3.5em;
-  }
 
   span,
   p,
@@ -163,20 +153,42 @@ body {
   ul,
   li {
     font-size: 12pt;
+    color: #000000;
   }
 
   li {
     list-style-type: none;
   }
 
+  #resume {
+    display: block !important;
+  }
+
+  #resume #content {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 1em 3.5em;
+  }
+
+  #resume #content .contacts {
+    padding-bottom: 0.5em;
+    border-bottom: solid #6e6e6e;
+  }
+
   #resume #content .name {
     display: block;
-    font-size: 20pt;
+    font-size: 21pt;
     text-align: center;
+    font-weight: 600;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    color: #13a2bb;
   }
 
   #resume #content .contacts ul {
-    margin-top: 0.75em;
+    margin-bottom: 0.25em;
     display: flex;
     gap: 10%;
     flex-direction: row;
@@ -191,11 +203,32 @@ body {
   #resume #content .work-experience,
   #resume #content .education,
   #resume #content .interest {
-    margin-top: 1em;
+    margin-top: 0.5em;
     font-weight: bold;
+    color: #13a2bb;
+    font-size: 14pt;
   }
 
   #resume #content ul {
+    font-weight: 100;
+  }
+
+  #resume #content .details {
+    margin-left: 2em;
+    list-style-type: disc;
+  }
+
+  #resume #content .detailed-details {
+    margin-left: 4em;
+    list-style-type: circle;
+  }
+
+  #resume #content .education .institute,
+  #resume #content .interest .interests {
+    font-weight: bold;
+  }
+
+  #resume #content .education .institute .institute-details {
     font-weight: 100;
   }
 

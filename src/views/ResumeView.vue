@@ -31,7 +31,7 @@
         PROJECT EXPERIENCE
         <ul>
           <li class="project" style="margin-top: 0">
-            <span style="width: 50%">Thesis;</span>
+            <span style="font-weight: bold">Thesis;</span>
             <span class="location" style="text-align: right; width: auto"
               >Civil Engineering of Universitas Islam Riau</span
             >
@@ -41,17 +41,17 @@
             Assignment for Thesis, making Manage Cost and Schedule for Civil
             Engineering Project App
           </li>
-          <li class="details">
+          <li class="detailed-details">
             Web App for managing schedule, and cost from other source for
             projects. Made with VueJS + ExpressJS
           </li>
-          <li class="details">
+          <li class="detailed-details">
             Using Differential Evolution as method to get material
             recommendation for project tasks
           </li>
 
           <li class="project">
-            <span>Internship;</span>
+            <span style="font-weight: bold">Internship;</span>
             <span class="location" style="text-align: right; width: auto"
               >Civil Engineering of Universitas Islam Riau</span
             >
@@ -60,15 +60,15 @@
           <li class="details">
             Internship assignment, making an Optional Course Scheduling App
           </li>
-          <li class="details">
+          <li class="detailed-details">
             Web App for managing optional course at civil engineering made with
             Laravel + Vue framework, SPA/MPA Hybrid
           </li>
-          <li class="details">
+          <li class="detailed-details">
             Authentication for user with 4 levels; Guest, Super Admin, Admin,
             College Student
           </li>
-          <li class="details">
+          <li class="detailed-details">
             Also has simple forum feature for students and staffs communicating
           </li>
         </ul>
@@ -83,7 +83,7 @@
         WORK EXPERIENCE
         <ul>
           <li class="project" style="margin-top: 0">
-            <span
+            <span style="font-weight: bold"
               >Department of Population and Civil Registration - Back Office
               Employee;</span
             >
@@ -101,7 +101,9 @@
           </li>
 
           <li class="project">
-            <span>Universitas Islam Riau - Laboratory Assistant;</span>
+            <span style="font-weight: bold"
+              >Universitas Islam Riau - Laboratory Assistant;</span
+            >
             <span class="location" style="text-align: right; width: auto"
               >Pekanbaru City, Riau Province, Indonesia</span
             >
@@ -111,7 +113,7 @@
             Teaching juniors as Lecturer Assistant on practicum lessons: C++,
             DBMS, MySQL, Python, Matlab, PHP
           </li>
-          <li class="details">
+          <li class="detailed-details">
             Have juniors keeping up with building practice source code. While
             explaining how the code works, helping them with debugging if bug or
             errors found
@@ -128,20 +130,21 @@
         EDUCATION
         <ul>
           <li class="institute" style="margin-top: 0">
-            Universitas Islam Riau, Engineering Faculty
-            <span class="details"
-              >| Bachelor of Information Technology | Pekanbaru City, Riau
-              Province, Indonesia | September 2017 - June 2024</span
-            >
+            Universitas Islam Riau, Engineering Faculty | Bachelor of
+            Information Technology
+            <span class="institute-details">
+              | Pekanbaru City, Riau Province, Indonesia | September 2017 - June
+              2024
+            </span>
           </li>
           <li>Concentration: Artificial Intelligent | GPA: 3.73 / 4.0</li>
 
           <li class="institute">
-            Sekolah Menengah Kejuruan Negeri 2 Pekanbaru
-            <span class="details"
-              >| Graduate of Vocational School for Computer Software Engineering
-              Major | Pekanbaru City, Riau Province, Indonesia | July 2014 -
-              June 2017</span
+            Sekolah Menengah Kejuruan Negeri 2 Pekanbaru | Graduate of
+            Vocational School for Computer Software Engineering Major
+            <span class="institute-details">
+              | Pekanbaru City, Riau Province, Indonesia | July 2014 - June
+              2017</span
             >
           </li>
         </ul>
@@ -160,13 +163,11 @@
             Photography, Music, Badminton
           </li>
           <li>
-            <span class="programming-language"
-              >Progamming Language, and Stack:</span
-            >
+            <span class="interests">Programming Language, and Stack:</span>
             C++, PHP, JavaScript, HTML, CSS, MySQL
           </li>
           <li>
-            <span class="framework">Framework:</span>
+            <span class="interests">Framework:</span>
             Laravel, VueJS, ExpressJS
           </li>
         </ul>
@@ -180,6 +181,9 @@ export default {
   methods: {},
   mounted() {
     setTimeout(() => {
+      window.addEventListener("beforeprint", () => {
+        document.title = "muhammad-darmawan-resume";
+      });
       window.print();
     }, 3500);
   },
