@@ -136,9 +136,14 @@ body {
 }
 
 @media print {
+  * {
+    font-family: "Cormorant Garamond";
+  }
+
   body {
     visibility: hidden;
-    background-color: #ffffff;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
   @page {
     size: 8.5in 11in;
@@ -169,11 +174,11 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    margin: 1em 3.5em;
+    margin: 2.5em 3.5em;
   }
 
   #resume #content .contacts {
-    padding-bottom: 0.5em;
+    padding-bottom: 0.35em;
     border-bottom: solid #6e6e6e;
   }
 
@@ -188,7 +193,7 @@ body {
   }
 
   #resume #content .contacts ul {
-    margin-bottom: 0.25em;
+    margin: 0.65em 0 0.25em 0;
     display: flex;
     gap: 10%;
     flex-direction: row;
@@ -203,14 +208,22 @@ body {
   #resume #content .work-experience,
   #resume #content .education,
   #resume #content .interest {
-    margin-top: 0.5em;
+    margin-top: 1.25em;
     font-weight: bold;
     color: #13a2bb;
-    font-size: 14pt;
+    font-size: 12pt;
+
+    /* padding-bottom: 0.35em;
+    border-bottom: solid #6e6e6e; */
   }
 
   #resume #content ul {
     font-weight: 100;
+  }
+
+  #resume #content .project-experience .date,
+  #resume #content .work-experience .location {
+    width: max-content;
   }
 
   #resume #content .details {
@@ -235,13 +248,53 @@ body {
   #resume #content .project-experience .project,
   #resume #content .work-experience .project,
   #resume #content .education .institute {
-    margin-top: 0.75em;
+    margin-top: 0.95em;
   }
 
-  #resume #content .project-experience .project,
-  #resume #content .work-experience .project {
+  #resume #content .project-experience .project .left,
+  #resume #content .work-experience .project .left,
+  #resume #content .education .institute .left {
     display: flex;
-    justify-content: space-between;
+  }
+
+  #resume #content .project-experience .project .left .right,
+  #resume #content .work-experience .project .left .right,
+  #resume #content .education .institute .left .right {
+    margin-left: auto;
+  }
+
+  #cv {
+    display: block !important;
+  }
+
+  #cv #content {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 1em 4.35em;
+  }
+
+  #cv #content .name {
+    height: 125px;
+    width: max-content;
+    display: flex;
+  }
+
+  #cv #content .name span {
+    align-self: flex-end;
+    font-size: 26pt;
+    color: #003874;
+  }
+
+  #cv #contacts-content {
+    visibility: visible;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    height: 175px;
+    width: 8.5in;
+    background-color: #2a7bf5;
   }
 }
 
