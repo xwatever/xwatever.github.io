@@ -168,7 +168,7 @@
 
           <li class="institute">
             Sekolah Menengah Kejuruan Negeri 2 Pekanbaru | Graduate of
-            Vocational School for Computer Software Engineering Major
+            Vocational High School for Computer Software Engineering Major
             <span class="institute-details">
               <div class="left">
                 Pekanbaru City, Riau Province, Indonesia
@@ -189,15 +189,12 @@
         <ul>
           <li style="margin-top: 0.25em">
             <span class="interests">Interests:</span>
-            Photography, Music, Badminton
+            Photography, Music, Gaming, Badminton
           </li>
           <li>
-            <span class="interests">Programming Language, and Stack:</span>
-            C++, PHP, JavaScript, HTML, CSS, MySQL
-          </li>
-          <li>
-            <span class="interests">Framework:</span>
-            Laravel, VueJS, ExpressJS
+            <span class="interests">Tech Stack:</span>
+            C++, Python, PHP, JavaScript, HTML, CSS, MySQL, Laravel, VueJS,
+            ExpressJS
           </li>
         </ul>
       </div>
