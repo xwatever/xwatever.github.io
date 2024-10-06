@@ -122,29 +122,110 @@ body {
   color: white;
 }
 
-#home .introduction {
+#home #introduction {
   font-size: 40px;
   position: absolute;
   left: calc(13.5% + 195px);
   top: calc(50% - 75px);
 }
 
-#home .introduction .details {
+#home #introduction .details {
   display: block;
   font-size: 19px;
 }
 
-#home .introduction .contacts i {
+#home #introduction .contacts i {
   font-size: 45px;
   margin-top: 20px;
-  margin-right: 40px;
+  margin-right: 25px;
 }
+
+#home #introduction .contacts a:link {
+  color: white;
+  text-decoration: none;
+}
+
+#home #introduction .contacts a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+#home #introduction .contacts a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+#home #introduction .contacts a:active {
+  color: white;
+  text-decoration: none;
+}
+
+#home #toggle-down {
+  position: absolute;
+  bottom: 15px;
+  right: calc(50% - 25px);
+}
+
+#home #toggle-down i {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+/* #home #toggle-down i:hover {
+} */
 
 #about {
   min-width: 100%;
-  height: calc(100vh - 5em);
   background-color: #129c00;
   color: white;
+}
+
+#about #about-me {
+  padding: 1.75em 0 0.75em 0;
+  font-size: 42px;
+  text-align: center;
+  height: calc(100vh - 80px);
+  border: 1px solid red;
+}
+
+#about #education {
+  padding: 0.25em 0 0 0;
+  font-size: 42px;
+  text-align: center;
+  height: calc(100vh - 80px);
+  border: 1px solid red;
+}
+
+#about #work {
+  padding: 3.15em 0 0.75em 0;
+  font-size: 42px;
+  text-align: center;
+  height: calc(100vh - 80px);
+  border: 1px solid red;
+}
+
+#about #about-me .about,
+#about #education .institute,
+#about #work .job {
+  font-size: 28px;
+  text-align: left;
+  padding: 0.75em 2em 0 2em;
+  line-height: 1.5;
+}
+
+#about #education .institute .left {
+  font-size: 25px;
+  display: flex;
+}
+
+#about #education .institute .right {
+  font-size: 25px;
+  margin-left: auto;
+}
+
+#about #education .details {
+  margin: 0.5em 0;
+  font-size: 19px;
 }
 
 #projects {
@@ -152,6 +233,12 @@ body {
   height: calc(100vh - 5em);
   background-color: #9c1700;
   color: white;
+}
+
+#projects #introduction {
+  padding-top: 1.25em;
+  font-size: 26px;
+  text-align: center;
 }
 
 @media print {
@@ -171,7 +258,7 @@ body {
     /* margin: 27mm 16mm 27mm 16mm; */
   }
 
-  hr {
+  #cv #content hr {
     border-top: 3px solid #003874;
     margin-bottom: 0.65em;
   }
@@ -302,7 +389,7 @@ body {
   #cv #contacts-content {
     visibility: visible;
     position: absolute;
-    top: 150px;
+    top: 110px;
     left: 0;
     height: 175px;
     width: 8.5in;
@@ -310,7 +397,7 @@ body {
   }
 
   #cv #content .name {
-    height: 125px;
+    height: 85px;
     /* font-weight: 600; */
     font-variant: small-caps;
     text-transform: capitalize;
@@ -325,7 +412,7 @@ body {
   }
 
   #cv #content .contacts {
-    margin-top: 2.65em;
+    margin-top: 2.5em;
     width: 100%;
     height: 100px;
     display: flex;
@@ -392,6 +479,34 @@ body {
     line-height: 1.5;
   }
 
+  #cv #content .below-content .skills li {
+    margin-left: 1em;
+    font-size: 14pt;
+    list-style-type: disc;
+  }
+
+  #cv #content .below-content .experience p {
+    font-size: 17pt;
+    color: #003874;
+    text-decoration: underline;
+    margin-bottom: 0.15em;
+    font-variant: small-caps;
+    text-transform: capitalize;
+  }
+
+  #cv #content .below-content .experience .work {
+    margin-bottom: 0.65em;
+  }
+
+  #cv #content .below-content .experience .project {
+    font-weight: bold;
+  }
+
+  #cv #content .below-content .experience .project- {
+    font-weight: bold;
+    margin-top: 0.5em;
+  }
+
   #cv #content .below-content .experience li {
     font-size: 14pt;
   }
@@ -405,6 +520,11 @@ body {
 
   #cv #content .below-content .institute .degree {
     font-weight: bold;
+    /* list-style-type: disc; */
+  }
+
+  #cv #content .below-content .instance {
+    margin-top: 0.85em;
   }
 }
 

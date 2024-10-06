@@ -1,6 +1,6 @@
 <template>
   <div id="projects">
-    <div class="introduction">Here's what i've made so far</div>
+    <div id="introduction">Here's what i've made so far</div>
   </div>
 </template>
 

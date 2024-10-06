@@ -18,19 +18,26 @@
       -->
       <div class="contacts">
         <ul class="personal-info">
-          <li><i class="fa-solid fa-image-portrait"></i>&nbsp;Male</li>
-          <li><i class="fa-solid fa-calendar"></i>&nbsp;August 9, 1999</li>
+          <li><i class="fa-solid fa-image-portrait"></i>&nbsp;&nbsp;Male</li>
           <li>
-            <i class="fa-brands fa-square-whatsapp"></i>&nbsp;+62-822-8267-4247
+            <i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;August 9, 1999
+          </li>
+          <li>
+            <i class="fa-brands fa-square-whatsapp"></i
+            >&nbsp;&nbsp;+62-822-8267-4247
           </li>
         </ul>
         <ul class="links">
           <li>
             <i class="fa-solid fa-envelope"></i
-            >&nbsp;muhammaddarmawan1999@gmail.com
+            >&nbsp;&nbsp;muhammaddarmawan1999@gmail.com
           </li>
-          <li><i class="fa-brands fa-square-github"></i>&nbsp;xwatever</li>
-          <li><i class="fa-brands fa-linkedin"></i>&nbsp;Muhammad Darmawan</li>
+          <li>
+            <i class="fa-brands fa-square-github"></i>&nbsp;&nbsp;xwatever
+          </li>
+          <li>
+            <i class="fa-brands fa-linkedin"></i>&nbsp;&nbsp;Muhammad Darmawan
+          </li>
         </ul>
         <img
           :src="cv_image"
@@ -56,7 +63,7 @@
             I am a fresh graduate of Bachelor of Informatics Engineering at
             Universitas Islam Riau. I am aspiring to be working as a programmer.
             I want to bring out everything i have learned to put into work,
-            making something that i can have pride out of.
+            making something that i can be proud of.
           </p>
         </div>
 
@@ -74,9 +81,9 @@
             <li>JavaScript</li>
             <li>PHP</li>
             <li>MySQL</li>
-            <li>Python</li>
-            <li>C++</li>
-            <li>General Office Work</li>
+            <li>Laravel</li>
+            <li>VueJS</li>
+            <li>ExpressJS</li>
           </ul>
         </div>
 
@@ -91,7 +98,9 @@
 
           <p>Project Experience</p>
           <ul>
-            <li>Manage Cost and Schedule for Civil Construction App</li>
+            <li class="project">
+              Manage Cost and Schedule for Civil Construction App
+            </li>
             <li class="date">April 2023 - June 2024</li>
             <li class="details">
               Thesis assignment for Informatics Engineering, Made with VueJS +
@@ -99,9 +108,9 @@
             </li>
           </ul>
           <ul>
-            <li>Optional Scheduling App</li>
+            <li class="project-">Optional Course Scheduling App</li>
             <li class="date">July 2020 - December 2021</li>
-            <li class="details">
+            <li class="details work">
               Internship assignment for Informatics Engineering, Made with
               Laravel + VueJS
             </li>
@@ -109,7 +118,7 @@
 
           <p>Work Experience</p>
           <ul>
-            <li>
+            <li class="project">
               Department of Population and Civil Registration - Back Office
               Employee
             </li>
@@ -117,7 +126,9 @@
             <li class="details"></li>
           </ul>
           <ul>
-            <li>Universitas Islam Riau - Laboratory Assistant</li>
+            <li class="project-">
+              Universitas Islam Riau - Laboratory Assistant
+            </li>
             <li class="date">September 2019 - July 2021</li>
             <li class="details"></li>
           </ul>
@@ -139,7 +150,7 @@
               <li class="date">2017 - 2024</li>
             </ul>
           </div>
-          <div class="institute">
+          <div class="institute instance">
             <ul>
               <li class="degree">
                 Graduate of Computer Science Engineer Major for Vocational High

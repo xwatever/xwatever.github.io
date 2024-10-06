@@ -1,0 +1,57 @@
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+    margin-top: 2.7%;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+
+.fade {
+  opacity: 1;
+  animation-name: fadeOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
+}
+
+@keyframes fadeOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-left {
+  opacity: 1;
+  animation-name: fadeLeftOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
+}
+
+@keyframes fadeLeftOpacity {
+  0% {
+    opacity: 0;
+    margin-left: 6.7%;
+  }
+
+  100% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
