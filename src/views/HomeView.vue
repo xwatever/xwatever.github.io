@@ -1,17 +1,7 @@
 <template>
   <div id="home" :class="{ fade: home }">
     <div class="image-profile">
-      <img
-        :src="profile_image"
-        :style="{
-          position: 'absolute',
-          top: 'calc(50% - 97px)',
-          left: '10%',
-          width: 'calc(195px + 1vh)',
-          height: 'calc(195px + 1vh)',
-          'border-radius': '50%',
-        }"
-      />
+      <img :src="profile_image" class="img" />
     </div>
     <div id="introduction" :class="{ 'fade-left': introduction }">
       Hello, My name is Muhammad Darmawan
@@ -52,9 +42,9 @@
 
 <script>
 import profile_image from "./../assets/img.jpg";
-import router from "./../router";
 
 export default {
+  props: ["view"],
   data: function () {
     return {
       profile_image: profile_image,
@@ -67,20 +57,6 @@ export default {
     setTimeout(() => {
       this.introduction = true;
     }, 10);
-    window.addEventListener("keydown", (e) => {
-      if (e.keyCode == 40) {
-        // arrow key pressed
-        router.push({ name: "about" });
-      }
-    });
-
-    window.addEventListener("wheel", (e) => {
-      if (e.deltaY >= 0) {
-        // Wheel Down
-        router.push({ name: "about" });
-      }
-    });
   },
-  methods: {},
 };
 </script>

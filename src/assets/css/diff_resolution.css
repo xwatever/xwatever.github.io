@@ -1,0 +1,123 @@
+@media (max-width: 550px) {
+  .menu {
+    position: fixed;
+    /* top: 5em; */
+    left: -0.5em;
+    background-color: #000000;
+    z-index: 998;
+    width: 100%;
+    height: calc(100vh - 5em);
+    margin-top: -100%;
+    text-align: center;
+  }
+
+  .menu.active {
+    margin-top: 4em;
+    width: 100%;
+  }
+
+  .menu .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+  }
+}
+
+@media (min-width: 550px) {
+  .mobile-config {
+    display: none;
+    border: none;
+  }
+}
+
+@media (min-width: 1466px) and (min-width: 868px) {
+  .navbar {
+    height: calc(5em + 3vw);
+    padding: calc(1em + 0.5vw) calc(2em + 3vw);
+  }
+
+  .title {
+    font-size: calc(1.35em + 0.85vw);
+    width: calc(265px + 10vw);
+  }
+
+  .menu .link {
+    font-size: calc(1.15em + 0.75vw);
+  }
+
+  .menu .link.active {
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  }
+
+  #home {
+    height: calc(100vh - (5em + 3vw));
+  }
+
+  #home .img {
+    top: calc(50% - (97px + 0.95vw));
+    left: 10% - 3.75vw;
+    width: calc(195px + 3.75vw);
+    height: calc(195px + 3.75vw);
+  }
+
+  #home #introduction {
+    font-size: calc(40px + 0.95vw);
+    left: calc(13.5% + (195px + 3vw));
+    top: calc(50% - (60px + 0.95vw));
+  }
+
+  #home #introduction .details {
+    font-size: calc(19px + 0.95vw);
+  }
+
+  #home #introduction .contacts i {
+    font-size: calc(45px + 0.95vw);
+    margin-right: calc(25px + 0.95vw);
+  }
+
+  #about #about-me {
+    /* height: calc(5em + 3vw); */
+    padding: calc(0.65em + 0.95vw) 0 calc(0.65em + 0.95vw) 0;
+    font-size: calc(42px + 0.95vw);
+    height: calc(100vh - (80px + 3vw));
+    border: 3px solid red;
+  }
+
+  #about #education {
+    /* height: calc(5em + 3vw); */
+    padding: calc(0.25em + 0.95vw) 0 0 0;
+    font-size: calc(42px + 0.95vw);
+    min-height: calc(100% - (80px + 3vw));
+    border: 3px solid red;
+  }
+
+  #about #work {
+    /* height: calc(5em + 3vw); */
+    padding: calc(1.15em + 0.95vw) 0 calc(0.75em + 0.95vw) 0;
+    font-size: calc(42px + 0.95vw);
+    height: calc(100vh - (80px + 3vw));
+    border: 3px solid red;
+  }
+
+  #about #about-me .about,
+  #about #education .institute,
+  #about #work .job {
+    font-size: calc(28px + 0.95vw);
+    text-align: left;
+    padding: calc(0.75em + 0.95vw) calc(2em + 0.95vw) 0 calc(2em + 0.95vw);
+    line-height: 1.5;
+  }
+
+  #about #education .institute .left {
+    font-size: calc(25px + 0.95vw);
+  }
+
+  #about #education .institute .right {
+    font-size: calc(25px + 0.95vw);
+  }
+
+  #about #education .details {
+    font-size: calc(19px + 0.95vw);
+  }
+}

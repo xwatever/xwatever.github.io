@@ -1,0 +1,286 @@
+@media print {
+  * {
+    font-family: "Cormorant Garamond";
+  }
+
+  body {
+    visibility: hidden;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  @page {
+    size: 8.5in 11in;
+    /* size: auto; */
+    margin: 0;
+    /* margin: 27mm 16mm 27mm 16mm; */
+  }
+
+  #cv #content hr {
+    border-top: 3px solid #003874;
+    margin-bottom: 0.65em;
+  }
+
+  span,
+  p,
+  b,
+  ul,
+  li {
+    font-size: 12pt;
+    color: #000000;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  #resume {
+    display: block !important;
+  }
+
+  #resume #content {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 2.5em 3.5em;
+  }
+
+  #resume #content .contacts {
+    padding-bottom: 0.35em;
+    border-bottom: solid #6e6e6e;
+  }
+
+  #resume #content .name {
+    display: block;
+    font-size: 21pt;
+    text-align: center;
+    font-weight: 600;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    color: #07798d;
+  }
+
+  #resume #content .contacts ul {
+    margin: 0.65em 0 0.25em 0;
+    display: flex;
+    gap: 10%;
+    flex-direction: row;
+    font-size: 12pt;
+  }
+
+  #resume #content .contacts li {
+    width: 45%;
+  }
+
+  #resume #content .project-experience,
+  #resume #content .work-experience,
+  #resume #content .education,
+  #resume #content .interest {
+    margin-top: 1.25em;
+    font-weight: bold;
+    color: #07798d;
+    font-size: 12pt;
+
+    /* padding-bottom: 0.35em;
+      border-bottom: solid #6e6e6e; */
+  }
+
+  #resume #content ul {
+    font-weight: 100;
+  }
+
+  #resume #content .project-experience .date,
+  #resume #content .work-experience .location {
+    width: max-content;
+  }
+
+  #resume #content .details {
+    margin-left: 2em;
+    list-style-type: disc;
+  }
+
+  #resume #content .detailed-details {
+    margin-left: 4em;
+    list-style-type: circle;
+  }
+
+  #resume #content .education .institute,
+  #resume #content .interest .interests {
+    font-weight: bold;
+  }
+
+  #resume #content .education .institute .institute-details {
+    font-weight: 100;
+  }
+
+  #resume #content .project-experience .project,
+  #resume #content .work-experience .project,
+  #resume #content .education .institute {
+    margin-top: 0.95em;
+  }
+
+  #resume #content .project-experience .project .left,
+  #resume #content .work-experience .project .left,
+  #resume #content .education .institute .left {
+    display: flex;
+  }
+
+  #resume #content .project-experience .project .left .right,
+  #resume #content .work-experience .project .left .right,
+  #resume #content .education .institute .left .right {
+    margin-left: auto;
+  }
+
+  #cv {
+    display: block !important;
+  }
+
+  #cv #content {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 1em 4em;
+  }
+
+  #cv #contacts-content {
+    visibility: visible;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    height: 175px;
+    width: 8.5in;
+    background-color: #2a7bf5;
+  }
+
+  #cv #content .name {
+    height: 85px;
+    /* font-weight: 600; */
+    font-variant: small-caps;
+    text-transform: capitalize;
+    width: max-content;
+    display: flex;
+  }
+
+  #cv #content .name span {
+    align-self: flex-end;
+    font-size: 26pt;
+    color: #003874;
+  }
+
+  #cv #content .contacts {
+    margin-top: 2.5em;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #cv #content .contacts ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #cv #content .contacts ul li {
+    font-size: 14pt;
+    color: white;
+    /* font-weight: 600; */
+  }
+
+  #cv #content .contacts .personal-info li {
+    width: 195px;
+  }
+
+  #cv #content .contacts .links li {
+    width: 350px;
+  }
+
+  #cv #content .below-content {
+    margin-top: 3.15em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px 2em;
+  }
+
+  #cv #content .below-content .summary,
+  #cv #content .below-content .experience {
+    display: block;
+    width: 400px;
+  }
+
+  #cv #content .below-content .education,
+  #cv #content .below-content .skills {
+    display: block;
+    width: 225px;
+  }
+
+  #cv #content .below-content .summary span,
+  #cv #content .below-content .education span,
+  #cv #content .below-content .experience span,
+  #cv #content .below-content .skills span {
+    color: #003874;
+    font-size: 22pt;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    text-align: left;
+    /* font-weight: bold; */
+  }
+
+  #cv #content .below-content .summary p {
+    font-size: 14pt;
+    line-height: 1.5;
+  }
+
+  #cv #content .below-content .skills li {
+    margin-left: 1em;
+    font-size: 14pt;
+    list-style-type: disc;
+  }
+
+  #cv #content .below-content .experience p {
+    font-size: 17pt;
+    color: #003874;
+    text-decoration: underline;
+    margin-bottom: 0.15em;
+    font-variant: small-caps;
+    text-transform: capitalize;
+  }
+
+  #cv #content .below-content .experience .work {
+    margin-bottom: 0.65em;
+  }
+
+  #cv #content .below-content .experience .project {
+    font-weight: bold;
+  }
+
+  #cv #content .below-content .experience .project- {
+    font-weight: bold;
+    margin-top: 0.5em;
+  }
+
+  #cv #content .below-content .experience li {
+    font-size: 14pt;
+  }
+
+  #cv #content .below-content .institute li {
+    margin-left: 0.35em;
+    padding-left: 0.65em;
+    border-left: 3px solid black;
+    font-size: 14pt;
+  }
+
+  #cv #content .below-content .institute .degree {
+    font-weight: bold;
+    /* list-style-type: disc; */
+  }
+
+  #cv #content .below-content .instance {
+    margin-top: 0.85em;
+  }
+}

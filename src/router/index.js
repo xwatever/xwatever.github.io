@@ -21,11 +21,9 @@ const routes = [
     path: "/about",
     name: "about",
     component: AboutView,
-  },
-  {
-    path: "/projects",
-    name: "projects",
-    component: AccomplishmentView,
+    // children: [
+
+    // ],
   },
   {
     path: "/cv",
@@ -36,6 +34,11 @@ const routes = [
     path: "/resume",
     name: "resume",
     component: ResumeView,
+  },
+  {
+    path: "/projects",
+    name: "projects",
+    component: AccomplishmentView,
   },
 ];
 

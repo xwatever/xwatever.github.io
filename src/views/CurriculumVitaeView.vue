@@ -99,7 +99,7 @@
           <p>Project Experience</p>
           <ul>
             <li class="project">
-              Manage Cost and Schedule for Civil Construction App
+              Manage Cost and Schedules for Civil Construction App
             </li>
             <li class="date">April 2023 - June 2024</li>
             <li class="details">

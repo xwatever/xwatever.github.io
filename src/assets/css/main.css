@@ -36,12 +36,10 @@ body {
 }
 
 .mobile-config {
-  /* display: none; */
   float: right;
   color: rgb(179, 179, 179);
   border: solid #696969 2px;
   border-radius: 3px;
-  /* width: 45px; */
   padding: 0.35em;
 
   font-size: 1.35em;
@@ -54,7 +52,6 @@ body {
 
 .mobile-config.active {
   color: #ffffff;
-  /* text-shadow: -0.75px 0 black, 0 0.75px black, 0.75px 0 black, 0 -0.75px black; */
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
@@ -78,7 +75,7 @@ body {
 
 .menu .link.active {
   color: #ffffff;
-  /* text-shadow: -0.75px 0 black, 0 0.75px black, 0.75px 0 black, 0 -0.75px black; */
+  /* text-shadow -0.75px 0 black,0 0.75px blac, 0.75px 0 black,  -0.75px black; */
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
@@ -101,34 +98,51 @@ body {
   cursor: pointer;
 }
 
-/* #sidebar {
-  top: 4em;
-  position: sticky;
-
-  min-width: 300px;
-  height: calc(100vh - 4em);
-  overflow-y: auto;
-
-  background-color: #004c9c;
-  color: white;
-  border-color: black;
-  transition: all 0.65s;
-
-  font-weight: 500;
-} */
-
 #home {
   min-width: 100%;
   height: calc(100vh - 5em);
-  background-color: #004c9c;
   color: white;
+  text-shadow: -0.65px 0 black, 0 0.65px black, 0.65px 0 black, 0 -0.65px black;
+
+  background: rgb(58, 180, 179);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(58, 180, 179, 1) 0%,
+    rgba(0, 6, 164, 1) 15%,
+    rgba(0, 6, 164, 1) 85%,
+    rgba(58, 180, 179, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(58, 180, 179, 1) 0%,
+    rgba(0, 6, 164, 1) 15%,
+    rgba(0, 6, 164, 1) 85%,
+    rgba(58, 180, 179, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(58, 180, 179, 1) 0%,
+    rgba(0, 6, 164, 1) 15%,
+    rgba(0, 6, 164, 1) 85%,
+    rgba(58, 180, 179, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3ab4b3",endColorstr="#3ab4b3",GradientType=1);
+}
+
+#home .img {
+  position: absolute;
+  top: calc(50% - 97px);
+  left: 10%;
+  width: calc(195px + 1.35vw);
+  height: calc(195px + 1.35vw);
+  border-radius: 50%;
 }
 
 #home #introduction {
   font-size: 40px;
   position: absolute;
   left: calc(13.5% + 195px);
-  top: calc(50% - 75px);
+  top: calc(50% - (60px + 0.15vw));
 }
 
 #home #introduction .details {
@@ -162,7 +176,7 @@ body {
   text-decoration: none;
 }
 
-#home #toggle-down {
+/* #home #toggle-down {
   position: absolute;
   bottom: 15px;
   right: calc(50% - 25px);
@@ -173,13 +187,13 @@ body {
   cursor: pointer;
 }
 
-/* #home #toggle-down i:hover {
+#home #toggle-down i:hover {
 } */
 
 #about {
   min-width: 100%;
-  background-color: #129c00;
   color: white;
+  text-shadow: -0.65px 0 black, 0 0.65px black, 0.65px 0 black, 0 -0.65px black;
 }
 
 #about #about-me {
@@ -188,22 +202,28 @@ body {
   text-align: center;
   height: calc(100vh - 80px);
   border: 1px solid red;
+
+  background: rgba(255, 145, 0, 1);
 }
 
 #about #education {
-  padding: 0.25em 0 0 0;
+  padding: 0.5em 0 0 0;
   font-size: 42px;
   text-align: center;
   height: calc(100vh - 80px);
   border: 1px solid red;
+
+  background: rgba(0, 121, 255, 100);
 }
 
 #about #work {
-  padding: 3.15em 0 0.75em 0;
+  padding: 2.15em 0 0.75em 0;
   font-size: 42px;
   text-align: center;
   height: calc(100vh - 80px);
   border: 1px solid red;
+
+  background: rgb(255, 0, 43);
 }
 
 #about #about-me .about,
@@ -230,6 +250,22 @@ body {
   font-size: 19px;
 }
 
+#about #work .cv-n-resume {
+  text-align: left;
+  padding: 0.75em 2em 0 2em;
+  margin-top: 1em;
+}
+
+#about #work .cv-n-resume .resume,
+#about #work .cv-n-resume .cv {
+  display: block;
+
+  padding: 0.15em 0.9em;
+  /* padding: 0.75em 2em 0 2em; */
+  font-size: 28px;
+  cursor: pointer;
+}
+
 #projects {
   min-width: 100%;
   height: calc(100vh - 5em);
@@ -243,322 +279,94 @@ body {
   text-align: center;
 }
 
-@media print {
-  * {
-    font-family: "Cormorant Garamond";
-  }
-
-  body {
-    visibility: hidden;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-  @page {
-    size: 8.5in 11in;
-    /* size: auto; */
-    margin: 0;
-    /* margin: 27mm 16mm 27mm 16mm; */
-  }
-
-  #cv #content hr {
-    border-top: 3px solid #003874;
-    margin-bottom: 0.65em;
-  }
-
-  span,
-  p,
-  b,
-  ul,
-  li {
-    font-size: 12pt;
-    color: #000000;
-  }
-
-  li {
-    list-style-type: none;
-  }
-
-  #resume {
-    display: block !important;
-  }
-
-  #resume #content {
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin: 2.5em 3.5em;
-  }
-
-  #resume #content .contacts {
-    padding-bottom: 0.35em;
-    border-bottom: solid #6e6e6e;
-  }
-
-  #resume #content .name {
-    display: block;
-    font-size: 21pt;
-    text-align: center;
-    font-weight: 600;
-    font-variant: small-caps;
-    text-transform: capitalize;
-    color: #13a2bb;
-  }
-
-  #resume #content .contacts ul {
-    margin: 0.65em 0 0.25em 0;
-    display: flex;
-    gap: 10%;
-    flex-direction: row;
-    font-size: 12pt;
-  }
-
-  #resume #content .contacts li {
-    width: 45%;
-  }
-
-  #resume #content .project-experience,
-  #resume #content .work-experience,
-  #resume #content .education,
-  #resume #content .interest {
-    margin-top: 1.25em;
-    font-weight: bold;
-    color: #13a2bb;
-    font-size: 12pt;
-
-    /* padding-bottom: 0.35em;
-    border-bottom: solid #6e6e6e; */
-  }
-
-  #resume #content ul {
-    font-weight: 100;
-  }
-
-  #resume #content .project-experience .date,
-  #resume #content .work-experience .location {
-    width: max-content;
-  }
-
-  #resume #content .details {
-    margin-left: 2em;
-    list-style-type: disc;
-  }
-
-  #resume #content .detailed-details {
-    margin-left: 4em;
-    list-style-type: circle;
-  }
-
-  #resume #content .education .institute,
-  #resume #content .interest .interests {
-    font-weight: bold;
-  }
-
-  #resume #content .education .institute .institute-details {
-    font-weight: 100;
-  }
-
-  #resume #content .project-experience .project,
-  #resume #content .work-experience .project,
-  #resume #content .education .institute {
-    margin-top: 0.95em;
-  }
-
-  #resume #content .project-experience .project .left,
-  #resume #content .work-experience .project .left,
-  #resume #content .education .institute .left {
-    display: flex;
-  }
-
-  #resume #content .project-experience .project .left .right,
-  #resume #content .work-experience .project .left .right,
-  #resume #content .education .institute .left .right {
-    margin-left: auto;
-  }
-
-  #cv {
-    display: block !important;
-  }
-
-  #cv #content {
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin: 1em 4em;
-  }
-
-  #cv #contacts-content {
-    visibility: visible;
-    position: absolute;
-    top: 110px;
-    left: 0;
-    height: 175px;
-    width: 8.5in;
-    background-color: #2a7bf5;
-  }
-
-  #cv #content .name {
-    height: 85px;
-    /* font-weight: 600; */
-    font-variant: small-caps;
-    text-transform: capitalize;
-    width: max-content;
-    display: flex;
-  }
-
-  #cv #content .name span {
-    align-self: flex-end;
-    font-size: 26pt;
-    color: #003874;
-  }
-
-  #cv #content .contacts {
-    margin-top: 2.5em;
-    width: 100%;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  #cv #content .contacts ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  #cv #content .contacts ul li {
-    font-size: 14pt;
-    color: white;
-    /* font-weight: 600; */
-  }
-
-  #cv #content .contacts .personal-info li {
-    width: 195px;
-  }
-
-  #cv #content .contacts .links li {
-    width: 350px;
-  }
-
-  #cv #content .below-content {
-    margin-top: 3.15em;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px 2em;
-  }
-
-  #cv #content .below-content .summary,
-  #cv #content .below-content .experience {
-    display: block;
-    width: 400px;
-  }
-
-  #cv #content .below-content .education,
-  #cv #content .below-content .skills {
-    display: block;
-    width: 225px;
-  }
-
-  #cv #content .below-content .summary span,
-  #cv #content .below-content .education span,
-  #cv #content .below-content .experience span,
-  #cv #content .below-content .skills span {
-    color: #003874;
-    font-size: 22pt;
-    font-variant: small-caps;
-    text-transform: capitalize;
-    text-align: left;
-    /* font-weight: bold; */
-  }
-
-  #cv #content .below-content .summary p {
-    font-size: 14pt;
-    line-height: 1.5;
-  }
-
-  #cv #content .below-content .skills li {
-    margin-left: 1em;
-    font-size: 14pt;
-    list-style-type: disc;
-  }
-
-  #cv #content .below-content .experience p {
-    font-size: 17pt;
-    color: #003874;
-    text-decoration: underline;
-    margin-bottom: 0.15em;
-    font-variant: small-caps;
-    text-transform: capitalize;
-  }
-
-  #cv #content .below-content .experience .work {
-    margin-bottom: 0.65em;
-  }
-
-  #cv #content .below-content .experience .project {
-    font-weight: bold;
-  }
-
-  #cv #content .below-content .experience .project- {
-    font-weight: bold;
-    margin-top: 0.5em;
-  }
-
-  #cv #content .below-content .experience li {
-    font-size: 14pt;
-  }
-
-  #cv #content .below-content .institute li {
-    margin-left: 0.35em;
-    padding-left: 0.65em;
-    border-left: 3px solid black;
-    font-size: 14pt;
-  }
-
-  #cv #content .below-content .institute .degree {
-    font-weight: bold;
-    /* list-style-type: disc; */
-  }
-
-  #cv #content .below-content .instance {
-    margin-top: 0.85em;
-  }
+#projects .card-contents {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 2px solid #5b5d5c;
+  border-radius: 5px;
+  margin-top: 1em;
+  padding: 2em;
 }
 
-@media (max-width: 550px) {
-  .menu {
-    position: fixed;
-    /* top: 5em; */
-    left: -0.5em;
-    background-color: #000000;
-    z-index: 998;
-    width: 100%;
-    height: calc(100vh - 5em);
-    margin-top: -100%;
-    text-align: center;
-  }
-
-  .menu.active {
-    margin-top: 4em;
-    width: 100%;
-  }
-
-  .menu .link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 65px;
-  }
+#projects .card-contents .card {
+  border: 2px solid #5b5d5c;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  flex: 0 1 calc(50% - 1em);
 }
 
-@media (min-width: 550px) {
-  .mobile-config {
-    display: none;
-    border: none;
-  }
+#projects .card-contents .card .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+  padding: 0.7em 0;
+  text-align: center;
+  font-size: 1.42em;
+  border: 2px solid #5b5d5c;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  /* background-color: #3dbd57; */
+  background-color: #0cbb0c;
+  text-shadow: -0.65px 0 black, 0 0.65px black, 0.65px 0 black, 0 -0.65px black;
+  color: #ffffff;
+  z-index: 2;
+  cursor: pointer;
+}
+
+#projects .card-contents .card .header.dropped {
+  background-color: #e70e0e;
+}
+
+#projects .card-contents .card .header.ongoing {
+  background-color: #ffd900;
+}
+
+#projects .card-contents .card .header.finished {
+  background-color: #0fa30f;
+}
+
+#projects .card-contents .card .header .title {
+  font-size: 18px;
+  text-align: left;
+  padding: 0 1em;
+  color: #ffffff;
+}
+
+#projects .card-contents .card .header .name {
+  font-size: 21px;
+  padding: 0 0.5em;
+  color: #ffffff;
+}
+
+#projects .card-contents .card .header .status {
+  font-size: 18px;
+  color: #ffffff;
+  bottom: 0;
+}
+
+#projects .card-contents .card .header.head {
+  display: block;
+  padding: 0.1em 0;
+  text-align: center;
+  font-size: 4em;
+}
+
+#projects .card-contents .card .description {
+  padding: 0 0.5em;
+  max-height: 0;
+  overflow: hidden;
+  /* Set our transitions up. */
+  -webkit-transition: max-height 1.15s;
+  -moz-transition: max-height 1.15s;
+  transition: max-height 1.15s;
+  font-size: 1em;
+}
+
+#projects .card-contents .card .description.active {
+  max-height: 500px;
+  padding: 0 0.5em;
 }

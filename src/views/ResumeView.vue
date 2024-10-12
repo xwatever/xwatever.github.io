@@ -16,11 +16,11 @@
       <div class="contacts">
         <ul>
           <li style="text-align: left">
-            <i class="fa-solid fa-envelope" style="color: #13a2bb"></i>
+            <i class="fa-solid fa-envelope" style="color: #07798d"></i>
             muhammaddarmawan1999@gmail.com
           </li>
           <li style="text-align: right">
-            <i class="fa-brands fa-linkedin" style="color: #13a2bb"></i>
+            <i class="fa-brands fa-linkedin" style="color: #07798d"></i>
             https://www.linkedin.com/in/muhammad-darmawan-595420227/
           </li>
         </ul>
@@ -47,7 +47,7 @@
           </li>
           <li class="details">
             Thesis Assignment for Informatics Engineer Bachelor's Degree at
-            Universitas Islam Riau, making Manage Cost and Schedule for Civil
+            Universitas Islam Riau, making Manage Cost and Schedules for Civil
             Construction App for Civil Engineering of Universitas Islam Riau
           </li>
           <li class="detailed-details">

@@ -16,39 +16,40 @@
         active: dropDownMenu,
       }"
     >
-      <router-link
+      <span
         title="My socials and contacts"
-        to="/home"
+        @click="toggleMenu"
         class="link"
         :class="{
           active: viewedPage == 'home',
         }"
-      >
-        HOME
-      </router-link>
-      <router-link
+        >HOME
+      </span>
+      <span
         title="My life summary, probably"
-        to="/about"
+        @click="toggleMenu"
         class="link"
         :class="{
           active: viewedPage == 'about',
         }"
       >
         ABOUT
-      </router-link>
-      <router-link
+      </span>
+      <span
         title="More to come, probably still having my assignments from my college days as projects"
-        to="/projects"
+        @click="toggleMenu"
         class="link"
         :class="{
           active: viewedPage == 'projects',
         }"
       >
         PROJECTS
-      </router-link>
+      </span>
+
       <router-link
         title="More to come, probably still having my assignments from my college days as projects"
         to="/cv"
+        @click="toggleMenu"
         class="link"
         :class="{
           active: viewedPage == 'cv',
@@ -56,9 +57,11 @@
       >
         Curriculum Vitae
       </router-link>
+
       <router-link
         title="More to come, probably still having my assignments from my college days as projects"
         to="/resume"
+        @click="toggleMenu"
         class="link"
         :class="{
           active: viewedPage == 'resume',
@@ -66,6 +69,27 @@
       >
         Resume
       </router-link>
+
+      <!-- <span
+        title="More to come, probably still having my assignments from my college days as projects"
+        @click="toggleMenu"
+        class="link"
+        :class="{
+          active: viewedPage == 'cv',
+        }"
+      >
+        Curriculum Vitae
+      </span>
+      <span
+        title="More to come, probably still having my assignments from my college days as projects"
+        @click="toggleMenu"
+        class="link"
+        :class="{
+          active: viewedPage == 'resume',
+        }"
+      >
+        Resume
+      </span> -->
       <!-- <i
         title="See my curriculum vitae or resume"
         class="view-button fa-solid fa-file"
@@ -85,6 +109,8 @@
 </template>
 
 <script>
+import router from "./../router";
+
 export default {
   props: ["width"],
   watch: {
@@ -119,6 +145,26 @@ export default {
   methods: {
     toggleDropdown() {
       this.dropDownMenu = !this.dropDownMenu;
+    },
+    toggleMenu(e) {
+      const route = e.target.innerHTML.replace(/ /g, "");
+      console.log(route);
+      if (route == "HOME") {
+        this.$emit("clicked", "home");
+        setTimeout(() => {
+          router.push({ name: "home" });
+        }, 50);
+      } else if (route == "ABOUT") {
+        this.$emit("clicked", "about");
+        setTimeout(() => {
+          router.push({ name: "about" });
+        }, 50);
+      } else if (route == "PROJECTS") {
+        this.$emit("clicked", "projects");
+        setTimeout(() => {
+          router.push({ name: "projects" });
+        }, 50);
+      }
     },
   },
 };
