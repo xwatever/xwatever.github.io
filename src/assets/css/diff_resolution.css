@@ -81,7 +81,6 @@
     padding: calc(0.65em + 0.95vw) 0 calc(0.65em + 0.95vw) 0;
     font-size: calc(42px + 0.95vw);
     height: calc(100vh - (80px + 3vw));
-    border: 3px solid red;
   }
 
   #about #education {
@@ -89,7 +88,6 @@
     padding: calc(0.25em + 0.95vw) 0 0 0;
     font-size: calc(42px + 0.95vw);
     min-height: calc(100% - (80px + 3vw));
-    border: 3px solid red;
   }
 
   #about #work {
@@ -97,7 +95,6 @@
     padding: calc(1.15em + 0.95vw) 0 calc(0.75em + 0.95vw) 0;
     font-size: calc(42px + 0.95vw);
     height: calc(100vh - (80px + 3vw));
-    border: 3px solid red;
   }
 
   #about #about-me .about,
@@ -119,5 +116,13 @@
 
   #about #education .details {
     font-size: calc(19px + 0.95vw);
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  #projects .prev,
+  #projects .next,
+  #projects .text {
+    font-size: 11px;
   }
 }

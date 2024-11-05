@@ -71,11 +71,18 @@
 </template>
 
 <script>
-import resume from "./../assets/muhammad-darmawan-resume.pdf";
-import cv from "./../assets/muhammad-darmawan-cv.pdf";
+import resume from "./../assets/pdf/muhammad-darmawan-resume.pdf";
+import cv from "./../assets/pdf/muhammad-darmawan-cv.pdf";
 
 export default {
-  props: ["view", "subView", "width"],
+  props: [
+    "view",
+    "subView",
+    "width",
+    "height",
+    "navbarHeight",
+    "keydownAndWheelActive",
+  ],
   watch: {
     subView(val) {
       var element =
@@ -89,10 +96,30 @@ export default {
         top: offsetPosition,
         behavior: "smooth",
       });
+
+      setTimeout(() => {
+        var height = element.getBoundingClientRect().height;
+
+        if (height > this.height - this.navbarHeight + 1) {
+          this.$emit("height", { state: false });
+        }
+      }, 95);
+    },
+    keydownAndWheelActive(val) {
+      if (val == false) {
+        window.addEventListener("keydown", (e) => {
+          this.toggleRouteKeyDown(e);
+        });
+        window.addEventListener("wheel", (e) => {
+          this.toggleRouteWheel(e);
+        });
+      }
     },
   },
+
   data: function () {
     return {
+      onTopOrBottom: false,
       resume: resume,
       cv: cv,
     };
@@ -100,7 +127,8 @@ export default {
   mounted() {
     setTimeout(() => {
       this.toggleView();
-    }, 200);
+      this.onTopOrBottom = false;
+    }, 150);
   },
   methods: {
     toggleView() {
@@ -115,14 +143,105 @@ export default {
         top: offsetPosition,
         behavior: "smooth",
       });
+
+      setTimeout(() => {
+        var height = element.getBoundingClientRect().height;
+        if (height > this.height - this.navbarHeight + 1) {
+          this.$emit("height", { state: false });
+        }
+      }, 95);
     },
     toggleResume() {
-      // router.push({ name: "resume" });
       window.open(resume, "_blank");
     },
     toggleCV() {
-      // router.push({ name: "cv" });
       window.open(cv, "_blank");
+    },
+    toggleRouteKeyDown(e) {
+      if (this.keydownAndWheelActive == false) {
+        console.log("true");
+        if (e.keyCode === 40) {
+          var top = window.pageYOffset || document.documentElement.scrollTop;
+          var bottom =
+            window.pageYOffset + (this.height - this.navbarHeight) ||
+            document.documentElement.scrollBottom;
+          console.log(top + " " + bottom);
+        } else if (e.keyCode === 38) {
+          top = window.pageYOffset || document.documentElement.scrollTop;
+          bottom =
+            window.pageYOffset + (this.height - this.navbarHeight) ||
+            document.documentElement.scrollBottom;
+          console.log(top + " " + bottom);
+        }
+      } else {
+        window.removeEventListener("keydown", this.toggleRouteKeyDown);
+      }
+    },
+    toggleRouteWheel(e) {
+      var cumulativeOffset = function (element) {
+        var top = 0;
+        var bottom = 0;
+        var offsetHeight = element.offsetHeight;
+
+        do {
+          top += element.offsetTop || 0;
+          bottom += element.offsetTop || 0;
+          element = element.offsetParent;
+        } while (element);
+
+        return {
+          top: top,
+          bottom: bottom + offsetHeight,
+        };
+      };
+
+      if (this.keydownAndWheelActive == false) {
+        var education_top =
+          cumulativeOffset(document.getElementById("education")).top -
+          this.navbarHeight;
+
+        var education_bottom =
+          cumulativeOffset(document.getElementById("education")).bottom -
+          this.navbarHeight;
+
+        setTimeout(() => {
+          var top = window.pageYOffset || document.documentElement.scrollTop;
+
+          var bottom =
+            window.pageYOffset + (this.height - this.navbarHeight) ||
+            document.documentElement.scrollBottom;
+
+          setTimeout(() => {
+            var scrolled = Math.abs(window.scrollY - top);
+
+            if (
+              education_top >= top - scrolled ||
+              education_bottom <= bottom + scrolled
+            ) {
+              setTimeout(() => {
+                this.onTopOrBottom = true;
+              }, 50);
+              if (this.onTopOrBottom == true) {
+                if (e.deltaY >= 0) {
+                  // scrolled down
+                  this.$emit("height", { state: true, direction: "down" });
+                } else if (e.deltaY <= 0) {
+                  // scrolled up
+                  this.$emit("height", { state: true, direction: "up" });
+                  setTimeout(() => {
+                    this.toggleRouteWheel();
+                    this.toggleRouteKeyDown();
+                  }, 100);
+                }
+              }
+            } else {
+              this.onTopOrBottom = false;
+            }
+          }, 50);
+        }, 50);
+      } else {
+        window.removeEventListener("wheel", this.toggleRouteWheel);
+      }
     },
   },
 };

@@ -134,6 +134,11 @@ export default {
     if (this.width < 550) {
       this.mobileView = true;
     }
+
+    var navbarHeight = document
+      .getElementsByClassName("navbar")[0]
+      .getBoundingClientRect().height;
+    this.$emit("height", navbarHeight);
   },
   data: function () {
     return {

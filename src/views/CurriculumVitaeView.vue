@@ -169,7 +169,7 @@
 </template>
 
 <script>
-import cv_image from "./../assets/cv_img.png";
+import cv_image from "./../assets/img/cv_img.png";
 
 export default {
   data: function () {

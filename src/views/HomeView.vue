@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import profile_image from "./../assets/img.jpg";
+import profile_image from "./../assets/img/img.jpg";
 
 export default {
   props: ["view"],

@@ -5,6 +5,7 @@ const AboutView = () => import("./../views/AboutView.vue");
 const AccomplishmentView = () => import("./../views/AccomplishmentView.vue");
 const CurriculumVitaeView = () => import("./../views/CurriculumVitaeView.vue");
 const ResumeView = () => import("./../views/ResumeView.vue");
+const CarouselComponent = () => import("./../components/CarouselComponent.vue");
 
 const routes = [
   {
@@ -39,6 +40,18 @@ const routes = [
     path: "/projects",
     name: "projects",
     component: AccomplishmentView,
+    children: [
+      {
+        path: "manage-cost-and-schedules-for-civil-construction-app/",
+        name: "manage-cost-and-schedules-for-civil-construction-app",
+        component: CarouselComponent,
+      },
+      {
+        path: "optional-course-scheduling-app/",
+        name: "optional-course-scheduling-app",
+        component: CarouselComponent,
+      },
+    ],
   },
 ];
 

@@ -1,9 +1,19 @@
 <template>
-  <navbar :width="width" @clicked="toggleNavMenu" />
+  <navbar :width="width" @clicked="toggleNavMenu" @height="getNavbarHeight" />
 
   <sidebar />
 
-  <router-view :view="view" :subView="subView" :width="width" />
+  <router-view
+    :view="view"
+    :subView="subView"
+    :width="width"
+    :height="height"
+    :navbarHeight="navbarHeight"
+    :bodyOverflow="bodyOverflow"
+    :keydownAndWheelActive="keydownAndWheelActive"
+    @height="toggleScroll"
+    @handleScrolling="toggleHandleScrolling"
+  />
 </template>
 
 <script>
@@ -21,28 +31,34 @@ export default {
   data: function () {
     return {
       width: window.innerWidth,
+      height: window.innerHeight,
+      bodyOverflow: "",
+      navbarHeight: 0,
       view: "home",
       subView: "about-me",
+      keydownAndWheelActive: true,
     };
   },
   created() {
     window.addEventListener("resize", this.handleResize);
     this.handleResize();
+    this.handleSession();
   },
   mounted() {
     this.handleSession();
 
-    window.addEventListener("keydown", (e) => {
-      this.toggleRouteKeyDown(e);
-    });
+    this.bodyOverflow = window.getComputedStyle(document.body).overflow;
 
-    window.addEventListener("wheel", (e) => {
-      this.toggleRouteWheel(e);
-    });
+    window.addEventListener("keydown", this.keydownHandler);
+    window.addEventListener("wheel", this.wheelHandler);
   },
   methods: {
     handleResize() {
-      this.width = window.innerWidth;      
+      this.width = window.innerWidth;
+      this.height = window.innerHeight;
+    },
+    getNavbarHeight(e) {
+      this.navbarHeight = e;
     },
     handleSession() {
       store.dispatch("getView");
@@ -74,10 +90,10 @@ export default {
       );
       sessionStorage.setItem("view", JSON.stringify(this.view));
     },
-    toggleRouteKeyDown(e) {
+    toggleRouteKeyDownMain(e) {
       if (e.keyCode === 40) {
         // arrow key pressed down
-        document.body.style.overflow = "hidden";
+
         if (this.view == "home") {
           this.view = "about";
           setTimeout(() => {
@@ -92,7 +108,6 @@ export default {
             this.view = "projects";
             setTimeout(() => {
               router.push({ name: "projects" });
-              document.body.style.overflow = "scroll";
             }, 50);
           }
         }
@@ -102,19 +117,15 @@ export default {
           JSON.stringify(this.subView != undefined ? this.subView : "")
         );
         sessionStorage.setItem("view", JSON.stringify(this.view));
-        // store.dispatch("getAboutView");
       } else if (e.keyCode === 38) {
         // arrow key pressed up
-        if (this.view != "project") {
-          document.body.style.overflow = "hidden";
-        }
-        // if (this.view == "projects") {
-        //   this.view = "about";
-        //   setTimeout(() => {
-        //     router.push({ name: "about" });
-        //   }, 50);
-        // } else
-        if (this.view == "about") {
+
+        if (this.view == "projects") {
+          this.view = "about";
+          setTimeout(() => {
+            router.push({ name: "about" });
+          }, 50);
+        } else if (this.view == "about") {
           if (this.subView == "work") {
             this.subView = "education";
           } else if (this.subView == "education") {
@@ -134,10 +145,9 @@ export default {
         sessionStorage.setItem("view", JSON.stringify(this.view));
       }
     },
-    toggleRouteWheel(e) {
+    toggleRouteWheelMain(e) {
       if (e.deltaY >= 0) {
         // wheel or scroll down
-        document.body.style.overflow = "hidden";
         if (this.view == "home") {
           this.view = "about";
           setTimeout(() => {
@@ -152,7 +162,6 @@ export default {
             this.view = "projects";
             setTimeout(() => {
               router.push({ name: "projects" });
-              document.body.style.overflow = "scroll";
             }, 50);
           }
         }
@@ -163,14 +172,15 @@ export default {
         );
         sessionStorage.setItem("view", JSON.stringify(this.view));
       } else if (e.deltaY <= 0) {
+        console.log("scrolling up");
+
         // wheel or scroll up
-        // if (this.view == "projects") {
-        //   this.view = "about";
-        //   setTimeout(() => {
-        //     router.push({ name: "about" });
-        //   }, 50);
-        // } else
-        if (this.view == "about") {
+        if (this.view == "projects") {
+          this.view = "about";
+          setTimeout(() => {
+            router.push({ name: "about" });
+          }, 50);
+        } else if (this.view == "about") {
           if (this.subView == "work") {
             this.subView = "education";
           } else if (this.subView == "education") {
@@ -188,6 +198,71 @@ export default {
           JSON.stringify(this.subView != undefined ? this.subView : "")
         );
         sessionStorage.setItem("view", JSON.stringify(this.view));
+      }
+    },
+    toggleScroll(event) {
+      if (event.state == false) {
+        document.body.style.overflow = "scroll";
+        this.keydownAndWheelActive = false;
+      } else {
+        document.body.style.overflow = "hidden";
+        this.keydownAndWheelActive = true;
+        setTimeout(() => {
+          window.addEventListener("keydown", this.keydownHandler);
+          window.addEventListener("wheel", this.wheelHandler);
+        }, 500);
+
+        if (event.direction == "up") {
+          if (this.view == "projects") {
+            this.view = "about";
+            setTimeout(() => {
+              router.push({ name: "about" });
+            }, 50);
+          } else if (this.view == "about") {
+            if (this.subView == "work") {
+              this.subView = "education";
+            } else if (this.subView == "education") {
+              this.subView = "about-me";
+            } else if (this.subView == "about-me") {
+              this.view = "home";
+              setTimeout(() => {
+                router.push({ name: "home" });
+              }, 50);
+            }
+          }
+        } else if (event.direction == "down") {
+          if (this.view == "home") {
+            this.view = "about";
+            setTimeout(() => {
+              router.push({ name: "about" });
+            }, 50);
+          } else if (this.view == "about") {
+            if (this.subView == "about-me") {
+              this.subView = "education";
+            } else if (this.subView == "education") {
+              this.subView = "work";
+            } else if (this.subView == "work") {
+              this.view = "projects";
+              setTimeout(() => {
+                router.push({ name: "projects" });
+              }, 50);
+            }
+          }
+        }
+      }
+    },
+    wheelHandler(e) {
+      if (this.keydownAndWheelActive == true) {
+        this.toggleRouteWheelMain(e);
+      } else {
+        window.removeEventListener("wheel", this.wheelHandler);
+      }
+    },
+    keydownHandler(e) {
+      if (this.keydownAndWheelActive == true) {
+        this.toggleRouteKeyDownMain(e);
+      } else {
+        window.removeEventListener("keydown", this.keydownHandler);
       }
     },
   },
