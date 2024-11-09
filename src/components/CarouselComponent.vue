@@ -26,7 +26,7 @@
       v-for="(img, index) in civilConstructionAppImages"
       class="dot"
       :key="index"
-      @click="currentSlide(index)"
+      @click="currentSlide(parseInt(index))"
     ></span>
   </div>
   <!-- <div class="slideshow-container">
@@ -85,7 +85,9 @@ import optionalCourseSchedulingAppImage9 from "./../assets/img/optional-course-s
 export default {
   props: ["viewed"],
   mounted() {
-    this.showSlides(1);
+    setTimeout(() => {
+      this.showSlides(this.slideIndex);
+    }, 100);
   },
   data: function () {
     return {
@@ -124,12 +126,11 @@ export default {
     },
     showSlides(n) {
       let i;
-      // console.log(n + i);
       let slides = document.getElementsByClassName("mySlides");
       let dots = document.getElementsByClassName("dot");
       // console.log(slides);
       // console.log(dots);
-      if (n < slides.length) {
+      if (n > slides.length) {
         this.slideIndex = 1;
       }
       if (n < 1) {
@@ -139,10 +140,12 @@ export default {
         slides[i].style.display = "none";
       }
       for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace("active", "");
+        dots[i].className = dots[i].className.replace(" active", "");
       }
-      slides[this.slideIndex - 1].style.display = "block";
-      dots[this.slideIndex - 1].className += "active";
+      setTimeout(() => {
+        slides[this.slideIndex - 1].style.display = "block";
+        dots[this.slideIndex - 1].className += " active";
+      }, 150);
     },
   },
 };
