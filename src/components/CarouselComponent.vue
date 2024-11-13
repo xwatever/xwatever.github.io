@@ -1,63 +1,122 @@
 <template>
   <div
+    id="carousel"
     v-if="viewed == 'manage-cost-and-schedules-for-civil-construction-app'"
-    class="slideshow-container"
   >
-    <div
-      v-for="(img, index) in civilConstructionAppImages"
-      class="mySlides fade"
-      :key="index"
+    <div class="slideshow-container">
+      <div
+        v-for="(img, index) in civilConstructionAppImages"
+        class="mySlides fade-carousel"
+        :key="index"
+      >
+        <div class="numbertext">{{ index }} / 9</div>
+        <img :src="img" style="width: 100%" />
+      </div>
+
+      <a class="prev" @click="plusSlides(-1)">❮</a>
+      <a class="next" @click="plusSlides(1)">❯</a>
+    </div>
+
+    <br />
+
+    <div style="text-align: center">
+      <span
+        v-for="(img, index) in civilConstructionAppImages"
+        class="dot"
+        :key="index"
+        @click="currentSlide(parseInt(index))"
+      ></span>
+    </div>
+  </div>
+
+  <div id="carousel" v-if="viewed == 'optional-course-scheduling-app'">
+    <div class="slideshow-container">
+      <div
+        v-for="(img, index) in optionalCourseSchedulingAppImages"
+        class="mySlides fade-carousel"
+        :key="index"
+      >
+        <div class="numbertext">{{ index }} / 10</div>
+        <img :src="img" style="width: 100%" />
+      </div>
+
+      <a class="prev" @click="plusSlides(-1)">❮</a>
+      <a class="next" @click="plusSlides(1)">❯</a>
+    </div>
+
+    <br />
+
+    <div style="text-align: center">
+      <span
+        v-for="(img, index) in optionalCourseSchedulingAppImages"
+        class="dot"
+        :key="index"
+        @click="currentSlide(parseInt(index))"
+      ></span>
+    </div>
+  </div>
+
+  <div id="content">
+    <template
+      v-if="viewed == 'manage-cost-and-schedules-for-civil-construction-app'"
     >
-      <div class="numbertext">{{ index }} / 9</div>
-      <img :src="img" style="width: 100%" />
-    </div>
-
-    <a class="prev" @click="plusSlides(-1)">❮</a>
-    <a class="next" @click="plusSlides(1)">❯</a>
+      <p>
+        This app was made for my thesis assignment at Universitas Islam Riau. It
+        was made with VueJS + ExpressJS. This app manage schedules and cost (by
+        material usage and matching different types of material) from civil
+        building projects.
+      </p>
+      <p>
+        Other than teaching college students, Civil Engineering faculty have
+        collaborate and operating civil projects for campus or outside of
+        campus. Civil Engineering faculty does collab with certain company to
+        manage projects with ease with an app. But there is no feature to make
+        'forecast' of material usage on civil building with the same or
+        different occurrence, and forecasting cost if there is delay or adding
+        more days to complete certain tasks for the project. And that makes this
+        app being offered as solution (and of course for my thesis assignment)
+      </p>
+      <p>
+        This app contains data for types of building, their constructing
+        method/technique for references (material needed), types of material
+        used in those projects (and their cost), projects performed, and its
+        tasks, etc.
+      </p>
+      <p>
+        So the way this app works, these projects will hold information about
+        daily cost of each tasks and the duration of days the task will be
+        completed. The usage of materials for constructing civil building are
+        needed too for overall or project total cost.
+      </p>
+      <p>
+        To make these usage of material have some kind of method or algorithm to
+        change every combination that will be referenced or suggested as
+        solution by the app, i had used Differential Evolution algorithm.
+      </p>
+      <p>
+        And for forecasting postponing tasks, using daily cost as reference to
+        predict overall project cost, not using some kind of algorithm, but just
+        some basic logic by multiplying daily cost to added days to finish a
+        certain task
+      </p>
+      <p>
+        This app used template that i have been used for my internship
+        assignment that being developed with Laravel + VueJS, but with a little
+        improvement on its appearance, like making sub menu on sidebar, using
+        webpack or plugin or library like improving routing with Vue-Router (on
+        internship app i had not used vue-router) CKEditor to make adding civil
+        information (like construction technique/method, types of civil
+        building, types of material) explanation feel like using document
+        processing app, etc.
+      </p>
+      <p>
+        I have used more time on figuring how the algorithm works, database
+        scheme, developing its back end, and felt the design already sufficient
+        for it.
+      </p>
+    </template>
+    <template v-if="viewed == 'optional-course-scheduling-app'"> </template>
   </div>
-
-  <br />
-
-  <div
-    style="text-align: center"
-    v-if="viewed == 'manage-cost-and-schedules-for-civil-construction-app'"
-  >
-    <span
-      v-for="(img, index) in civilConstructionAppImages"
-      class="dot"
-      :key="index"
-      @click="currentSlide(parseInt(index))"
-    ></span>
-  </div>
-  <!-- <div class="slideshow-container">
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-      <img src="" style="width: 100%" />
-      <div class="text">Caption Text</div>
-    </div>
-
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="" style="width: 100%" />
-      <div class="text">Caption Two</div>
-    </div>
-
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="" style="width: 100%" />
-      <div class="text">Caption Three</div>
-    </div>
-
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
-  </div>
-  <br />
-
-  <div style="text-align: center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-  </div> -->
 </template>
 
 <script>
@@ -84,10 +143,13 @@ import optionalCourseSchedulingAppImage9 from "./../assets/img/optional-course-s
 
 export default {
   props: ["viewed"],
-  mounted() {
-    setTimeout(() => {
+  async mounted() {
+    if (
+      this.viewed == "manage-cost-and-schedules-for-civil-construction-app" ||
+      this.viewed == "optional-course-scheduling-app"
+    ) {
       this.showSlides(this.slideIndex);
-    }, 100);
+    }
   },
   data: function () {
     return {
@@ -142,10 +204,8 @@ export default {
       for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
       }
-      setTimeout(() => {
-        slides[this.slideIndex - 1].style.display = "block";
-        dots[this.slideIndex - 1].className += " active";
-      }, 150);
+      slides[this.slideIndex - 1].style.display = "block";
+      dots[this.slideIndex - 1].className += " active";
     },
   },
 };

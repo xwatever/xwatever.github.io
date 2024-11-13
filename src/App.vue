@@ -79,6 +79,9 @@ export default {
     },
     toggleNavMenu(e) {
       this.view = e;
+
+      this.toggleScroll({ state: true });
+
       if (e == "home") {
         this.subView = "about-me";
       } else if (e == "projects") {

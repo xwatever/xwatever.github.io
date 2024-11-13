@@ -20,8 +20,8 @@
   opacity: 1;
   animation-name: fadeInOpacity;
   animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-duration: 0.85s;
 }
 
 @keyframes fadeInOpacity {
@@ -113,5 +113,19 @@
   100% {
     opacity: 1;
     margin-top: 0px;
+  }
+}
+
+.fade-carousel {
+  animation-name: fade-carousel;
+  animation-duration: 1.25s;
+}
+
+@keyframes fade-carousel {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
   }
 }

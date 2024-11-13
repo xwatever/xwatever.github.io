@@ -52,7 +52,8 @@ body {
 
 .mobile-config.active {
   color: #ffffff;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px 0 rgb(82, 82, 82), 0 1px rgb(82, 82, 82),
+    1px 0 rgb(82, 82, 82), 0 -1px rgb(82, 82, 82);
 }
 
 .menu {
@@ -75,8 +76,9 @@ body {
 
 .menu .link.active {
   color: #ffffff;
-  /* text-shadow -0.75px 0 black,0 0.75px blac, 0.75px 0 black,  -0.75px black; */
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  /* text-shadow -0.75px 0 rgb(82, 82, 82),0 0.75px blac, 0.75px 0 rgb(82, 82, 82),  -0.75px rgb(82, 82, 82); */
+  text-shadow: -1px 0 rgb(82, 82, 82), 0 1px rgb(82, 82, 82),
+    1px 0 rgb(82, 82, 82), 0 -1px rgb(82, 82, 82);
 }
 
 .toggle-sidebar-button {
@@ -123,7 +125,8 @@ body {
   min-width: 100%;
   height: calc(100vh - 5em);
   color: white;
-  text-shadow: -0.65px 0 black, 0 0.65px black, 0.65px 0 black, 0 -0.65px black;
+  text-shadow: -0.65px 0 rgb(82, 82, 82), 0 0.65px rgb(82, 82, 82),
+    0.65px 0 rgb(82, 82, 82), 0 -0.65px rgb(82, 82, 82);
 
   background: rgb(58, 180, 179);
   background: -moz-linear-gradient(
@@ -214,7 +217,8 @@ body {
 #about {
   min-width: 100%;
   color: white;
-  text-shadow: -0.65px 0 black, 0 0.65px black, 0.65px 0 black, 0 -0.65px black;
+  text-shadow: -0.65px 0 rgb(82, 82, 82), 0 0.65px rgb(82, 82, 82),
+    0.65px 0 rgb(82, 82, 82), 0 -0.65px rgb(82, 82, 82);
 }
 
 #about #about-me {
@@ -223,7 +227,7 @@ body {
   text-align: center;
   height: calc(100vh - 80px);
 
-  background: rgba(255, 145, 0, 1);
+  background: rgb(54, 196, 41);
 }
 
 #about #education {
@@ -232,7 +236,7 @@ body {
   text-align: center;
   height: calc(100vh - 80px);
 
-  background: rgba(0, 121, 255, 100);
+  background: rgb(55, 124, 204);
 }
 
 #about #work {
@@ -241,7 +245,7 @@ body {
   text-align: center;
   height: calc(100vh - 80px);
 
-  background: rgb(255, 0, 43);
+  background: rgb(255, 21, 60);
 }
 
 #about #about-me .about,
@@ -287,13 +291,15 @@ body {
 #projects {
   min-width: 100%;
   height: calc(100vh - 5em);
-  background-color: #9c1700;
+  background-color: #c40202;
   color: white;
 }
 
 #projects #introduction {
-  padding: 1.25em 0;
+  padding: 1em 0 0.5em 0;
   font-size: 26px;
+  text-shadow: -1px 0 rgb(82, 82, 82), 0 1px rgb(82, 82, 82),
+    1px 0 rgb(82, 82, 82), 0 -1px rgb(82, 82, 82);
   text-align: center;
 }
 
@@ -328,8 +334,8 @@ body {
   border-right: none;
   border-left: none;
   /* background-color: #3dbd57; */
-  background-color: #0cbb0c;
-  text-shadow: -0.65px 0 black, 0 0.65px black, 0.65px 0 black, 0 -0.65px black;
+  text-shadow: -0.65px 0 rgb(82, 82, 82), 0 0.65px rgb(82, 82, 82),
+    0.65px 0 rgb(82, 82, 82), 0 -0.65px rgb(82, 82, 82);
   color: #ffffff;
   z-index: 2;
   cursor: pointer;
@@ -370,24 +376,67 @@ body {
   -webkit-transition: max-height 1.15s;
   -moz-transition: max-height 1.15s;
   transition: max-height 1.15s;
-  font-size: 1em;
+  text-shadow: -1px 0 rgb(82, 82, 82), 0 1px rgb(82, 82, 82),
+    1px 0 rgb(82, 82, 82), 0 -1px rgb(82, 82, 82);
+  background-color: #5e0000;
 }
 
+#projects .card-contents .card .description center {
+  font-size: 1em;
+}
 #projects .card-contents .card .description.active {
   max-height: 500px;
   padding: 0.65em 0.25em;
 }
 
+#projects .project-name {
+  display: block;
+  font-size: 26px;
+  text-shadow: -1px 0 rgb(82, 82, 82), 0 1px rgb(82, 82, 82),
+    1px 0 rgb(82, 82, 82), 0 -1px rgb(82, 82, 82);
+  text-align: center;
+}
+
+#projects #content {
+  display: block;
+  padding: 3em 10.5em;
+  background-color: #c40202;
+  box-sizing: border-box;
+}
+
+#projects #content p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 1.5em;
+  text-shadow: -1px 0 rgb(82, 82, 82), 0 1px rgb(82, 82, 82),
+    1px 0 rgb(82, 82, 82), 0 -1px rgb(82, 82, 82);
+}
+
+#projects #carousel {
+  display: block;
+  padding: 0.5em 0;
+  background-color: #c40202;
+  box-sizing: border-box;
+}
+
+#projects #carousel .mySlides {
+  display: none;
+}
+#projects #carousel img {
+  vertical-align: middle;
+}
+
 /* Slideshow container */
-#projects .slideshow-container {
-  max-width: 1000px;
+#projects #carousel .slideshow-container {
+  max-width: 75%;
   position: relative;
   margin: auto;
 }
 
 /* Next & previous buttons */
-#projects .prev,
-#projects .next {
+#projects #carousel .prev,
+#projects #carousel .next {
+  opacity: 50%;
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -395,27 +444,31 @@ body {
   padding: 16px;
   margin-top: -22px;
   color: white;
+  text-shadow: -1px 0 rgb(82, 82, 82), 0 1px rgb(82, 82, 82),
+    1px 0 rgb(82, 82, 82), 0 -1px rgb(82, 82, 82);
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  border: #000000 solid 1px;
 }
 
 /* Position the "next button" to the right */
-#projects .next {
+#projects #carousel .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-#projects .prev:hover,
-#projects .next:hover {
+/* On hover, add a rgb(82, 82, 82) background color with a little bit see-through */
+#projects #carousel .prev:hover,
+#projects #carousel .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
+  opacity: 100%;
 }
 
 /* Caption text */
-#projects .text {
+#projects #carousel .text {
   color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
@@ -426,27 +479,32 @@ body {
 }
 
 /* Number text (1/3 etc) */
-#projects .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
+#projects #carousel .numbertext {
+  color: #000000;
+  background-color: white;
+  border: #000000 solid 1px;
+  border-radius: 5px;
+  font-size: 1em;
+  padding: 5px 8px;
   position: absolute;
-  top: 0;
+  top: 2%;
+  left: 46.5%;
+  opacity: 90%;
 }
 
 /* The dots/bullets/indicators */
-#projects .dot {
+#projects #carousel .dot {
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 0 2px;
+  margin: 1em 2px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
-#projects .active,
-#projects .dot:hover {
+#projects #carousel .active,
+#projects #carousel .dot:hover {
   background-color: #717171;
 }

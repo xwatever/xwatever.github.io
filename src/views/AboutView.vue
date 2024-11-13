@@ -148,6 +148,7 @@ export default {
         var height = element.getBoundingClientRect().height;
         if (height > this.height - this.navbarHeight + 1) {
           this.$emit("height", { state: false });
+          this.onTopOrBottom = true;
         }
       }, 95);
     },
@@ -214,24 +215,39 @@ export default {
           setTimeout(() => {
             var scrolled = Math.abs(window.scrollY - top);
 
-            if (
-              education_top >= top - scrolled ||
-              education_bottom <= bottom + scrolled
-            ) {
+            if (education_top >= top - scrolled) {
+              setTimeout(() => {
+                this.onTopOrBottom = true;
+              }, 50);
+
+              window.scrollTo({
+                top: top,
+                behavior: "smooth",
+              });
+
+              if (this.onTopOrBottom == true) {
+                if (e.deltaY <= 0) {
+                  // scrolled up
+                  setTimeout(() => {
+                    this.$emit("height", { state: true, direction: "up" });
+
+                    setTimeout(() => {
+                      this.toggleRouteWheel();
+                      this.toggleRouteKeyDown();
+                    }, 100);
+                  }, 200);
+                }
+              }
+            } else if (education_bottom <= bottom + scrolled) {
               setTimeout(() => {
                 this.onTopOrBottom = true;
               }, 50);
               if (this.onTopOrBottom == true) {
                 if (e.deltaY >= 0) {
                   // scrolled down
-                  this.$emit("height", { state: true, direction: "down" });
-                } else if (e.deltaY <= 0) {
-                  // scrolled up
-                  this.$emit("height", { state: true, direction: "up" });
                   setTimeout(() => {
-                    this.toggleRouteWheel();
-                    this.toggleRouteKeyDown();
-                  }, 100);
+                    this.$emit("height", { state: true, direction: "down" });
+                  }, 200);
                 }
               }
             } else {

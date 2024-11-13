@@ -117,7 +117,11 @@ export default {
     $route: function (from, to) {
       if (to !== from) {
         this.dropDownMenu = false;
-        this.viewedPage = from.name;
+        this.viewedPage =
+          from.name == "manage-cost-and-schedules-for-civil-construction-app" ||
+          from.name == "optional-course-scheduling-app"
+            ? "projects"
+            : from.name;
       }
     },
     width: function (oldItem, newItem) {
