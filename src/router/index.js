@@ -56,6 +56,7 @@ const routes = [
 ];
 
 const router = createRouter({
+  mode: "hash",
   history: createWebHistory("/xwatever.github.io/"),
   routes,
 });
