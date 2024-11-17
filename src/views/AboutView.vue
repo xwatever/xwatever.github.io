@@ -119,7 +119,8 @@ export default {
 
   data: function () {
     return {
-      onTopOrBottom: false,
+      onTop: false,
+      onBottom: false,
       resume: resume,
       cv: cv,
     };
@@ -127,7 +128,8 @@ export default {
   mounted() {
     setTimeout(() => {
       this.toggleView();
-      this.onTopOrBottom = false;
+      this.onTop = false;
+      this.onBottom = false;
     }, 150);
   },
   methods: {
@@ -147,8 +149,8 @@ export default {
       setTimeout(() => {
         var height = element.getBoundingClientRect().height;
         if (height > this.height - this.navbarHeight + 1) {
-          this.$emit("height", { state: false });
-          this.onTopOrBottom = true;
+          this.$emit("height", { state: null });
+          this.onTop = true;
         }
       }, 95);
     },
@@ -160,7 +162,6 @@ export default {
     },
     toggleRouteKeyDown(e) {
       if (this.keydownAndWheelActive == false) {
-        console.log("true");
         if (e.keyCode === 40) {
           var top = window.pageYOffset || document.documentElement.scrollTop;
           var bottom =
@@ -179,6 +180,19 @@ export default {
       }
     },
     toggleRouteWheel(e) {
+      if (this.onTop == true) {
+        if (e.deltaY <= 0) {
+          // scrolled up
+          setTimeout(() => {
+            this.$emit("height", { state: true, direction: "up" });
+
+            // setTimeout(() => {
+            //   this.toggleRouteWheel();
+            //   this.toggleRouteKeyDown();
+            // }, 100);
+          }, 200);
+        }
+      }
       var cumulativeOffset = function (element) {
         var top = 0;
         var bottom = 0;
@@ -217,15 +231,12 @@ export default {
 
             if (education_top >= top - scrolled) {
               setTimeout(() => {
-                this.onTopOrBottom = true;
+                this.onTop = true;
+                document.getElementById("scrollbar").style.display = "block";
+                document.body.style.overflowY = "hidden";
               }, 50);
 
-              window.scrollTo({
-                top: top,
-                behavior: "smooth",
-              });
-
-              if (this.onTopOrBottom == true) {
+              if (this.onTop == true) {
                 if (e.deltaY <= 0) {
                   // scrolled up
                   setTimeout(() => {
@@ -237,21 +248,40 @@ export default {
                     }, 100);
                   }, 200);
                 }
+              } else {
+                setTimeout(() => {
+                  document.body.style.overflowY = "scroll";
+                  document.getElementById("scrollbar").style.display = "none";
+                }, 50);
               }
             } else if (education_bottom <= bottom + scrolled) {
               setTimeout(() => {
-                this.onTopOrBottom = true;
+                this.onBottom = true;
+                document.getElementById("scrollbar").style.display = "block";
+                document.body.style.overflowY = "hidden";
               }, 50);
-              if (this.onTopOrBottom == true) {
+
+              if (this.onBottom == true) {
                 if (e.deltaY >= 0) {
                   // scrolled down
                   setTimeout(() => {
                     this.$emit("height", { state: true, direction: "down" });
+
+                    setTimeout(() => {
+                      this.toggleRouteWheel();
+                      this.toggleRouteKeyDown();
+                    }, 100);
                   }, 200);
+                } else {
+                  setTimeout(() => {
+                    document.body.style.overflowY = "scroll";
+                    document.getElementById("scrollbar").style.display = "none";
+                  }, 50);
                 }
               }
             } else {
-              this.onTopOrBottom = false;
+              this.onTop = false;
+              this.onBottom = false;
             }
           }, 50);
         }, 50);

@@ -1,4 +1,5 @@
 <template>
+  <div id="scrollbar"></div>
   <navbar :width="width" @clicked="toggleNavMenu" @height="getNavbarHeight" />
 
   <sidebar />
@@ -48,6 +49,7 @@ export default {
     this.handleSession();
 
     this.bodyOverflow = window.getComputedStyle(document.body).overflow;
+    document.getElementById("scrollbar").style.display = "block";
 
     window.addEventListener("keydown", this.keydownHandler);
     window.addEventListener("wheel", this.wheelHandler);
@@ -205,10 +207,18 @@ export default {
     },
     toggleScroll(event) {
       if (event.state == false) {
-        document.body.style.overflow = "scroll";
+        this.keydownAndWheelActive = true;
+        document.body.style.overflowY = "scroll";
+        document.getElementById("scrollbar").style.display = "none";
+        setTimeout(() => {
+          this.keydownAndWheelActive = false;
+        }, 50);
+      }
+      if (event.state == null) {
         this.keydownAndWheelActive = false;
       } else {
-        document.body.style.overflow = "hidden";
+        document.getElementById("scrollbar").style.display = "block";
+        document.body.style.overflowY = "hidden";
         this.keydownAndWheelActive = true;
         setTimeout(() => {
           window.addEventListener("keydown", this.keydownHandler);
