@@ -5,7 +5,10 @@ module.exports = defineConfig({
 });
 
 module.exports = {
-  publicPath: "/xwatever.github.io/",
+  publicPath:
+    process.env.NODE_ENV === "production"
+      ? "/xwatever.github.io/" // note the trailing slash
+      : "/",
 };
 
 module.exports = {

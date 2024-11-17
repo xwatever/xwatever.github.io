@@ -56,7 +56,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE - URL),
+  history: createWebHistory("/xwatever.github.io/"),
   routes,
 });
 
