@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 
-const execa = require("execa");
-const promisify = require("promisify");
-const rimraf = require("rimraf");
+import execa from "execa";
+import promisify from "promisify";
+import rimraf from "rimraf";
 
 const rmrf = promisify(rimraf);
 let exitCode = 0;
