@@ -50,6 +50,7 @@ export default {
 
     this.bodyOverflow = window.getComputedStyle(document.body).overflow;
     document.getElementById("scrollbar").style.display = "block";
+    document.body.style.overflowY = "hidden";
 
     window.addEventListener("keydown", this.keydownHandler);
     window.addEventListener("wheel", this.wheelHandler);
@@ -246,11 +247,6 @@ export default {
               this.subView = "education";
             } else if (this.subView == "education") {
               this.subView = "work";
-            } else if (this.subView == "work") {
-              this.view = "projects";
-              setTimeout(() => {
-                router.push({ name: "projects" });
-              }, 50);
             }
           }
         }
