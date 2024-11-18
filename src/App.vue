@@ -213,8 +213,7 @@ export default {
         setTimeout(() => {
           this.keydownAndWheelActive = false;
         }, 50);
-      }
-      if (event.state == null) {
+      } else if (event.state == null) {
         this.keydownAndWheelActive = false;
       } else {
         document.getElementById("scrollbar").style.display = "block";
@@ -232,15 +231,8 @@ export default {
               router.push({ name: "about" });
             }, 50);
           } else if (this.view == "about") {
-            if (this.subView == "work") {
-              this.subView = "education";
-            } else if (this.subView == "education") {
+            if (this.subView == "education") {
               this.subView = "about-me";
-            } else if (this.subView == "about-me") {
-              this.view = "home";
-              setTimeout(() => {
-                router.push({ name: "home" });
-              }, 50);
             }
           }
         } else if (event.direction == "down") {

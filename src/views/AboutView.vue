@@ -180,7 +180,7 @@ export default {
       }
     },
     toggleRouteWheel(e) {
-      if (this.onTop == true) {
+      if (this.onTop == true && this.keydownAndWheelActive == false) {
         if (e.deltaY <= 0) {
           // scrolled up
           setTimeout(() => {
@@ -230,11 +230,15 @@ export default {
             var scrolled = Math.abs(window.scrollY - top);
 
             if (education_top >= top - scrolled) {
+              window.scrollTo({
+                top: education_top,
+                behavior: "smooth",
+              });
               setTimeout(() => {
                 this.onTop = true;
                 document.getElementById("scrollbar").style.display = "block";
                 document.body.style.overflowY = "hidden";
-              }, 50);
+              }, 15);
 
               if (this.onTop == true) {
                 if (e.deltaY <= 0) {
@@ -245,8 +249,8 @@ export default {
                     setTimeout(() => {
                       this.toggleRouteWheel();
                       this.toggleRouteKeyDown();
-                    }, 100);
-                  }, 200);
+                    }, 50);
+                  }, 100);
                 }
               } else {
                 setTimeout(() => {
@@ -255,11 +259,15 @@ export default {
                 }, 50);
               }
             } else if (education_bottom <= bottom + scrolled) {
+              window.scrollTo({
+                top: top - (bottom - education_bottom),
+                behavior: "smooth",
+              });
               setTimeout(() => {
                 this.onBottom = true;
                 document.getElementById("scrollbar").style.display = "block";
                 document.body.style.overflowY = "hidden";
-              }, 50);
+              }, 15);
 
               if (this.onBottom == true) {
                 if (e.deltaY >= 0) {
@@ -270,8 +278,8 @@ export default {
                     setTimeout(() => {
                       this.toggleRouteWheel();
                       this.toggleRouteKeyDown();
-                    }, 100);
-                  }, 200);
+                    }, 50);
+                  }, 100);
                 } else {
                   setTimeout(() => {
                     document.body.style.overflowY = "scroll";

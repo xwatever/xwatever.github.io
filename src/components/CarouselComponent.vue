@@ -61,10 +61,10 @@
       v-if="viewed == 'manage-cost-and-schedules-for-civil-construction-app'"
     >
       <p>
-        This app was made for my thesis assignment at Universitas Islam Riau. It
-        was made with VueJS + ExpressJS. This app manage schedules and cost (by
-        material usage and matching different types of material) from civil
-        building projects.
+        This app was made with VueJS + ExpressJS for my thesis assignment at
+        Universitas Islam Riau. This app manage schedules and cost (by material
+        usage and matching different types of material) from civil building
+        projects.
       </p>
       <p>
         Other than teaching college students, Civil Engineering faculty have
@@ -101,14 +101,10 @@
         certain task
       </p>
       <p>
-        This app used template that i have been used for my internship
-        assignment that being developed with Laravel + VueJS, but with a little
-        improvement on its appearance, like making sub menu on sidebar, using
-        webpack or plugin or library like improving routing with Vue-Router (on
-        internship app i had not used vue-router) CKEditor to make adding civil
-        information (like construction technique/method, types of civil
-        building, types of material) explanation feel like using document
-        processing app, etc.
+        This app used template/design that i have been used for my internship
+        assignment, but with a little improvement on its feature, like making
+        sub menu on sidebar, using webpack or plugin or library like improving
+        routing with Vue-Router.
       </p>
       <p>
         I have used more time on figuring how the algorithm works, database
@@ -118,45 +114,39 @@
     </template>
     <template v-if="viewed == 'optional-course-scheduling-app'">
       <p>
-        This app was made for my Internship assignment at Universitas Islam
-        Riau. It was made with Laravel + VueJS. This app manage schedules for
-        civil engineering's optional courses. It is some kind of information
-        system for college student, lecturer, and the one who managing this app
-        to communicate and managing their classes schedules, grouping college
+        This app was made with Laravel + VueJS for my Internship assignment at
+        Universitas Islam Riau. This app manage schedules for civil
+        engineering's optional courses. It is some kind of information system
+        for college student, lecturer, and the one who managing this app to
+        communicate and managing their classes schedules, grouping college
         student by their study concentration, and rooms or classes being use for
         lecturing.
       </p>
       <p>
         Being lecturer's assistant, i was offered to do internship at campus,
-        delivering / developing apps for other faculty at Universitas Islam
-        Riau. Meeting the current head of civil engineering laboratory
-        (different person from head of civil engineering laboratory for
-        developing thesis app) with some of fellow assistant, he was fascinated
-        by how coding works, and wanted to learn code by tinkering finished app.
-        With some discussion, we got agreement to make app to manage optional
-        course.
+        developing apps for other faculty at Universitas Islam Riau. Meeting the
+        current head of civil engineering laboratory (Sir Muttaqin) with some of
+        fellow assistant, he was fascinated by how coding works, and wanted to
+        learn code by tinkering finished app. With some discussion, we got
+        agreement to make app to manage optional course.
       </p>
       <p>
-        At first, we had respective feature to develop this app, but since it
-        took a while to develop my feature first (since i was tasked to make the
-        main managing schedule feature), i told my fellow assistant that they
-        can abandon collaborating, developing this app and do other internship
-        (I want to apologize to them. If you are reading this i hope you forgive
-        me. If not, atleast you are hearing my regret having you trusting me,
-        this untrustworthy person)(and this dumbass haven't learn github yet, it
-        was difficult to control version / patch from developing this app, just
-        copying laravel development files to friends) since it took me 2-3
-        semester to develop this app (because there is no end game/ main goal to
-        finish the app just like the head of civil engineering lab wanted, he
-        just wanted an functioning app to be tinkered, if not being used on
-        civil engineering lab).
+        At first, we had respective feature work to develop this app, but since
+        it took a while to develop my feature first (since my part is the intial
+        part of the app), i told my fellow assistant that they can abandon doing
+        this project and do other internship (If you are reading this i hope you
+        forgive me. If not, atleast you are hearing my regret having you
+        trusting me, this untrustworthy person)(and this dumbass haven't learn
+        github yet, it was difficult to control version / patch from developing
+        this app, just copying laravel development files to friends)
       </p>
       <p>
         I developed this app in laravel, trying to develop many features being
         offered to be developed (Learning MVC, Schema Builder, Middleware,
-        Authorization, Etc) so i would enrich my knowledge developing laravel
-        project (I did email notification too, but it wasn't included in the
-        finished app for the internship, just development to learn more).
+        Authorization, API, Etc) so i would enrich my knowledge developing
+        laravel project (I did email notification too, but it wasn't included in
+        the finished app for the internship, just development to learn more).
+        And used JavaScript lib or framework like VueJS, Axios, etc
       </p>
       <p>
         Having heard from my vocational school friend that had already working
@@ -168,23 +158,22 @@
       </p>
       <p>
         In this project, i haven't learn or consider using Vue Router to route
-        my projects, so with some kind of buggy interface (since when the
-        webpage being refreshed or reloaded, it will redirect to home /
-        dashboard page without considering user previous operation in the app),
-        but it kinda works, and kinda light for my device at that time (dunno if
-        it's heavy for other devices), so the route using laravel controller
-        only routing login page to the landing page of certain user level (Of
-        course with auth, redirecting access to admin or student landing page
-        without log on or invalid crsf token access to login page).
+        my projects, with some kind of buggy interface (refreshing page will
+        reroute user into dashboard/landing page, ignoring previous component
+        viewed by user), i would only make few laravel blade view to route login
+        page, then pages based on certain user level (Of course with auth,
+        redirecting access to admin or student landing page without log on or
+        invalid crsf token access to login page).
       </p>
       <p>
-        Since it was blind walkthrough, learning and developing the app while
-        still haven't learn most of its documentation, by trial and error, it
-        took longer than i anticipated to finish my internship, and approaching
-        near the end of 10th semester of my college, i did confirm the growth of
-        the developing the app, but did not finished it 100% as the head of
-        civil engineering laboratory wanted as we discussed before. So, without
-        finishing it with mostly of its feature being done, the head of civil
+        Since it took me 2-3 semester to develop this app (because there is no
+        end game/main goal to finish the app just like the head of civil
+        engineering lab wanted, he just wanted an functioning app to be
+        tinkered, if not being used on civil engineering lab, and my lazy ass
+        postponing working on it). it took longer than i anticipated to finish
+        my internship. Approaching near the end of 10th semester, i met with the
+        head of civil engineering laboratory to consult about delivering the
+        app, without finishing it as we discussed before. The head of civil
         engineering laboratory just declare the app as finished so i can finish
         my internship assignment (Thank you to sir Muttaqin for trusting me and
         helped me finish my internship).

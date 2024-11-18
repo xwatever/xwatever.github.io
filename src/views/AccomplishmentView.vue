@@ -78,9 +78,11 @@ export default {
     };
   },
   mounted() {
-    this.$emit("height", {
-      state: false,
-    });
+    setTimeout(() => {
+      this.$emit("height", {
+        state: false,
+      });
+    }, 50);
 
     window.scrollTo({
       top: 0,
