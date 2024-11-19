@@ -9,9 +9,6 @@ module.exports = {
     process.env.NODE_ENV === "production"
       ? "/portfolio/" // note the trailing slash
       : "/",
-};
-
-module.exports = {
   chainWebpack: (config) => {
     config.module
       .rule("pdf")

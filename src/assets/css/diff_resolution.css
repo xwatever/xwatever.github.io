@@ -31,7 +31,15 @@
   }
 }
 
-@media (min-width: 1466px) and (min-width: 868px) {
+@media only screen and (max-width: 300px) {
+  #projects .prev,
+  #projects .next,
+  #projects .text {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 1920px) and (min-width: 1080px) {
   .navbar {
     height: calc(5em + 3vw);
     padding: calc(1em + 0.5vw) calc(2em + 3vw);
@@ -43,8 +51,9 @@
 
   .back_button {
     padding: calc(0.3em + 0.05vw);
+    margin-left: calc(0.3em + 2vw);
     font-size: calc(1.1em + 0.95vw);
-    border-radius: calc(5px + 0.05vw);
+    border-radius: calc(5px + 0.3vw);
   }
 
   .title {
@@ -128,6 +137,16 @@
     font-size: calc(19px + 0.95vw);
   }
 
+  #about #work .cv-n-resume .resume {
+    margin-top: calc(25px + 0.95vw);
+  }
+
+  #about #work .cv-n-resume .resume,
+  #about #work .cv-n-resume .cv {
+    padding: calc(0.15em + 0.05vw) calc(0.9em + 1.775vw);
+    font-size: calc(28px + 0.95vw);
+  }
+
   #projects #introduction {
     font-size: calc(26px + 1.35vw);
   }
@@ -172,7 +191,7 @@
   }
 
   #projects .project-name {
-    font-size: calc(26px + 0.95vw);
+    font-size: calc(26px + 1.35vw);
   }
 
   #projects #content p {
@@ -182,7 +201,7 @@
   #projects #carousel .prev,
   #projects #carousel .next {
     font-size: calc(18px + 1.95vw);
-    border-radius: 0 calc(3px + 0.05vw) calc(3px + 0.05vw) 0;
+    border-radius: 0 calc(3px + 0.3vw) calc(3px + 0.3vw) 0;
     border: #000000 solid calc(1px + 0.05vw);
     margin-top: calc(-22px - 0.5vw);
     padding: calc(16px + 0.35vw);
@@ -194,7 +213,7 @@
 
   #projects #carousel .numbertext {
     border: #000000 solid calc(1px + 0.05vw);
-    border-radius: calc(5px + 0.05vw);
+    border-radius: calc(5px + 0.3vw);
     font-size: calc(1em + 0.95vw);
     padding: calc(5px + 0.15vw) calc(8px + 0.15vw);
   }

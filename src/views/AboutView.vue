@@ -3,14 +3,16 @@
     <div id="about-me" :class="{ fade: subView == 'about-me' }">
       About me
       <div class="about" :class="{ 'fade-in': subView == 'about-me' }">
-        I live in Pekanbaru, Indonesia. I have learned coding for 10 years, and
-        haven't started my career as a programmer yet. I want to start my
-        journey as a Front-End Developer to make myself better at designing. I
-        have learned to use Framework like Laravel, VueJS, ExpressJS for my
-        college assignments. I strive for making something i have visualised
-        works, but sometimes i'm just trying to make things simple if i dont
-        have the capability for it. Things would've been better if i'm
-        developing or creating more stuffs so i can improve my knowledge more.
+        I live in Pekanbaru, Indonesia. I have learned code for 10 years,
+        attending Vocational Highschool as Software Engineer student, college as
+        Informatics Technology student, and haven't started my career as a
+        programmer yet. I want to start my journey as a Front-End Developer to
+        make myself better at designing. I have learned to use Framework like
+        Laravel, VueJS, ExpressJS for my college assignments. I strive for
+        making something i have visualised works, but sometimes i'm just trying
+        to make things simple if i dont have the capability for it. Things
+        would've been better if i'm developing or creating more stuffs so i can
+        improve my knowledge more.
       </div>
     </div>
     <div id="education" :class="{ fade: subView == 'education' }">
@@ -161,38 +163,14 @@ export default {
       window.open(cv, "_blank");
     },
     toggleRouteKeyDown(e) {
-      if (this.keydownAndWheelActive == false) {
-        if (e.keyCode === 40) {
-          var top = window.pageYOffset || document.documentElement.scrollTop;
-          var bottom =
-            window.pageYOffset + (this.height - this.navbarHeight) ||
-            document.documentElement.scrollBottom;
-          console.log(top + " " + bottom);
-        } else if (e.keyCode === 38) {
-          top = window.pageYOffset || document.documentElement.scrollTop;
-          bottom =
-            window.pageYOffset + (this.height - this.navbarHeight) ||
-            document.documentElement.scrollBottom;
-          console.log(top + " " + bottom);
-        }
-      } else {
-        window.removeEventListener("keydown", this.toggleRouteKeyDown);
-      }
-    },
-    toggleRouteWheel(e) {
       if (this.onTop == true && this.keydownAndWheelActive == false) {
-        if (e.deltaY <= 0) {
-          // scrolled up
+        if (e.keyCode === 38) {
           setTimeout(() => {
             this.$emit("height", { state: true, direction: "up" });
-
-            // setTimeout(() => {
-            //   this.toggleRouteWheel();
-            //   this.toggleRouteKeyDown();
-            // }, 100);
           }, 200);
         }
       }
+
       var cumulativeOffset = function (element) {
         var top = 0;
         var bottom = 0;
@@ -241,8 +219,7 @@ export default {
               }, 15);
 
               if (this.onTop == true) {
-                if (e.deltaY <= 0) {
-                  // scrolled up
+                if (e.keyCode === 38) {
                   setTimeout(() => {
                     this.$emit("height", { state: true, direction: "up" });
 
@@ -270,8 +247,7 @@ export default {
               }, 15);
 
               if (this.onBottom == true) {
-                if (e.deltaY >= 0) {
-                  // scrolled down
+                if (e.keyCode === 40) {
                   setTimeout(() => {
                     this.$emit("height", { state: true, direction: "down" });
 
@@ -291,6 +267,123 @@ export default {
               this.onTop = false;
               this.onBottom = false;
             }
+          }, 50);
+        }, 50);
+      } else {
+        window.removeEventListener("keydown", this.toggleRouteKeyDown);
+      }
+    },
+    toggleRouteWheel(e) {
+      if (this.onTop == true && this.keydownAndWheelActive == false) {
+        if (e.deltaY <= 0) {
+          // scrolled up
+          setTimeout(() => {
+            this.$emit("height", { state: true, direction: "up" });
+          }, 200);
+        }
+      }
+
+      var cumulativeOffset = function (element) {
+        var top = 0;
+        var bottom = 0;
+        var offsetHeight = element.offsetHeight;
+
+        do {
+          top += element.offsetTop || 0;
+          bottom += element.offsetTop || 0;
+          element = element.offsetParent;
+        } while (element);
+
+        return {
+          top: top,
+          bottom: bottom + offsetHeight,
+        };
+      };
+
+      if (this.keydownAndWheelActive == false) {
+        setTimeout(() => {
+          var education_top =
+            cumulativeOffset(document.getElementById("education")).top -
+            this.navbarHeight;
+
+          var education_bottom =
+            cumulativeOffset(document.getElementById("education")).bottom -
+            this.navbarHeight;
+
+          setTimeout(() => {
+            var top = window.pageYOffset || document.documentElement.scrollTop;
+
+            var bottom =
+              window.pageYOffset + (this.height - this.navbarHeight) ||
+              document.documentElement.scrollBottom;
+
+            setTimeout(() => {
+              var scrolled = Math.abs(window.scrollY - top);
+
+              if (education_top >= top - scrolled) {
+                window.scrollTo({
+                  top: education_top,
+                  behavior: "smooth",
+                });
+                setTimeout(() => {
+                  this.onTop = true;
+                  document.getElementById("scrollbar").style.display = "block";
+                  document.body.style.overflowY = "hidden";
+                }, 15);
+
+                if (this.onTop == true) {
+                  if (e.deltaY <= 0) {
+                    // scrolled up
+                    setTimeout(() => {
+                      this.$emit("height", { state: true, direction: "up" });
+
+                      setTimeout(() => {
+                        this.toggleRouteWheel();
+                        this.toggleRouteKeyDown();
+                      }, 50);
+                    }, 100);
+                  }
+                } else {
+                  setTimeout(() => {
+                    document.body.style.overflowY = "scroll";
+                    document.getElementById("scrollbar").style.display = "none";
+                  }, 50);
+                }
+              } else if (education_bottom <= bottom + scrolled) {
+                window.scrollTo({
+                  top: top - (bottom - education_bottom),
+                  behavior: "smooth",
+                });
+                setTimeout(() => {
+                  this.onBottom = true;
+                  document.getElementById("scrollbar").style.display = "block";
+                  document.body.style.overflowY = "hidden";
+                }, 15);
+
+                if (this.onBottom == true) {
+                  if (e.deltaY >= 0) {
+                    // scrolled down
+                    setTimeout(() => {
+                      this.$emit("height", { state: true, direction: "down" });
+
+                      setTimeout(() => {
+                        this.toggleRouteWheel();
+                        this.toggleRouteKeyDown();
+                      }, 50);
+                    }, 100);
+                  } else {
+                    setTimeout(() => {
+                      document.body.style.overflowY = "scroll";
+                      document.getElementById("scrollbar").style.display =
+                        "none";
+                    }, 50);
+                  }
+                }
+              } else {
+                this.onTop = false;
+                this.onBottom = false;
+              }
+            }, 50);
           }, 50);
         }, 50);
       } else {

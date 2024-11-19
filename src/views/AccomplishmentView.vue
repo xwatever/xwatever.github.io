@@ -69,12 +69,26 @@ import optionalCourseSchedulingAppImage from "./../assets/img/optional-course-sc
 import router from "./../router";
 
 export default {
+  props: ["keydownAndWheelActive"],
+  watch: {
+    keydownAndWheelActive(val) {
+      if (val == false) {
+        // window.addEventListener("keydown", (e) => {
+        //   this.toggleRouteKeyDown(e);
+        // });
+        window.addEventListener("wheel", (e) => {
+          this.toggleRouteWheel(e);
+        });
+      }
+    },
+  },
   data: function () {
     return {
       civilConstructionAppImage: civilConstructionAppImage,
       optionalCourseSchedulingAppImage: optionalCourseSchedulingAppImage,
       main: true,
       viewed: "",
+      onTop: false,
     };
   },
   mounted() {
@@ -114,6 +128,24 @@ export default {
       setTimeout(() => {
         router.push({ name: "projects" });
       }, 50);
+    },
+    toggleRouteWheel(e) {
+      var top = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (this.keydownAndWheelActive == false) {
+        if (top == 0) {
+          this.onTop = true;
+        } else {
+          this.onTop = false;
+        }
+        if (e.deltaY <= 0 && this.onTop == true) {
+          setTimeout(() => {
+            this.$emit("height", { state: true, direction: "up" });
+          }, 200);
+        }
+      } else {
+        window.removeEventListener("wheel", this.toggleRouteWheel);
+      }
     },
   },
 };

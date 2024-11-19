@@ -112,6 +112,7 @@ export default {
             this.subView = "work";
           } else if (this.subView == "work") {
             this.view = "projects";
+            this.subView = "work";
             setTimeout(() => {
               router.push({ name: "projects" });
             }, 50);
@@ -166,6 +167,7 @@ export default {
             this.subView = "work";
           } else if (this.subView == "work") {
             this.view = "projects";
+            this.subView = "work";
             setTimeout(() => {
               router.push({ name: "projects" });
             }, 50);
@@ -213,6 +215,10 @@ export default {
         document.getElementById("scrollbar").style.display = "none";
         setTimeout(() => {
           this.keydownAndWheelActive = false;
+          setTimeout(() => {
+            this.wheelHandler();
+            this.keydownHandler();
+          }, 50);
         }, 50);
       } else if (event.state == null) {
         this.keydownAndWheelActive = false;

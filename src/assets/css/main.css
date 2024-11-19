@@ -127,6 +127,7 @@ body {
   color: white;
   cursor: pointer;
   margin-bottom: 1em;
+  margin-left: 2em;
   font-weight: bold;
 }
 
@@ -231,10 +232,10 @@ body {
 }
 
 #about #about-me {
-  padding: 1.75em 0 0.75em 0;
+  padding: 0.5em 0 0.75em 0;
   font-size: 42px;
   text-align: center;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
 
   background: rgb(54, 196, 41);
 }
@@ -249,17 +250,16 @@ body {
 }
 
 #about #work {
-  padding: 2.15em 0 0.75em 0;
+  padding: 0.85em 0 0.75em 0;
   font-size: 42px;
   text-align: center;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
 
   background: rgb(255, 21, 60);
 }
 
 #about #about-me .about,
-#about #education .institute,
-#about #work .job {
+#about #education .institute {
   font-size: 28px;
   text-align: left;
   padding: 0.75em 2em 0 2em;
@@ -279,6 +279,13 @@ body {
 #about #education .details {
   margin: 0.5em 0;
   font-size: 19px;
+}
+
+#about #work .job {
+  font-size: 28px;
+  text-align: left;
+  padding: 1.65em 2em 0 2em;
+  line-height: 1.5;
 }
 
 #about #work .cv-n-resume {
