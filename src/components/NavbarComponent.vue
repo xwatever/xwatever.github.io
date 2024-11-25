@@ -46,6 +46,8 @@
         PROJECTS
       </span>
 
+      <!--
+
       <router-link
         title="More to come, probably still having my assignments from my college days as projects"
         to="/cv"
@@ -70,7 +72,7 @@
         Resume
       </router-link>
 
-      <!-- <span
+      <span
         title="More to come, probably still having my assignments from my college days as projects"
         @click="toggleMenu"
         class="link"

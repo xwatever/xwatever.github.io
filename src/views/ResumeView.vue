@@ -16,12 +16,22 @@
       <div class="contacts">
         <ul>
           <li style="text-align: left">
-            <i class="fa-solid fa-envelope" style="color: #07798d"></i>
-            muhammaddarmawan1999@gmail.com
+            <a
+              href="mailto:muhammaddarmawan1999@gmail.com"
+              style="text-decoration: none"
+            >
+              <i class="fa-solid fa-envelope" style="color: #07798d"></i>
+              muhammaddarmawan1999@gmail.com
+            </a>
           </li>
           <li style="text-align: right">
-            <i class="fa-brands fa-linkedin" style="color: #07798d"></i>
-            https://www.linkedin.com/in/muhammad-darmawan-595420227/
+            <a
+              href="https://www.linkedin.com/in/muhammad-darmawan-595420227/"
+              style="text-decoration: none"
+            >
+              <i class="fa-brands fa-linkedin" style="color: #07798d"></i>
+              https://www.linkedin.com/in/muhammad-darmawan-595420227/
+            </a>
           </li>
         </ul>
       </div>

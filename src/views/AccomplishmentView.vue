@@ -79,6 +79,9 @@ export default {
         window.addEventListener("wheel", (e) => {
           this.toggleRouteWheel(e);
         });
+        window.addEventListener("keydown", (e) => {
+          this.toggleRouteKeyDown(e);
+        });
       }
     },
   },
@@ -133,7 +136,7 @@ export default {
       var top = window.pageYOffset || document.documentElement.scrollTop;
 
       if (this.keydownAndWheelActive == false) {
-        if (top == 0) {
+        if (top == 0 && this.main == true) {
           this.onTop = true;
         } else {
           this.onTop = false;
@@ -145,6 +148,24 @@ export default {
         }
       } else {
         window.removeEventListener("wheel", this.toggleRouteWheel);
+      }
+    },
+    toggleRouteKeyDown(e) {
+      var top = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (this.keydownAndWheelActive == false) {
+        if (top == 0 && this.main == true) {
+          this.onTop = true;
+        } else {
+          this.onTop = false;
+        }
+        if (e.keyCode === 38 && this.onTop == true) {
+          setTimeout(() => {
+            this.$emit("height", { state: true, direction: "up" });
+          }, 200);
+        }
+      } else {
+        window.removeEventListener("keydown", this.toggleRouteKeyDown);
       }
     },
   },

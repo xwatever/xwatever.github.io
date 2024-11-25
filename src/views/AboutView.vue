@@ -123,6 +123,7 @@ export default {
     return {
       onTop: false,
       onBottom: false,
+
       resume: resume,
       cv: cv,
     };
@@ -148,11 +149,12 @@ export default {
         behavior: "smooth",
       });
 
+      this.onTop = true;
+
       setTimeout(() => {
         var height = element.getBoundingClientRect().height;
         if (height > this.height - this.navbarHeight + 1) {
           this.$emit("height", { state: null });
-          this.onTop = true;
         }
       }, 95);
     },
@@ -163,125 +165,15 @@ export default {
       window.open(cv, "_blank");
     },
     toggleRouteKeyDown(e) {
-      if (this.onTop == true && this.keydownAndWheelActive == false) {
-        if (e.keyCode === 38) {
-          setTimeout(() => {
-            this.$emit("height", { state: true, direction: "up" });
-          }, 200);
+      setTimeout(() => {
+        if (this.onTop == true && this.keydownAndWheelActive == false) {
+          if (e.keyCode === 38) {
+            setTimeout(() => {
+              this.$emit("height", { state: true, direction: "up" });
+            }, 200);
+          }
         }
-      }
-
-      var cumulativeOffset = function (element) {
-        var top = 0;
-        var bottom = 0;
-        var offsetHeight = element.offsetHeight;
-
-        do {
-          top += element.offsetTop || 0;
-          bottom += element.offsetTop || 0;
-          element = element.offsetParent;
-        } while (element);
-
-        return {
-          top: top,
-          bottom: bottom + offsetHeight,
-        };
-      };
-
-      if (this.keydownAndWheelActive == false) {
-        var education_top =
-          cumulativeOffset(document.getElementById("education")).top -
-          this.navbarHeight;
-
-        var education_bottom =
-          cumulativeOffset(document.getElementById("education")).bottom -
-          this.navbarHeight;
-
-        setTimeout(() => {
-          var top = window.pageYOffset || document.documentElement.scrollTop;
-
-          var bottom =
-            window.pageYOffset + (this.height - this.navbarHeight) ||
-            document.documentElement.scrollBottom;
-
-          setTimeout(() => {
-            var scrolled = Math.abs(window.scrollY - top);
-
-            if (education_top >= top - scrolled) {
-              window.scrollTo({
-                top: education_top,
-                behavior: "smooth",
-              });
-              setTimeout(() => {
-                this.onTop = true;
-                document.getElementById("scrollbar").style.display = "block";
-                document.body.style.overflowY = "hidden";
-              }, 15);
-
-              if (this.onTop == true) {
-                if (e.keyCode === 38) {
-                  setTimeout(() => {
-                    this.$emit("height", { state: true, direction: "up" });
-
-                    setTimeout(() => {
-                      this.toggleRouteWheel();
-                      this.toggleRouteKeyDown();
-                    }, 50);
-                  }, 100);
-                }
-              } else {
-                setTimeout(() => {
-                  document.body.style.overflowY = "scroll";
-                  document.getElementById("scrollbar").style.display = "none";
-                }, 50);
-              }
-            } else if (education_bottom <= bottom + scrolled) {
-              window.scrollTo({
-                top: top - (bottom - education_bottom),
-                behavior: "smooth",
-              });
-              setTimeout(() => {
-                this.onBottom = true;
-                document.getElementById("scrollbar").style.display = "block";
-                document.body.style.overflowY = "hidden";
-              }, 15);
-
-              if (this.onBottom == true) {
-                if (e.keyCode === 40) {
-                  setTimeout(() => {
-                    this.$emit("height", { state: true, direction: "down" });
-
-                    setTimeout(() => {
-                      this.toggleRouteWheel();
-                      this.toggleRouteKeyDown();
-                    }, 50);
-                  }, 100);
-                } else {
-                  setTimeout(() => {
-                    document.body.style.overflowY = "scroll";
-                    document.getElementById("scrollbar").style.display = "none";
-                  }, 50);
-                }
-              }
-            } else {
-              this.onTop = false;
-              this.onBottom = false;
-            }
-          }, 50);
-        }, 50);
-      } else {
-        window.removeEventListener("keydown", this.toggleRouteKeyDown);
-      }
-    },
-    toggleRouteWheel(e) {
-      if (this.onTop == true && this.keydownAndWheelActive == false) {
-        if (e.deltaY <= 0) {
-          // scrolled up
-          setTimeout(() => {
-            this.$emit("height", { state: true, direction: "up" });
-          }, 200);
-        }
-      }
+      }, 100);
 
       var cumulativeOffset = function (element) {
         var top = 0;
@@ -329,19 +221,130 @@ export default {
                   this.onTop = true;
                   document.getElementById("scrollbar").style.display = "block";
                   document.body.style.overflowY = "hidden";
-                }, 15);
+                }, 50);
 
                 if (this.onTop == true) {
-                  if (e.deltaY <= 0) {
-                    // scrolled up
+                  if (e.keyCode === 38) {
+                    this.onTop = false;
+                  } else {
                     setTimeout(() => {
-                      this.$emit("height", { state: true, direction: "up" });
+                      document.body.style.overflowY = "scroll";
+                      document.getElementById("scrollbar").style.display =
+                        "none";
+                    }, 50);
+                  }
+                }
+              } else if (education_bottom <= bottom + scrolled) {
+                window.scrollTo({
+                  top: top - (bottom - education_bottom),
+                  behavior: "smooth",
+                });
+                setTimeout(() => {
+                  this.onBottom = true;
+                  document.getElementById("scrollbar").style.display = "block";
+                  document.body.style.overflowY = "hidden";
+                }, 50);
+
+                if (this.onBottom == true) {
+                  if (e.keyCode === 40) {
+                    setTimeout(() => {
+                      this.$emit("height", { state: true, direction: "down" });
+
+                      this.onBottom = false;
 
                       setTimeout(() => {
                         this.toggleRouteWheel();
                         this.toggleRouteKeyDown();
-                      }, 50);
-                    }, 100);
+                      }, 100);
+                    }, 200);
+                  } else {
+                    setTimeout(() => {
+                      document.body.style.overflowY = "scroll";
+                      document.getElementById("scrollbar").style.display =
+                        "none";
+                    }, 50);
+                  }
+                }
+              } else {
+                this.onTop = false;
+                this.onBottom = false;
+              }
+            }, 100);
+          }, 100);
+        }, 50);
+      } else if (this.keydownAndWheelActive == true) {
+        window.removeEventListener("keydown", this.toggleRouteKeyDown);
+      }
+    },
+    toggleRouteWheel(e) {
+      setTimeout(() => {
+        if (this.onTop == true && this.keydownAndWheelActive == false) {
+          if (e.deltaY <= 0) {
+            // scrolled up
+            setTimeout(() => {
+              this.$emit("height", { state: true, direction: "up" });
+            }, 200);
+          }
+        }
+      }, 100);
+
+      var cumulativeOffset = function (element) {
+        var top = 0;
+        var bottom = 0;
+        var offsetHeight = element.offsetHeight;
+
+        do {
+          top += element.offsetTop || 0;
+          bottom += element.offsetTop || 0;
+          element = element.offsetParent;
+        } while (element);
+
+        return {
+          top: top,
+          bottom: bottom + offsetHeight,
+        };
+      };
+
+      if (this.keydownAndWheelActive == false) {
+        setTimeout(() => {
+          var education_top =
+            cumulativeOffset(document.getElementById("education")).top -
+            this.navbarHeight;
+
+          var education_bottom =
+            cumulativeOffset(document.getElementById("education")).bottom -
+            this.navbarHeight;
+
+          setTimeout(() => {
+            var top = window.pageYOffset || document.documentElement.scrollTop;
+
+            var bottom =
+              window.pageYOffset + (this.height - this.navbarHeight) ||
+              document.documentElement.scrollBottom;
+
+            setTimeout(() => {
+              var scrolled = Math.abs(window.scrollY - top);
+
+              if (education_top >= top - scrolled) {
+                window.scrollTo({
+                  top: education_top,
+                  behavior: "smooth",
+                });
+                setTimeout(() => {
+                  this.onTop = true;
+                  document.getElementById("scrollbar").style.display = "block";
+                  document.body.style.overflowY = "hidden";
+                }, 50);
+
+                if (this.onTop == true) {
+                  if (e.deltaY <= 0) {
+                    this.onTop = false;
+                  } else {
+                    setTimeout(() => {
+                      document.body.style.overflowY = "scroll";
+                      document.getElementById("scrollbar").style.display =
+                        "none";
+                    }, 50);
                   }
                 } else {
                   setTimeout(() => {
@@ -358,7 +361,7 @@ export default {
                   this.onBottom = true;
                   document.getElementById("scrollbar").style.display = "block";
                   document.body.style.overflowY = "hidden";
-                }, 15);
+                }, 50);
 
                 if (this.onBottom == true) {
                   if (e.deltaY >= 0) {
@@ -366,11 +369,13 @@ export default {
                     setTimeout(() => {
                       this.$emit("height", { state: true, direction: "down" });
 
+                      this.onBottom = false;
+
                       setTimeout(() => {
                         this.toggleRouteWheel();
                         this.toggleRouteKeyDown();
-                      }, 50);
-                    }, 100);
+                      }, 100);
+                    }, 200);
                   } else {
                     setTimeout(() => {
                       document.body.style.overflowY = "scroll";
@@ -383,10 +388,10 @@ export default {
                 this.onTop = false;
                 this.onBottom = false;
               }
-            }, 50);
-          }, 50);
+            }, 100);
+          }, 100);
         }, 50);
-      } else {
+      } else if (this.keydownAndWheelActive == true) {
         window.removeEventListener("wheel", this.toggleRouteWheel);
       }
     },

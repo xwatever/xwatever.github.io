@@ -22,22 +22,39 @@
           <li>
             <i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;August 9, 1999
           </li>
-          <li>
-            <i class="fa-brands fa-square-whatsapp"></i
-            >&nbsp;&nbsp;+62-822-8267-4247
-          </li>
+          <a
+            href="https://api.whatsapp.com/send?phone=6282282674247"
+            style="text-decoration: none"
+          >
+            <li>
+              <i class="fa-brands fa-square-whatsapp"></i
+              >&nbsp;&nbsp;+62-822-8267-4247
+            </li>
+          </a>
         </ul>
         <ul class="links">
-          <li>
-            <i class="fa-solid fa-envelope"></i
-            >&nbsp;&nbsp;muhammaddarmawan1999@gmail.com
-          </li>
-          <li>
-            <i class="fa-brands fa-square-github"></i>&nbsp;&nbsp;xwatever
-          </li>
-          <li>
-            <i class="fa-brands fa-linkedin"></i>&nbsp;&nbsp;Muhammad Darmawan
-          </li>
+          <a
+            href="mailto:muhammaddarmawan1999@gmail.com"
+            style="text-decoration: none"
+          >
+            <li>
+              <i class="fa-solid fa-envelope"></i
+              >&nbsp;&nbsp;muhammaddarmawan1999@gmail.com
+            </li>
+          </a>
+          <a href="https://github.com/xwatever" style="text-decoration: none">
+            <li>
+              <i class="fa-brands fa-square-github"></i>&nbsp;&nbsp;xwatever
+            </li>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/muhammad-darmawan-595420227/"
+            style="text-decoration: none"
+          >
+            <li>
+              <i class="fa-brands fa-linkedin"></i>&nbsp;&nbsp;Muhammad Darmawan
+            </li>
+          </a>
         </ul>
         <img
           :src="cv_image"
