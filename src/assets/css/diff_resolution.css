@@ -1,19 +1,19 @@
 @media (max-width: 550px) {
   .menu {
-    position: fixed;
-    /* top: 5em; */
-    left: -0.5em;
+    position: sticky;
+    /* top: -100%; */
+    left: 0;
     background-color: #000000;
-    z-index: 998;
-    width: 100%;
-    height: calc(100vh - 5em);
-    margin-top: -100%;
+    z-index: 900;
+    width: fit-content;
+    height: calc(100vh - 80px);
+    margin-top: 100vh;
     text-align: center;
   }
 
   .menu.active {
-    margin-top: 4em;
-    width: 100%;
+    margin-top: 0;
+    /* width: 100%; */
   }
 
   .menu .link {
@@ -40,6 +40,16 @@
 }
 
 @media (min-width: 1920px) and (min-width: 1080px) {
+  #scrollbar {
+    overflow-y: scroll;
+    top: 0;
+    right: 0;
+    display: none;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+  }
+
   .navbar {
     height: calc(5em + 3vw);
     padding: calc(1em + 0.5vw) calc(2em + 3vw);
@@ -52,7 +62,7 @@
   .back_button {
     padding: calc(0.3em + 0.05vw);
     margin-left: calc(0.3em + 2vw);
-    font-size: calc(1.1em + 0.95vw);
+    font-size: calc(1.1em + 0.5vw);
     border-radius: calc(5px + 0.3vw);
   }
 
@@ -76,75 +86,71 @@
   #home .img {
     top: calc(50% - (97px + 1.75vw));
     left: 10% - 3.75vw;
-    width: calc(195px + 4.75vw);
-    height: calc(195px + 4.75vw);
+    width: calc(195px + 7.75vw);
+    height: calc(195px + 7.75vw);
   }
 
   #home #introduction {
-    font-size: calc(40px + 1.5vw);
-    left: calc(13.5% + (195px + 3vw));
-    top: calc(50% - (60px + 1.5vw));
+    font-size: calc(40px + 1.05vw);
+    left: calc(13.5% + (195px + 7vw));
+    top: calc(50% - (60px + 0.3vw));
   }
 
   #home #introduction .details {
-    font-size: calc(19px + 1.05vw);
+    font-size: calc(20px + 0.95vw);
+    padding: 0 2em 0 0;
   }
 
   #home #introduction .contacts i {
-    font-size: calc(45px + 1.5vw);
-    margin-right: calc(25px + 0.5vw);
+    font-size: calc(45px + 2vw);
+    margin-right: calc(24px + 0.5vw);
   }
 
   #about #about-me {
     /* height: calc(5em + 3vw); */
-    padding: calc(0.65em + 0.95vw) 0 calc(0.65em + 0.95vw) 0;
-    font-size: calc(42px + 0.95vw);
+    padding: calc(0.65em + 0.95vw) 2em calc(0.65em + 0.95vw) 2em;
+    font-size: calc(36px + 0.95vw);
     height: calc(100vh - (80px + 3vw));
   }
 
   #about #education {
     /* height: calc(5em + 3vw); */
-    padding: calc(0.25em + 0.95vw) 0 0 0;
-    font-size: calc(42px + 0.95vw);
-    min-height: calc(100% - (80px + 3vw));
+    padding: calc(0.25em + 0.95vw) 2em calc(0.25em + 0.95vw) 2em;
+    font-size: calc(36px + 0.75vw);
+    min-height: calc(100vh - (80px + 3vw));
   }
 
   #about #work {
     /* height: calc(5em + 3vw); */
     padding: calc(1.15em + 0.95vw) 0 calc(0.75em + 0.95vw) 0;
-    font-size: calc(42px + 0.95vw);
+    font-size: calc(36px + 0.95vw);
     height: calc(100vh - (80px + 3vw));
   }
 
   #about #about-me .about,
   #about #education .institute,
   #about #work .job {
-    font-size: calc(28px + 0.95vw);
+    font-size: calc(24px + 0.65vw);
     text-align: left;
     padding: calc(0.75em + 0.95vw) calc(2em + 0.95vw) 0 calc(2em + 0.95vw);
-    line-height: 1.5;
   }
 
   #about #education .institute .left {
-    font-size: calc(25px + 0.95vw);
+    font-size: calc(24px + 0.55vw);
   }
 
   #about #education .institute .right {
-    font-size: calc(25px + 0.95vw);
+    font-size: calc(24px + 0.55vw);
   }
 
   #about #education .details {
-    font-size: calc(19px + 0.95vw);
-  }
-
-  #about #work .cv-n-resume .resume {
-    margin-top: calc(25px + 0.95vw);
+    font-size: calc(20px + 0.55vw);
   }
 
   #about #work .cv-n-resume .resume,
   #about #work .cv-n-resume .cv {
     padding: calc(0.15em + 0.05vw) calc(0.9em + 1.775vw);
-    font-size: calc(28px + 0.95vw);
+    font-size: calc(24px + 0.95vw);
   }
 
   #projects #introduction {
@@ -152,55 +158,55 @@
   }
 
   #projects .card-contents .card {
-    flex: 0 1 calc(425px + 0.95vw);
+    flex: 0 1 calc(424px + 0.5vw);
   }
 
   #projects .card-contents .card .header {
     font-size: calc(1.42em + 0.95vw);
-    max-width: calc(425px + 18vw);
-    max-height: calc(250px + 18vw);
+    max-width: calc(424px + 7vw);
+    max-height: calc(250px + 7vw);
   }
 
   #projects .card-contents .card .header img {
-    max-width: calc(425px + 18vw);
-    max-height: calc(250px + 18vw);
+    max-width: calc(424px + 7vw);
+    max-height: calc(250px + 7vw);
   }
 
   #projects .card-contents .card .header .title {
-    font-size: calc(18px + 0.95vw);
+    font-size: calc(18px + 0.5vw);
   }
 
   #projects .card-contents .card .header .name {
-    font-size: calc(21px + 0.95vw);
+    font-size: calc(21px + 0.5vw);
   }
 
   #projects .card-contents .card .header.head {
-    font-size: calc(4em + 0.95vw);
+    font-size: calc(4em + 0.5vw);
   }
 
   #projects .card-contents .card .description center {
-    font-size: calc(1em + 0.75vw);
+    font-size: calc(1em + 0.5vw);
   }
 
   #projects .card-contents .card .description.active {
-    max-height: calc(500px + 0.95vw);
+    max-height: calc(500px + 0.5vw);
   }
 
   #projects #content {
-    padding: calc(3em + 0.5vw) calc(10.5em + 9vw);
+    padding: calc(3em + 0.5vw) calc(10.5em + 7vw);
   }
 
   #projects .project-name {
-    font-size: calc(26px + 1.35vw);
+    font-size: calc(26px + 1vw);
   }
 
   #projects #content p {
-    font-size: calc(18px + 0.95vw);
+    font-size: calc(18px + 0.5vw);
   }
 
   #projects #carousel .prev,
   #projects #carousel .next {
-    font-size: calc(18px + 1.95vw);
+    font-size: calc(18px + 1vw);
     border-radius: 0 calc(3px + 0.3vw) calc(3px + 0.3vw) 0;
     border: #000000 solid calc(1px + 0.05vw);
     margin-top: calc(-22px - 0.5vw);
@@ -219,9 +225,9 @@
   }
 
   #projects #carousel .dot {
-    height: calc(15px + 0.95vw);
-    width: calc(15px + 0.95vw);
-    margin: calc(1em + 0.95vw) calc(2px + 0.15vw);
+    height: calc(15px + 0.5vw);
+    width: calc(15px + 0.5vw);
+    margin: calc(1em + 0.5vw) calc(2px + 0.15vw);
   }
 }
 

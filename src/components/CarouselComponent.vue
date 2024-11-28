@@ -146,7 +146,10 @@
         Authorization, API, Etc) so i would enrich my knowledge developing
         laravel project (I did email notification too, but it wasn't included in
         the finished app for the internship, just development to learn more).
-        And used JavaScript lib or framework like VueJS, Axios, etc
+        And used JavaScript lib or framework like VueJS, Axios, etc. the app
+        being delivered for internship wasn't in english (it was in bahasa or
+        indonesia language), i did make this in english so it can be considered
+        as project experience.
       </p>
       <p>
         Having heard from my vocational school friend that had already working

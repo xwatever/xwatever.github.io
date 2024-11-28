@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="redirecting-menu fade" v-if="main == false">
+    <div class="redirecting-menu" v-if="main == false" style="color: black">
       <div class="back_button" @click="toggleAccomplishment">
         <i class="far fa-arrow-alt-circle-left" style="font-size: 0.85em"></i>
         Back
@@ -60,6 +60,12 @@
 
     <router-view :viewed="viewed" />
   </div>
+
+  <!-- <div id="toggle-up">
+    <router-link to="/about">
+      <i class="fa-solid fa-angles-up"></i>
+    </router-link>
+  </div> -->
 </template>
 
 <script>

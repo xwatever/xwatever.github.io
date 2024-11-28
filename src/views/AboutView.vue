@@ -62,10 +62,16 @@
       </div>
 
       <div class="cv-n-resume">
-        <span class="resume" @click="toggleResume"
-          >Check out my resume here</span
-        >
-        <span class="cv" @click="toggleCV">Check out my cv here</span>
+        <div class="left">
+          <!-- Check out my resume here -->
+          <span class="resume" @click="toggleResume"
+            >Check out my resume here</span
+          >
+          <div class="right">
+            <!-- Check out my cv here -->
+            <span class="cv" @click="toggleCV">Check out my cv here</span>
+          </div>
+        </div>
       </div>
     </div>
     <router-view></router-view>

@@ -2,19 +2,21 @@
   <div id="scrollbar"></div>
   <navbar :width="width" @clicked="toggleNavMenu" @height="getNavbarHeight" />
 
-  <sidebar />
+  <div class="wrapper">
+    <sidebar />
 
-  <router-view
-    :view="view"
-    :subView="subView"
-    :width="width"
-    :height="height"
-    :navbarHeight="navbarHeight"
-    :bodyOverflow="bodyOverflow"
-    :keydownAndWheelActive="keydownAndWheelActive"
-    @height="toggleScroll"
-    @handleScrolling="toggleHandleScrolling"
-  />
+    <router-view
+      :view="view"
+      :subView="subView"
+      :width="width"
+      :height="height"
+      :navbarHeight="navbarHeight"
+      :bodyOverflow="bodyOverflow"
+      :keydownAndWheelActive="keydownAndWheelActive"
+      @height="toggleScroll"
+      @handleScrolling="toggleHandleScrolling"
+    />
+  </div>
 </template>
 
 <script>

@@ -32,12 +32,13 @@
         </a>
       </div>
     </div>
-    <!-- <div id="toggle-down">
-      <router-link to="/about">
-        <i class="fa-solid fa-angles-down"></i>
-      </router-link>
-    </div> -->
   </div>
+
+  <!-- <div id="toggle-down">
+    <router-link to="/about">
+      <i class="fa-solid fa-angles-down"></i>
+    </router-link>
+  </div> -->
 </template>
 
 <script>

@@ -19,4 +19,15 @@ module.exports = {
         name: "assets/[name].[hash:8].[ext]",
       });
   },
+  devServer: {
+    client: {
+      overlay: {
+        warnings: false,
+        errors: false,
+      },
+
+      // or
+      overlay: false,
+    },
+  },
 };
