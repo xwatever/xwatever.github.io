@@ -10,8 +10,7 @@ const CarouselComponent = () => import("./../components/CarouselComponent.vue");
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    redirect: { name: "home" },
   },
   {
     path: "/home",

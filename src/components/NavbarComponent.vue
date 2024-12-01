@@ -127,11 +127,9 @@ export default {
       }
     },
     width: function (oldItem, newItem) {
-      console.log(oldItem);
-      console.log(newItem);
       if (oldItem < 550) {
         this.mobileView = true;
-      } else if (oldItem > 550) {
+      } else if (oldItem > 550 || newItem) {
         this.mobileView = false;
       }
     },
@@ -159,7 +157,6 @@ export default {
     },
     toggleMenu(e) {
       const route = e.target.innerHTML.replace(/ /g, "");
-      console.log(route);
       if (route == "HOME") {
         this.$emit("clicked", "home");
         setTimeout(() => {

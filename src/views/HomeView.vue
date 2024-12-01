@@ -57,7 +57,8 @@ export default {
     this.home = true;
     setTimeout(() => {
       this.introduction = true;
-    }, 10);
+    }, 75);
+    this.$emit("height", { state: true });
   },
 };
 </script>
