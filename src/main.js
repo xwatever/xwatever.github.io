@@ -12,4 +12,5 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 // createApp(App).mount("#app");
 
 const app = createApp(App);
+app.config.devtools = true;
 app.use(router).use(store).mount("#app");

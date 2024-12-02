@@ -11,7 +11,6 @@
       :width="width"
       :height="height"
       :navbarHeight="navbarHeight"
-      :bodyOverflow="bodyOverflow"
       :keydownAndWheelActive="keydownAndWheelActive"
       @height="toggleScroll"
       @handleScrolling="toggleHandleScrolling"
@@ -33,9 +32,15 @@ export default {
   },
   data: function () {
     return {
-      width: window.innerWidth,
-      height: window.innerHeight,
-      bodyOverflow: "",
+      // width: window.innerWidth,
+      // height: window.innerHeight,
+      // navbarHeight: 0,
+      // view: "home",
+      // subView: "about-me",
+      // keydownAndWheelActive: true,
+      // ScrollDebounce: true,
+      width: 0,
+      height: 0,
       navbarHeight: 0,
       view: "home",
       subView: "about-me",
@@ -45,18 +50,37 @@ export default {
   },
   created() {
     window.addEventListener("resize", this.handleResize);
+
     this.handleResize();
     this.handleSession();
   },
   mounted() {
     this.handleSession();
 
-    this.bodyOverflow = window.getComputedStyle(document.body).overflow;
     document.getElementById("scrollbar").style.display = "block";
     document.body.style.overflowY = "hidden";
 
-    window.addEventListener("keydown", this.keydownHandler);
-    window.addEventListener("wheel", this.wheelHandler);
+    setTimeout(() => {
+      let view = "home";
+      let subView = "about-me";
+      this.width = window.innerWidth;
+      this.height = window.innerHeight;
+      this.view = view;
+      this.subView = subView;
+      setTimeout(() => {
+        console.log(this.width);
+        console.log(this.height);
+        console.log(this.navbarHeight);
+        console.log(this.view);
+        console.log(this.subView);
+        console.log(this.keydownAndWheelActive);
+        console.log(this.ScrollDebounce);
+        setTimeout(() => {
+          window.addEventListener("keydown", this.keydownHandler);
+          window.addEventListener("wheel", this.wheelHandler);
+        }, 50);
+      }, 50);
+    }, 50);
   },
   methods: {
     handleResize() {
