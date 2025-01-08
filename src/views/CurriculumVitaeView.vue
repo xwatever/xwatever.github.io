@@ -78,9 +78,9 @@
           <hr />
           <p>
             I am a fresh graduate of Bachelor of Informatics Engineering at
-            Universitas Islam Riau. I am aspiring to be working as a programmer.
-            I want to bring out everything i have learned to put into work,
-            making something that i can be proud of.
+            Islamic University of Riau. I am aspiring to be working as a
+            programmer. I want to bring out everything i have learned to put
+            into work, making something that i can be proud of.
           </p>
         </div>
 
@@ -144,7 +144,7 @@
           </ul>
           <ul>
             <li class="project-">
-              Universitas Islam Riau - Laboratory Assistant
+              Islamic University of Riau - Laboratory Assistant
             </li>
             <li class="date">September 2019 - July 2021</li>
             <li class="details"></li>
@@ -163,7 +163,7 @@
           <div class="institute">
             <ul>
               <li class="degree">Bachelor of Informatics Engineering</li>
-              <li class="location">Universitas Islam Riau, Indonesia</li>
+              <li class="location">Islamic University of Riau, Indonesia</li>
               <li class="date">2017 - 2024</li>
             </ul>
           </div>
@@ -174,7 +174,7 @@
                 School
               </li>
               <li class="location">
-                Sekolah Menengah Kejuruan Negara 2 Pekanbaru, Indonesia
+                Public Vocational High School 2 Pekanbaru, Indonesia
               </li>
               <li class="date">2014 - 2017</li>
             </ul>

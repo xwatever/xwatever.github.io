@@ -1,75 +1,93 @@
 <template>
   <div id="about">
     <div id="about-me" :class="{ fade: subView == 'about-me' }">
-      About me
-      <div class="about" :class="{ 'fade-in': subView == 'about-me' }">
-        I live in Pekanbaru, Indonesia. I have learned code for 10 years,
-        attending Vocational Highschool as Software Engineer student, college as
-        Informatics Technology student, and haven't started my career as a
-        programmer yet. I want to start my journey as a Front-End Developer to
-        make myself better at designing. I have learned to use Framework like
-        Laravel, VueJS, ExpressJS for my college assignments. I strive for
-        making something i have visualised works, but sometimes i'm just trying
-        to make things simple if i dont have the capability for it. Things
-        would've been better if i'm developing or creating more stuffs so i can
-        improve my knowledge more.
+      <div class="title">About me</div>
+      <div class="content" :class="{ 'fade-in': subView == 'about-me' }">
+        <p>
+          I live in Pekanbaru, Indonesia. I have learned code for 10 years,
+          attending Vocational Highschool as Software Engineer student, college
+          as Informatics Technology student, and haven't started my career as a
+          programmer yet. I want to start my journey as a Front-End Developer to
+          make myself better at designing.
+        </p>
+        <p>
+          I have learned to use Framework like Laravel, VueJS, ExpressJS for my
+          college assignments. I strive for making something i have visualised
+          works, but sometimes i'm just trying to make things simple if i dont
+          have the capability for it. Things would've been better if i'm
+          developing or creating more stuffs so i can improve my knowledge more.
+        </p>
       </div>
     </div>
     <div id="education" :class="{ fade: subView == 'education' }">
-      My Education
-      <div class="institute" :class="{ 'fade-in': subView == 'education' }">
-        Bachelor of Informatics Engineering
-        <div class="left">
-          Universitas Islam Riau, Pekanbaru, Indonesia
-          <div class="right">September 2017 - June 2024</div>
+      <div class="title">My Education</div>
+      <div class="content">
+        <div class="institute" :class="{ 'fade-in': subView == 'education' }">
+          Bachelor of Informatics Engineering
+          <div class="left">
+            <span class="location"
+              >Universitas Islam Riau, Pekanbaru, Indonesia</span
+            >
+            <div class="right">
+              <span class="date"> September 2017 - June 2024 </span>
+            </div>
+          </div>
+          <div class="details">
+            I was assigned as laboratory assistant for practicum study at
+            certain subject. My role was to teach juniors to implement code that
+            they have learned from lecturer at class, as well as assisting
+            lecturer in evaluate student's grade based on their performance at
+            practicum session and laboratory assignments. My concentration was
+            Artificial Intelligent, and i'm intrigued by how math and some
+            formulae have made something so complex.
+          </div>
         </div>
-        <div class="details">
-          I was assigned as laboratory assistant for practicum study at certain
-          subject. My role was to teach juniors to implement code that they have
-          learned from lecturer at class, as well as assisting lecturer in
-          evaluate student's grade based on their performance at practicum
-          session and laboratory assignments. My concentration was Artificial
-          Intelligent, and i'm intrigued by how math and some formulae have made
-          something so complex.
-        </div>
-      </div>
-      <div class="institute" :class="{ 'fade-in': subView == 'education' }">
-        Graduate of Vocational High School for Computer Software Engineering
-        Major
-        <div class="left">
-          Sekolah Menengah Kejuruan Negeri 2 Pekanbaru, Indonesia
-          <div class="right">July 2014 - June 2017</div>
-        </div>
-        <div class="details">
-          I learned coding for the first time here. Was taught basics of
-          programming languages. It feels like magic when i tried to implement
-          code to work, and felt like i'm doing some hacking stuff, LOL. Being
-          intrigued by how software created, this is where i started to think
-          "maybe, having a job as a programmer would be good for my future".
+        <div
+          class="last institute"
+          :class="{ 'fade-in': subView == 'education' }"
+        >
+          Graduate of Vocational High School for Computer Software Engineering
+          Major
+          <div class="left">
+            <span class="location">
+              Sekolah Menengah Kejuruan Negeri 2 Pekanbaru, Indonesia
+            </span>
+            <div class="right">
+              <span class="date">July 2014 - June 2017</span>
+            </div>
+          </div>
+          <div class="details">
+            I learned coding for the first time here. Was taught basics of
+            programming languages. It feels like magic when i tried to implement
+            code to work, and felt like i'm doing some hacking stuff, LOL. Being
+            intrigued by how software created, this is where i started to think
+            "maybe, having a job as a programmer would be good for my future".
+          </div>
         </div>
       </div>
     </div>
 
     <div id="work" :class="{ fade: subView == 'work' }">
-      I had and have worked in these places
-      <div class="job" :class="{ 'fade-in': subView == 'work' }">
-        September 2022 - Present, Pekanbaru City, Riau Province, Indonesia,
-        Department of Population and Civil Registration - Back Office Employee
-      </div>
-      <div class="job" :class="{ 'fade-in': subView == 'work' }">
-        September 2019 - July 2021, Pekanbaru City, Riau Province, Indonesia,
-        Universitas Islam Riau - Laboratory Assistant
-      </div>
-
-      <div class="cv-n-resume">
-        <div class="left">
-          <!-- Check out my resume here -->
-          <span class="resume" @click="toggleResume"
-            >Check out my resume here</span
-          >
-          <div class="right">
-            <!-- Check out my cv here -->
-            <span class="cv" @click="toggleCV">Check out my cv here</span>
+      <div class="title">I had and have worked in these places</div>
+      <div class="content">
+        <div class="job" :class="{ 'fade-in': subView == 'work' }">
+          September 2022 - Present, Pekanbaru City, Riau Province, Indonesia,
+          Department of Population and Civil Registration - Back Office Employee
+        </div>
+        <div class="job" :class="{ 'fade-in': subView == 'work' }">
+          September 2019 - July 2021, Pekanbaru City, Riau Province, Indonesia,
+          Universitas Islam Riau - Laboratory Assistant
+        </div>
+        <div class="cv-n-resume">
+          <div class="left">
+            <!-- Check out my resume here -->
+            <span class="resume" @click="toggleResume"
+              >Check out my resume here</span
+            >
+            <div class="right">
+              <!-- Check out my cv here -->
+              <span class="cv" @click="toggleCV">Check out my cv here</span>
+            </div>
           </div>
         </div>
       </div>
@@ -90,31 +108,43 @@ export default {
     "height",
     "navbarHeight",
     "keydownAndWheelActive",
+    "mobileView",
   ],
   watch: {
     subView(val) {
-      var element =
-        document.getElementById(val) != null
-          ? document.getElementById(val)
-          : document.getElementById("about-me");
-      var headerOffset = this.width >= 1466 ? 80 + (3 * this.width) / 100 : 80;
-      var elementPosition = element.getBoundingClientRect().top;
-      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-
       setTimeout(() => {
-        var height = element.getBoundingClientRect().height;
+        var element =
+          document.getElementById(val) != null
+            ? document.getElementById(val)
+            : document.getElementById("about-me");
+        var headerOffset =
+          this.width >= 1466 ? 80 + (3 * this.width) / 100 : 80;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+        this.element =
+          document.getElementById(val) != null
+            ? document.getElementById(val)
+            : document.getElementById("about-me");
 
-        if (height > this.height - this.navbarHeight + 1) {
-          this.$emit("height", { state: false });
-        }
-      }, 95);
+        setTimeout(() => {
+          var height = element.getBoundingClientRect().height;
+
+          if (
+            height > this.height - this.navbarHeight + 1 &&
+            !this.mobileView
+          ) {
+            this.$emit("height", { state: false });
+          }
+        }, 95);
+      }, 50);
     },
     keydownAndWheelActive(val) {
-      if (val == false) {
+      if (val == false && !this.mobileView) {
         window.addEventListener("keydown", (e) => {
           this.toggleRouteKeyDown(e);
         });
@@ -129,40 +159,53 @@ export default {
     return {
       onTop: false,
       onBottom: false,
+      element: null,
 
       resume: resume,
       cv: cv,
     };
   },
   mounted() {
-    setTimeout(() => {
-      this.toggleView();
-      this.onTop = false;
-      this.onBottom = false;
-    }, 150);
+    if (this.mobileView == true) {
+      document.getElementById("scrollbar").style.display = "none";
+      document.body.style.overflowY = "scroll";
+    } else {
+      setTimeout(() => {
+        this.toggleView();
+        this.onTop = false;
+        this.onBottom = false;
+      }, 150);
+    }
   },
   methods: {
     toggleView() {
-      var element =
-        document.getElementById(this.subView) != null
-          ? document.getElementById(this.subView)
-          : document.getElementById("about-me");
-      var headerOffset = this.width >= 1466 ? 80 + (3 * this.width) / 100 : 80;
-      var elementPosition = element.getBoundingClientRect().top;
-      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-
-      this.onTop = true;
-
       setTimeout(() => {
-        var height = element.getBoundingClientRect().height;
-        if (height > this.height - this.navbarHeight + 1) {
-          this.$emit("height", { state: null });
-        }
-      }, 95);
+        var element =
+          document.getElementById(this.subView) != null
+            ? document.getElementById(this.subView)
+            : document.getElementById("about-me");
+        var headerOffset =
+          this.width >= 1466 ? 80 + (3 * this.width) / 100 : 80;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+
+        this.onTop = true;
+
+        setTimeout(() => {
+          var height = element.getBoundingClientRect().height;
+          if (
+            height > this.height - this.navbarHeight + 1 &&
+            !this.mobileView
+          ) {
+            this.$emit("height", { state: false });
+          }
+        }, 95);
+      }, 50);
     },
     toggleResume() {
       window.open(resume, "_blank");
@@ -200,12 +243,12 @@ export default {
 
       if (this.keydownAndWheelActive == false) {
         setTimeout(() => {
-          var education_top =
-            cumulativeOffset(document.getElementById("education")).top -
+          var element_top =
+            cumulativeOffset(document.getElementById(this.element)).top -
             this.navbarHeight;
 
-          var education_bottom =
-            cumulativeOffset(document.getElementById("education")).bottom -
+          var element_bottom =
+            cumulativeOffset(document.getElementById(this.element)).bottom -
             this.navbarHeight;
 
           setTimeout(() => {
@@ -218,9 +261,9 @@ export default {
             setTimeout(() => {
               var scrolled = Math.abs(window.scrollY - top);
 
-              if (education_top >= top - scrolled) {
+              if (element_top >= top - scrolled) {
                 window.scrollTo({
-                  top: education_top,
+                  top: element_top,
                   behavior: "smooth",
                 });
                 setTimeout(() => {
@@ -240,9 +283,9 @@ export default {
                     }, 50);
                   }
                 }
-              } else if (education_bottom <= bottom + scrolled) {
+              } else if (element_bottom <= bottom + scrolled) {
                 window.scrollTo({
-                  top: top - (bottom - education_bottom),
+                  top: top - (bottom - element_bottom),
                   behavior: "smooth",
                 });
                 setTimeout(() => {
@@ -313,12 +356,12 @@ export default {
 
       if (this.keydownAndWheelActive == false) {
         setTimeout(() => {
-          var education_top =
-            cumulativeOffset(document.getElementById("education")).top -
+          var element_top =
+            cumulativeOffset(document.getElementById(this.element)).top -
             this.navbarHeight;
 
-          var education_bottom =
-            cumulativeOffset(document.getElementById("education")).bottom -
+          var element_bottom =
+            cumulativeOffset(document.getElementById(this.element)).bottom -
             this.navbarHeight;
 
           setTimeout(() => {
@@ -331,9 +374,9 @@ export default {
             setTimeout(() => {
               var scrolled = Math.abs(window.scrollY - top);
 
-              if (education_top >= top - scrolled) {
+              if (element_top >= top - scrolled) {
                 window.scrollTo({
-                  top: education_top,
+                  top: element_top,
                   behavior: "smooth",
                 });
                 setTimeout(() => {
@@ -358,9 +401,9 @@ export default {
                     document.getElementById("scrollbar").style.display = "none";
                   }, 50);
                 }
-              } else if (education_bottom <= bottom + scrolled) {
+              } else if (element_bottom <= bottom + scrolled) {
                 window.scrollTo({
-                  top: top - (bottom - education_bottom),
+                  top: top - (bottom - element_bottom),
                   behavior: "smooth",
                 });
                 setTimeout(() => {

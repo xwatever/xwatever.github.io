@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from "vue-router";
 const HomeView = () => import("./../views/HomeView.vue");
 const AboutView = () => import("./../views/AboutView.vue");
 const AccomplishmentView = () => import("./../views/AccomplishmentView.vue");
+// const CurriculumVitaeView = () =>
+//   import("./../views/CurriculumVitaeViewIndo.vue");
 const CurriculumVitaeView = () => import("./../views/CurriculumVitaeView.vue");
 const ResumeView = () => import("./../views/ResumeView.vue");
 const CarouselComponent = () => import("./../components/CarouselComponent.vue");

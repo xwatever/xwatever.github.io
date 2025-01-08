@@ -56,17 +56,12 @@
             </div>
           </li>
           <li class="details">
-            Thesis Assignment for Informatics Engineer Bachelor's Degree at
-            Universitas Islam Riau, making Manage Cost and Schedules for Civil
-            Construction App for Civil Engineering of Universitas Islam Riau
+            Developed a web app for managing cost and schedule for civil
+            construction projects using Vue.js and Express.js.
           </li>
-          <li class="detailed-details">
-            Web App for managing schedule, and cost for projects. Made with
-            VueJS + ExpressJS
-          </li>
-          <li class="detailed-details">
-            Using Differential Evolution as method to get material
-            recommendation for project tasks
+          <li class="details">
+            Implemented a recommendation system for construction material to be
+            used at project tasks using the Differential Evolution algorithm.
           </li>
 
           <li class="project">
@@ -83,20 +78,14 @@
             </div>
           </li>
           <li class="details">
-            Internship assignment for Informatics Engineering at Universitas
-            Islam Riau, making an Optional Course Scheduling App for Civil
-            Engineering of Universitas Islam Riau
+            Built an optional course scheduling web app for the Civil
+            Engineering faculty using Laravel and Vue.js (SPA/MPA hybrid).
           </li>
           <li class="detailed-details">
-            Web App for managing optional course at civil engineering made with
-            Laravel + VueJS framework, SPA/MPA Hybrid
+            Multi-level user authentication (Admin, Staff, Student).
           </li>
           <li class="detailed-details">
-            Authentication for user with 4 levels; Guest, Super Admin, Admin,
-            College Student
-          </li>
-          <li class="detailed-details">
-            Also has simple forum feature for students and staffs communicating
+            Integrated a simple forum for staff-student communication.
           </li>
         </ul>
       </div>
@@ -123,17 +112,30 @@
               </div>
             </div>
           </li>
-          <li class="details">
+          <!-- <li class="details">
             General office work such as document managing, operating apps,
-            making reports, etc
+            making reports, etc. As well as one of Social media officer, giving
+            information, guiding users to navigate using department's apps.
+          </li> -->
+          <li class="details">
+            As one of Social Media Officer, Assisted 150 to 250 users per week
+            in navigating the department’s apps, resolving inquiries, and
+            ensuring successful submission of citizenship-related documents.
           </li>
           <li class="details">
-            Fill in when certain Front Officer has leave from work on that day
+            Identified and reported recurring user challenges, resulting in the
+            implementation of documentation or guides that reduced app-related
+            complaints by 67%.
+          </li>
+          <li class="details">
+            Created user-fiendly guides and step-by-step instructions for app
+            functionality, improving user satisfaction as measured in our public
+            satisfaction survey.
           </li>
 
           <li class="project">
             <span style="font-weight: bold; display: block"
-              >Universitas Islam Riau - Laboratory Assistant;</span
+              >Islamic University of Riau - Laboratory Assistant;</span
             >
             <div class="left">
               <span class="location" style="text-align: right"
@@ -144,14 +146,26 @@
               </div>
             </div>
           </li>
-          <li class="details">
+          <!-- <li class="details">
             Teaching juniors as Lecturer Assistant on practicum lessons: C++,
             DBMS, MySQL, Python, Matlab, PHP
+          </li> -->
+          <li class="details">
+            Teaching juniors on practicum lessons: C++, DBMS, MySQL, Python,
+            Matlab, PHP. Guided and mentored up to 150 students per semester,
+            ensuring their understanding of programming concepts and practical
+            implementation of programming basics.
           </li>
-          <li class="detailed-details">
-            Have juniors keeping up with building practice source code. While
-            explaining how the code works, helping them with debugging if bug or
-            errors found
+          <li class="details">
+            Debugged and resolved coding issues from students, achieving an
+            average resolution time of 1 to 2 minutes per issue, making sure
+            that i can proceed to teach one to two more source codes by the
+            length of time given for my class.
+          </li>
+          <li class="details">
+            Designed teaching materials and exercises used for my classes and
+            for few fellow lecturer assitant, receiving positive feedback from
+            students, associates, and lecturers.
           </li>
         </ul>
       </div>
@@ -165,7 +179,7 @@
         EDUCATION
         <ul>
           <li class="institute" style="margin-top: 0.25em">
-            Universitas Islam Riau, Engineering Faculty | Bachelor of
+            Islamic University of Riau, Engineering Faculty | Bachelor of
             Informatics Engineering
             <span class="institute-details">
               <div class="left">
@@ -174,11 +188,11 @@
               </div>
             </span>
           </li>
-          <li>Concentration: Artificial Intelligent | GPA: 3.73 / 4.0</li>
+          <li>Concentration: Artificial Intelligent | GPA: 3.75 / 4.0</li>
 
           <li class="institute">
-            Sekolah Menengah Kejuruan Negeri 2 Pekanbaru | Graduate of
-            Vocational High School for Computer Software Engineering Major
+            Public Vocational High School 2 Pekanbaru | Graduate of Computer
+            Software Engineering Major
             <span class="institute-details">
               <div class="left">
                 Pekanbaru City, Riau Province, Indonesia

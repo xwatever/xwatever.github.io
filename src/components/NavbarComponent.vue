@@ -96,13 +96,38 @@
         title="See my curriculum vitae or resume"
         class="view-button fa-solid fa-file"
       ></i> -->
+
+      <!-- <router-link
+        title="More to come, probably still having my assignments from my college days as projects"
+        to="/cv"
+        @click="toggleMenu"
+        class="link"
+        :class="{
+          active: viewedPage == 'cv',
+        }"
+      >
+        Curriculum Vitae
+      </router-link>
+
+      <router-link
+        title="More to come, probably still having my assignments from my college days as projects"
+        to="/resume"
+        @click="toggleMenu"
+        class="link"
+        :class="{
+          active: viewedPage == 'resume',
+        }"
+      >
+        Resume
+      </router-link> -->
     </div>
 
     <div
-      class="mobile-config fa-solid"
+      class="fa-solid"
       :class="{
         active: dropDownMenu,
         'fa-bars': mobileView,
+        'mobile-config': mobileView,
       }"
       title="Menu dropdown"
       @click="toggleDropdown"
@@ -114,7 +139,7 @@
 import router from "./../router";
 
 export default {
-  props: ["width"],
+  props: ["mobileView"],
   watch: {
     $route: function (from, to) {
       if (to !== from) {
@@ -126,27 +151,17 @@ export default {
             : from.name;
       }
     },
-    width: function (oldItem, newItem) {
-      if (oldItem < 550) {
-        this.mobileView = true;
-      } else if (oldItem > 550 || newItem) {
-        this.mobileView = false;
-      }
-    },
   },
   mounted() {
-    if (this.width < 550) {
-      this.mobileView = true;
-    }
-
     var navbarHeight = document
       .getElementsByClassName("navbar")[0]
       .getBoundingClientRect().height;
-    this.$emit("height", navbarHeight);
+    if (!this.mobileView) {
+      this.$emit("height", navbarHeight);
+    }
   },
   data: function () {
     return {
-      mobileView: false,
       dropDownMenu: false,
       viewedPage: "home",
     };

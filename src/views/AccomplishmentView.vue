@@ -102,9 +102,11 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      this.$emit("height", {
-        state: false,
-      });
+      if (!this.mobileView) {
+        this.$emit("height", {
+          state: false,
+        });
+      }
     }, 50);
 
     window.scrollTo({

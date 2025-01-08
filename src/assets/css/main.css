@@ -138,7 +138,7 @@ a:active {
   padding: 0.3em;
   font-size: 1.1em;
   /* background-color: #3dbd57; */
-  background-color: #0cbb0c;
+  background-color: #001a36;
   color: white;
   cursor: pointer;
   margin-bottom: 1em;
@@ -202,7 +202,7 @@ a:active {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3ab4b3",endColorstr="#3ab4b3",GradientType=1); */
 }
 
-#home .img {
+#home .content .img {
   position: absolute;
   top: calc(50% - 97px);
   left: 10%;
@@ -211,155 +211,127 @@ a:active {
   border-radius: 50%;
 }
 
-#home #introduction {
+#home .content #introduction {
   font-size: 40px;
   position: absolute;
   left: calc(13.5% + 195px);
   top: calc(50% - (60px + 0.15vw));
 }
 
-#home #introduction .details {
+#home .content #introduction .details {
   display: block;
   font-size: 19px;
 }
 
-#home #introduction .contacts i {
+#home .content #introduction .contacts i {
   font-size: 45px;
   margin-top: 20px;
   margin-right: 24px;
 }
 
-#home #introduction .contacts a:link {
+#home .content #introduction .contacts a:link {
   color: white;
   text-decoration: none;
 }
 
-#home #introduction .contacts a:visited {
+#home .content #introduction .contacts a:visited {
   color: white;
   text-decoration: none;
 }
 
-#home #introduction .contacts a:hover {
+#home .content #introduction .contacts a:hover {
   color: white;
   text-decoration: none;
 }
 
-#home #introduction .contacts a:active {
+#home .content #introduction .contacts a:active {
   color: white;
   text-decoration: none;
 }
 
-/* #home #toggle-down {
+/* #home .content #toggle-down {
   position: absolute;
   bottom: 15px;
   right: calc(50% - 24px);
 }
 
-#home #toggle-down i {
+#home .content #toggle-down i {
   font-size: 50px;
   cursor: pointer;
 }
 
-#home #toggle-down i:hover {
+#home .content #toggle-down i:hover {
 } */
 
 #about {
   min-width: 100%;
   color: black;
+  background-color: #dad7cd;
   /* text-shadow: -0.65px 0 rgb(34, 26, 56), 0 0.65px rgb(34, 26, 56),
     0.65px 0 rgb(34, 26, 56), 0 -0.65px rgb(34, 26, 56); */
 }
 
-#about #about-me {
-  padding: 0.5em 2em 0.75em 2em;
-  font-size: 36px;
-  text-align: center;
-  height: calc(100vh - 80px);
-  line-height: 1.5;
-
-  /* background: rgb(54, 196, 41); */
-  background-color: #dad7cd;
-}
-
-#about #education {
-  padding: 0.5em 2em 0 2em;
-  font-size: 36px;
-  text-align: center;
-  height: calc(100vh - 80px);
-  /* height: auto; */
-
-  /* background: rgb(55, 124, 204); */
-  background-color: #dad7cd;
-}
-
+#about #about-me,
+#about #education,
 #about #work {
-  padding: 0.85em 0 0.75em 0;
-  font-size: 36px;
+  padding: 0 4em;
+  min-height: calc(100vh - 80px);
+}
+
+#about #about-me .title,
+#about #education .title,
+#about #work .title {
+  width: 100%;
+  font-size: 38px;
+  color: black;
   text-align: center;
-  height: calc(100vh - 80px);
-
-  /* background: rgb(255, 21, 60); */
-  background-color: #dad7cd;
+  font-weight: 200;
+  margin-top: 0.5em;
 }
 
-#about #about-me .about,
-#about #education .institute {
-  font-size: 24px;
-  text-align: left;
-  padding: 0.75em 2em 0 2em;
-}
-
-#about #about-me .about {
+#about #about-me .content,
+#about #education .content,
+#about #work .content {
+  width: 100%;
+  color: black;
   line-height: 1.5;
 }
 
-#about #education .institute {
-  line-height: 1.35;
+#about #about-me .content p,
+#about #education .institute,
+#about #work .job {
+  font-size: 24px;
+  padding-top: 1em;
 }
 
-#about #education .institute .left {
-  font-size: 24px;
+#about #education .content .last {
+  padding-bottom: 1em;
+}
+
+#about #education .content .institute .left,
+#about #work .content .cv-n-resume .left {
   display: flex;
 }
 
-#about #education .institute .right {
-  font-size: 24px;
+#about #education .content .institute .right,
+#about #work .content .cv-n-resume .right {
   margin-left: auto;
 }
 
-#about #education .details {
-  margin-top: 0.5em;
-  margin-bottom: 1em;
+#about #education .content .institute .left .location,
+#about #work .content .cv-n-resume .left .resume,
+#about #education .content .institute .right .date,
+#about #work .content .cv-n-resume .right .cv {
+  font-size: 24px;
+}
+
+#about #education .content .institute .details {
+  padding-top: 0.15em;
   font-size: 20px;
 }
 
-#about #work .job {
-  font-size: 24px;
-  text-align: left;
-  padding: 2em 5em 0 5em;
-  line-height: 1.5;
-}
-
-#about #work .cv-n-resume {
-  text-align: left;
-  padding: 0.75em 6em 0 6em;
-  margin-top: 1em;
-}
-
-#about #work .cv-n-resume .left {
-  display: flex;
-}
-
-#about #work .cv-n-resume .right {
-  margin-left: auto;
-}
-
-#about #work .cv-n-resume .resume,
-#about #work .cv-n-resume .cv {
-  padding: 0 0.9em;
-  /* padding: 0.75em 2em 0 2em; */
-  font-size: 24px;
-  cursor: pointer;
+#about #work .content .cv-n-resume .left {
+  padding-top: 4em;
 }
 
 #projects {

@@ -1,6 +1,11 @@
 <template>
   <div id="scrollbar"></div>
-  <navbar :width="width" @clicked="toggleNavMenu" @height="getNavbarHeight" />
+  <navbar
+    :width="width"
+    @clicked="toggleNavMenu"
+    :mobileView="mobileView"
+    @height="getNavbarHeight"
+  />
 
   <div class="wrapper">
     <sidebar />
@@ -46,6 +51,7 @@ export default {
       subView: "about-me",
       keydownAndWheelActive: true,
       ScrollDebounce: true,
+      mobileView: false,
     };
   },
   created() {
@@ -56,9 +62,6 @@ export default {
   },
   mounted() {
     this.handleSession();
-
-    document.getElementById("scrollbar").style.display = "block";
-    document.body.style.overflowY = "hidden";
 
     setTimeout(() => {
       let view = "home";
@@ -75,10 +78,26 @@ export default {
         console.log(this.subView);
         console.log(this.keydownAndWheelActive);
         console.log(this.ScrollDebounce);
+
+        if (
+          (this.width <= 960 && this.height <= 1280) ||
+          (this.width <= 1440 && this.height >= 1280 && this.height <= 2560)
+        ) {
+          this.mobileView = true;
+          document.getElementById("scrollbar").style.display = "none";
+          document.body.style.overflowY = "scroll";
+        } else {
+          this.mobileView = false;
+          document.getElementById("scrollbar").style.display = "block";
+          document.body.style.overflowY = "hidden";
+        }
+
         setTimeout(() => {
-          window.addEventListener("keydown", this.keydownHandler);
-          window.addEventListener("wheel", this.wheelHandler);
-        }, 50);
+          if (!this.mobileView) {
+            window.addEventListener("keydown", this.keydownHandler);
+            window.addEventListener("wheel", this.wheelHandler);
+          }
+        }, 150);
       }, 50);
     }, 50);
   },
@@ -86,6 +105,17 @@ export default {
     handleResize() {
       this.width = window.innerWidth;
       this.height = window.innerHeight;
+
+      setTimeout(() => {
+        if (
+          (this.width <= 960 && this.height <= 1280) ||
+          (this.width <= 1440 && this.height >= 1280 && this.height <= 2560)
+        ) {
+          this.mobileView = true;
+        } else {
+          this.mobileView = false;
+        }
+      }, 100);
     },
     getNavbarHeight(e) {
       this.navbarHeight = e;
@@ -110,7 +140,9 @@ export default {
     toggleNavMenu(e) {
       this.view = e;
 
-      this.toggleScroll({ state: true });
+      if (!this.mobileView) {
+        this.toggleScroll({ state: true });
+      }
 
       if (e == "home") {
         this.subView = "about-me";
@@ -132,7 +164,7 @@ export default {
           setTimeout(() => {
             router.push({ name: "about" });
           }, 50);
-        } else if (this.view == "about") {
+        } else if (this.view == "about" && this.mobileView == false) {
           if (this.subView == "about-me") {
             this.subView = "education";
           } else if (this.subView == "education") {
@@ -158,7 +190,7 @@ export default {
           setTimeout(() => {
             router.push({ name: "about" });
           }, 50);
-        } else if (this.view == "about") {
+        } else if (this.view == "about" && this.mobileView == false) {
           if (this.subView == "work") {
             this.subView = "education";
           } else if (this.subView == "education") {
@@ -186,7 +218,7 @@ export default {
           setTimeout(() => {
             router.push({ name: "about" });
           }, 50);
-        } else if (this.view == "about") {
+        } else if (this.view == "about" && this.mobileView == false) {
           if (this.subView == "about-me") {
             this.subView = "education";
           } else if (this.subView == "education") {
@@ -211,7 +243,7 @@ export default {
           setTimeout(() => {
             router.push({ name: "about" });
           }, 50);
-        } else if (this.view == "about") {
+        } else if (this.view == "about" && this.mobileView == false) {
           if (this.subView == "work") {
             this.subView = "education";
           } else if (this.subView == "education") {
@@ -234,60 +266,66 @@ export default {
     toggleScroll(event) {
       setTimeout(() => {
         if (event.state == false) {
-          this.keydownAndWheelActive = true;
-          document.body.style.overflowY = "scroll";
-          document.getElementById("scrollbar").style.display = "none";
-          setTimeout(() => {
-            this.keydownAndWheelActive = false;
+          if (!this.mobileView) {
+            this.keydownAndWheelActive = true;
+            document.body.style.overflowY = "scroll";
+            document.getElementById("scrollbar").style.display = "none";
             setTimeout(() => {
-              this.wheelHandler();
-              this.keydownHandler();
+              this.keydownAndWheelActive = false;
+              setTimeout(() => {
+                this.wheelHandler();
+                this.keydownHandler();
+              }, 50);
             }, 50);
-          }, 50);
+          }
         } else if (event.state == null) {
-          this.keydownAndWheelActive = false;
+          if (!this.mobileView) {
+            this.keydownAndWheelActive = false;
+          }
         } else {
-          this.keydownAndWheelActive = true;
-          document.getElementById("scrollbar").style.display = "block";
-          document.body.style.overflowY = "hidden";
+          if (!this.mobileView) {
+            this.keydownAndWheelActive = true;
+            document.getElementById("scrollbar").style.display = "block";
+            document.body.style.overflowY = "hidden";
 
-          window.addEventListener("keydown", this.keydownHandler);
-          window.addEventListener("wheel", this.wheelHandler);
+            window.addEventListener("keydown", this.keydownHandler);
+            window.addEventListener("wheel", this.wheelHandler);
 
-          if (event.direction == "up") {
-            if (this.view == "projects") {
-              this.view = "about";
-              setTimeout(() => {
-                router.push({ name: "about" });
-              }, 50);
-            } else if (this.view == "about") {
-              if (this.subView == "work") {
-                this.subView = "education";
-              } else if (this.subView == "education") {
-                this.subView = "about-me";
-              } else if (this.subView == "about-me") {
-                this.view = "home";
+            if (event.direction == "up") {
+              if (this.view == "projects") {
+                this.view = "about";
                 setTimeout(() => {
-                  router.push({ name: "home" });
+                  router.push({ name: "about" });
                 }, 50);
+              } else if (this.view == "about") {
+                if (this.subView == "work") {
+                  this.subView = "education";
+                } else if (this.subView == "education") {
+                  this.subView = "about-me";
+                } else if (this.subView == "about-me") {
+                  this.view = "home";
+                  setTimeout(() => {
+                    router.push({ name: "home" });
+                  }, 50);
+                }
               }
-            }
-          } else if (event.direction == "down") {
-            if (this.view == "home") {
-              this.view = "about";
-              setTimeout(() => {
-                router.push({ name: "about" });
-              }, 50);
-            } else if (this.view == "about") {
-              if (this.subView == "about-me") {
-                this.subView = "education";
-              } else if (this.subView == "education") {
-                this.subView = "work";
-              } else if (this.subView == "work") {
-                this.view = "projects";
+            } else if (event.direction == "down") {
+              if (this.view == "home") {
+                this.view = "about";
                 setTimeout(() => {
-                  router.push({ name: "projects" });
+                  router.push({ name: "about" });
                 }, 50);
+              } else if (this.view == "about") {
+                if (this.subView == "about-me") {
+                  this.subView = "education";
+                } else if (this.subView == "education") {
+                  this.subView = "work";
+                } else if (this.subView == "work") {
+                  this.view = "projects";
+                  setTimeout(() => {
+                    router.push({ name: "projects" });
+                  }, 50);
+                }
               }
             }
           }

@@ -5,7 +5,8 @@ import store from "./store";
 
 import "./assets/css/main.css";
 import "./assets/css/page.css";
-import "./assets/css/diff_resolution.css";
+import "./assets/css/mobile_view.css";
+import "./assets/css/wider_resolution_view.css";
 import "./assets/css/animation.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
