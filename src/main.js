@@ -1,17 +1,26 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
+/* default */
+// import { createApp } from 'vue'
+// import './style.css'
+// import App from './App.vue'
 
-import "./assets/css/main.css";
-import "./assets/css/page.css";
-import "./assets/css/mobile_view.css";
-import "./assets/css/wider_resolution_view.css";
-import "./assets/css/animation.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+// createApp(App).mount('#app')
 
-// createApp(App).mount("#app");
+/* v1 */
+// import { createApp } from "vue";
+// import App from "./VOneApp.vue";
+// import router from "./router/v1";
+// import store from "./store/v1";
 
-const app = createApp(App);
-app.config.devtools = true;
-app.use(router).use(store).mount("#app");
+// const app = createApp(App);
+// app.config.devtools = true;
+// app.use(router).use(store).mount("#app");
+
+/* v2 */
+
+import { createApp } from 'vue'
+import './style.css'
+import App from './App.vue'
+
+createApp(App).mount("#app");
+
+

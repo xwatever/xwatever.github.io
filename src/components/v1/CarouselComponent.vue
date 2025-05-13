@@ -186,26 +186,26 @@
 </template>
 
 <script>
-import civilConstructionAppImage1 from "./../assets/img/manage-cost-and-schedules-for-civil-construction-app/1.png";
-import civilConstructionAppImage2 from "./../assets/img/manage-cost-and-schedules-for-civil-construction-app/2.png";
-import civilConstructionAppImage3 from "./../assets/img/manage-cost-and-schedules-for-civil-construction-app/3.png";
-import civilConstructionAppImage4 from "./../assets/img/manage-cost-and-schedules-for-civil-construction-app/4.png";
-import civilConstructionAppImage5 from "./../assets/img/manage-cost-and-schedules-for-civil-construction-app/5.png";
-import civilConstructionAppImage6 from "./../assets/img/manage-cost-and-schedules-for-civil-construction-app/6.png";
-import civilConstructionAppImage7 from "./../assets/img/manage-cost-and-schedules-for-civil-construction-app/7.png";
-import civilConstructionAppImage8 from "./../assets/img/manage-cost-and-schedules-for-civil-construction-app/8.png";
-import civilConstructionAppImage9 from "./../assets/img/manage-cost-and-schedules-for-civil-construction-app/9.png";
+import civilConstructionAppImage1 from "./../../assets/v1/img/manage-cost-and-schedules-for-civil-construction-app/1.png";
+import civilConstructionAppImage2 from "./../../assets/v1/img/manage-cost-and-schedules-for-civil-construction-app/2.png";
+import civilConstructionAppImage3 from "./../../assets/v1/img/manage-cost-and-schedules-for-civil-construction-app/3.png";
+import civilConstructionAppImage4 from "./../../assets/v1/img/manage-cost-and-schedules-for-civil-construction-app/4.png";
+import civilConstructionAppImage5 from "./../../assets/v1/img/manage-cost-and-schedules-for-civil-construction-app/5.png";
+import civilConstructionAppImage6 from "./../../assets/v1/img/manage-cost-and-schedules-for-civil-construction-app/6.png";
+import civilConstructionAppImage7 from "./../../assets/v1/img/manage-cost-and-schedules-for-civil-construction-app/7.png";
+import civilConstructionAppImage8 from "./../../assets/v1/img/manage-cost-and-schedules-for-civil-construction-app/8.png";
+import civilConstructionAppImage9 from "./../../assets/v1/img/manage-cost-and-schedules-for-civil-construction-app/9.png";
 
-import optionalCourseSchedulingAppImage0 from "./../assets/img/optional-course-scheduling-app/0.png";
-import optionalCourseSchedulingAppImage1 from "./../assets/img/optional-course-scheduling-app/1.png";
-import optionalCourseSchedulingAppImage2 from "./../assets/img/optional-course-scheduling-app/2.png";
-import optionalCourseSchedulingAppImage3 from "./../assets/img/optional-course-scheduling-app/3.png";
-import optionalCourseSchedulingAppImage4 from "./../assets/img/optional-course-scheduling-app/4.png";
-import optionalCourseSchedulingAppImage5 from "./../assets/img/optional-course-scheduling-app/5.png";
-import optionalCourseSchedulingAppImage6 from "./../assets/img/optional-course-scheduling-app/6.png";
-import optionalCourseSchedulingAppImage7 from "./../assets/img/optional-course-scheduling-app/7.png";
-import optionalCourseSchedulingAppImage8 from "./../assets/img/optional-course-scheduling-app/8.png";
-import optionalCourseSchedulingAppImage9 from "./../assets/img/optional-course-scheduling-app/9.png";
+import optionalCourseSchedulingAppImage0 from "./../../assets/v1/img/optional-course-scheduling-app/0.png";
+import optionalCourseSchedulingAppImage1 from "./../../assets/v1/img/optional-course-scheduling-app/1.png";
+import optionalCourseSchedulingAppImage2 from "./../../assets/v1/img/optional-course-scheduling-app/2.png";
+import optionalCourseSchedulingAppImage3 from "./../../assets/v1/img/optional-course-scheduling-app/3.png";
+import optionalCourseSchedulingAppImage4 from "./../../assets/v1/img/optional-course-scheduling-app/4.png";
+import optionalCourseSchedulingAppImage5 from "./../../assets/v1/img/optional-course-scheduling-app/5.png";
+import optionalCourseSchedulingAppImage6 from "./../../assets/v1/img/optional-course-scheduling-app/6.png";
+import optionalCourseSchedulingAppImage7 from "./../../assets/v1/img/optional-course-scheduling-app/7.png";
+import optionalCourseSchedulingAppImage8 from "./../../assets/v1/img/optional-course-scheduling-app/8.png";
+import optionalCourseSchedulingAppImage9 from "./../../assets/v1/img/optional-course-scheduling-app/9.png";
 
 export default {
   props: ["viewed"],

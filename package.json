@@ -1,55 +1,30 @@
 {
-  "name": "xwatever.github.io",
-  "version": "0.1.0",
+  "name": "vite-project",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "deploy": "node scripts/gh-pages-deploy.js"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.6.0",
-    "core-js": "^3.8.3",
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@tailwindcss/vite": "^4.1.6",
     "file-loader": "^6.2.0",
     "promisify": "^0.0.3",
     "raw-loader": "^4.0.2",
     "rimraf": "^6.0.1",
     "rmrf": "^2.0.4",
+    "tailwindcss": "^4.1.6",
     "url-loader": "^4.1.1",
-    "vue": "^3.2.13",
+    "vue": "^3.5.13",
     "vue-loader": "^17.4.2",
-    "vue-router": "^4.4.3",
+    "vue-router": "^4.5.1",
     "vuex": "^4.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "execa": "latest"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ]
+    "@vitejs/plugin-vue": "^5.2.3",
+    "vite": "^6.3.5"
+  }
 }

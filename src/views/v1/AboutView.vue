@@ -97,8 +97,8 @@
 </template>
 
 <script>
-import resume from "./../assets/pdf/muhammad-darmawan-resume.pdf";
-import cv from "./../assets/pdf/muhammad-darmawan-cv.pdf";
+import resume from "./../../assets/v1/pdf/muhammad-darmawan-resume.pdf";
+import cv from "./../../assets/v1/pdf/muhammad-darmawan-cv.pdf";
 
 export default {
   props: [

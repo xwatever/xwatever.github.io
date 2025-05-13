@@ -69,10 +69,10 @@
 </template>
 
 <script>
-import civilConstructionAppImage from "./../assets/img/manage-cost-and-schedules-for-civil-construction-app/1.png";
-import optionalCourseSchedulingAppImage from "./../assets/img/optional-course-scheduling-app/0.png";
+import civilConstructionAppImage from "./../../assets/v1/img/manage-cost-and-schedules-for-civil-construction-app/1.png";
+import optionalCourseSchedulingAppImage from "./../../assets/v1/img/optional-course-scheduling-app/0.png";
 
-import router from "./../router";
+import router from "./../../router/v1";
 
 export default {
   props: ["keydownAndWheelActive"],

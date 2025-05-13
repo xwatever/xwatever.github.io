@@ -1,14 +1,13 @@
-const { defineConfig } = require("@vue/cli-service");
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import tailwindcss from '@tailwindcss/vite'
 
-module.exports = defineConfig({
-  transpileDependencies: true,
-});
-
-module.exports = {
-  // publicPath:
-  //   process.env.NODE_ENV === "production"
-  //     ? "/portfolio/" // note the trailing slash
-  //     : "/",
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [
+    vue(),
+    tailwindcss(),
+  ],
   chainWebpack: (config) => {
     config.module
       .rule("pdf")
@@ -30,4 +29,4 @@ module.exports = {
       overlay: false,
     },
   },
-};
+})

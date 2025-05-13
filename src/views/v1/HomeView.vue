@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import profile_image from "./../assets/img/img.jpg";
+import profile_image from "./../../assets/v1/img/img.jpg";
 
 export default {
   props: ["view", "mobileView"],
