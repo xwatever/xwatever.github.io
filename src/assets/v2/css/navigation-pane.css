@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@layer components {
+  #navigation-pane {
+    @apply px-3 py-4 bg-white rounded-[100px] w-10 flex flex-col gap-1.5;
+  }
+  .navigation-pane-header {
+    @apply absolute right-16 bottom-9 z-50 transition-all duration-500;
+  }
+  .navigation-pane-header-hovered {
+    @apply visible bg-white rounded-[100px];
+  }
+  #navigation-pane i {
+    @apply text-[14px] cursor-pointer;
+  }
+}

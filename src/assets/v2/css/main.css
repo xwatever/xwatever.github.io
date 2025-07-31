@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* .asd {
+  color: #ebe5e5;
+} */
+
+@theme {
+  --background: #ebe5e5;
+  --vh: size-full;
+}
+
+@layer components {
+  #body {
+    @apply min-h-screen w-full bg-gradient-to-r from-blue-500 to-purple-600;
+  }
+}

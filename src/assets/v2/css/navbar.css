@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@layer components {
+  #navbar {
+    @apply max-w-7xl mx-auto max-h-[71.5px] px-9 py-5 flex items-center justify-between text-[21px];
+  }
+  .navbar-header {
+    @apply fixed top-0 w-full z-50 transition-all duration-700;
+  }
+  .navbar-header-scrolled {
+    @apply visible bg-white;
+  }
+}

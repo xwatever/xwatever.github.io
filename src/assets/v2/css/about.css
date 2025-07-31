@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer components {
+  .about-container {
+    @apply h-screen w-screen overflow-hidden;
+  }
+
+  .section-transition {
+    @apply transition-transform duration-400 ease-in-out;
+  }
+}
