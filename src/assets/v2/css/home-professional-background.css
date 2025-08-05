@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer components {
   #professional-background {
     @apply min-h-screen w-full flex items-center justify-center;

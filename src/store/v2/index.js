@@ -1,30 +1,27 @@
 import { createStore } from "vuex";
+import theme from "./theme";
 
-const store = createStore({
-  state() {
-    return {
-      aboutSubView: [],
-      view: [],
-    };
+const savedLocale = localStorage.getItem("locale") || "en";
+
+export default createStore({
+  state: {
+    locale: savedLocale,
   },
   mutations: {
-    getAboutSubView(state) {
-      state.aboutSubView = JSON.parse(
-        sessionStorage.getItem("aboutSubView") || "{}"
-      );
-    },
-    getView(state) {
-      state.view = JSON.parse(sessionStorage.getItem("view") || "{}");
+    setLocale(state, locale) {
+      state.locale = locale;
+      localStorage.setItem("locale", locale);
     },
   },
   actions: {
-    getAboutSubView(context) {
-      context.commit("getAboutSubView");
-    },
-    getView(context) {
-      context.commit("getView");
+    changeLocale({ commit }, locale) {
+      commit("setLocale", locale);
     },
   },
+  getters: {
+    currentLocale: (state) => state.locale,
+  },
+  modules: {
+    theme,
+  },
 });
-
-export default store;

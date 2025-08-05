@@ -10,35 +10,35 @@
         </h1>
       </div>
       <div>
-        <ul class="flex gap-6 text-gray-700">
+        <ul class="navbar-menu">
           <li>
             <a
               href="/about"
               :class="[isScrolled ? 'invisible' : 'hover:underline']"
-              >About</a
+              >{{ $t("message.navbar.about") }}</a
             >
           </li>
           <li>
             <a
               href="/portfolio"
               :class="[isScrolled ? 'invisible' : 'hover:underline']"
-              >Portfolio</a
+              >{{ $t("message.navbar.portfolio") }}</a
             >
           </li>
           <li>
             <a
               href="/contact"
               :class="[isScrolled ? 'invisible' : 'hover:underline']"
-              >Contact</a
+              >{{ $t("message.navbar.contact") }}</a
             >
           </li>
-          <li class="relative cursor-pointer" @click="isOpen = !isOpen">
+          <li ref="dropdownCog" class="navbar-cog" @click="toggleCogDropdown">
             <i class="fa-solid fa-gear"></i>
 
             <transition name="slide-fade">
               <div
-                v-if="isOpen"
-                class="absolute right-0 z-10 mt-2 w-50 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden"
+                v-if="isOpenForCog"
+                class="navbar-cog-dropdown"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="menu-button"
@@ -46,34 +46,56 @@
               >
                 <div class="py-1" role="none">
                   <!-- Active: "bg-gray-100 text-gray-900 outline-hidden", Not Active: "text-gray-700" -->
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-gray-700"
+                  <div
+                    class="cog"
                     role="menuitem"
                     tabindex="-1"
                     id="menu-item-0"
-                    >English <span class="fi fi-gb"></span>
-                  </a>
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-gray-700"
-                    role="menuitem"
-                    tabindex="-1"
-                    id="menu-item-0"
-                    >Bahasa Indonesia <span class="fi fi-id"></span>
-                  </a>
+                  >
+                    <span class="mr-7"
+                      >{{ $t("message.navbar.cog_darkmode") }}
+                    </span>
+                    <i
+                      :class="[
+                        isDark
+                          ? 'fa-regular fa-sun mr-2'
+                          : 'fa-solid fa-sun mr-2',
+                      ]"
+                    ></i>
+                    <label class="navbar-cog-dark-mode">
+                      <input
+                        type="checkbox"
+                        class="sr-only peer"
+                        v-model="isDark"
+                        @change="toggleDark"
+                      />
+                      <div
+                        class="w-5 h-3 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-600 peer-checked:bg-blue-600"
+                      ></div>
+                      <div
+                        class="absolute left-0.5 top-0.5 bg-white w-1.75 h-1.75 rounded-full transition-transform peer-checked:translate-x-full dark:bg-gray-200"
+                      ></div>
+                    </label>
+                    <i
+                      :class="[
+                        isDark
+                          ? 'fa-solid fa-moon ml-2'
+                          : 'fa-regular fa-moon ml-2',
+                      ]"
+                    ></i>
+                  </div>
                 </div>
               </div>
             </transition>
           </li>
-          <li class="relative cursor-pointer" @click="isOpen = !isOpen">
-            <span class="fi fi-gb mr-2"></span
+          <li class="navbar-locale" @click="toggleLocaleDropdown">
+            <span :class="[locale == 'en' ? 'fi fi-gb' : 'fi fi-id']"></span
             ><i class="fa-solid fa-caret-down"></i>
 
             <transition name="slide-fade">
               <div
-                v-if="isOpen"
-                class="absolute right-0 z-10 mt-2 w-50 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden"
+                v-if="isOpenForLocale"
+                class="navbar-locale-dropdown"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="menu-button"
@@ -81,22 +103,26 @@
               >
                 <div class="py-1" role="none">
                   <!-- Active: "bg-gray-100 text-gray-900 outline-hidden", Not Active: "text-gray-700" -->
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-gray-700"
+                  <div
+                    @click="switchTo('en')"
+                    class="locale"
                     role="menuitem"
                     tabindex="-1"
                     id="menu-item-0"
-                    >English <span class="fi fi-gb"></span>
-                  </a>
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-gray-700"
+                  >
+                    <span class="fi fi-gb"></span
+                    >{{ $t("message.navbar.language_english") }}
+                  </div>
+                  <div
+                    @click="switchTo('id')"
+                    class="locale"
                     role="menuitem"
                     tabindex="-1"
                     id="menu-item-0"
-                    >Bahasa Indonesia <span class="fi fi-id"></span>
-                  </a>
+                  >
+                    <span class="fi fi-id"></span
+                    >{{ $t("message.navbar.language_indonesian") }}
+                  </div>
                 </div>
               </div>
             </transition>
@@ -110,12 +136,24 @@
 <script>
 import "./../../../assets/v2/css/navbar.css";
 import "./../../../../node_modules/flag-icons/css/flag-icons.min.css";
+import store from "./../../../store/v2";
+import { useI18n } from "vue-i18n";
+import { ref } from "vue";
 
 export default {
+  setup() {
+    const { t, locale } = useI18n();
+
+    const isDark = ref(store._modules.root.state.theme.isDark);
+
+    return { t, locale, isDark };
+  },
   data: function () {
     return {
       isScrolled: false,
-      isOpen: false,
+      isOpenForCog: false,
+      isOpenForLocale: false,
+      locale: store.getters.currentLocale,
     };
   },
   mounted() {
@@ -127,6 +165,40 @@ export default {
   methods: {
     handleScroll() {
       this.isScrolled = window.scrollY > 0.1;
+    },
+    toggleCogDropdown(event) {
+      if (event.target.outerHTML.includes("fa-gear")) {
+        this.isOpenForCog = !this.isOpenForCog;
+        if (this.isOpenForLocale) {
+          this.isOpenForLocale = !this.isOpenForLocale;
+        }
+      }
+    },
+    toggleLocaleDropdown(event) {
+      if (
+        event.target.outerHTML.includes("li class") ||
+        event.target.outerHTML.includes("fi fi-gb") ||
+        event.target.outerHTML.includes("fi fi-id") ||
+        event.target.outerHTML.includes("fa-caret-down")
+      ) {
+        this.isOpenForLocale = !this.isOpenForLocale;
+        if (this.isOpenForCog) {
+          this.isOpenForCog = !this.isOpenForCog;
+        }
+      }
+    },
+    switchTo(lang) {
+      setTimeout(() => {
+        this.isOpenForLocale = false;
+      }, 250);
+      this.$emit("locale", lang);
+    },
+    toggleDark() {
+      store.dispatch("theme/toggleDark");
+      var vm = this;
+      setTimeout(() => {
+        vm.isDark = store._modules.root.state.theme.isDark;
+      }, 150);
     },
   },
 };

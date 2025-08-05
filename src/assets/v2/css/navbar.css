@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer components {
   #navbar {
     @apply max-w-7xl mx-auto max-h-[71.5px] px-9 py-5 flex items-center justify-between text-[21px];
@@ -8,6 +10,41 @@
     @apply fixed top-0 w-full z-50 transition-all duration-700;
   }
   .navbar-header-scrolled {
-    @apply visible bg-white;
+    @apply visible bg-[#9fffff] dark:bg-[#000000];
+  }
+  .navbar-menu {
+    @apply flex gap-6 text-gray-700 dark:text-gray-100;
+  }
+  .navbar-cog {
+    @apply relative cursor-pointer;
+  }
+  .navbar-cog-dropdown {
+    @apply absolute right-0 z-10 mt-2 w-50 origin-top-right rounded-md bg-white dark:bg-[#000000] shadow-lg ring-1 ring-blue-100/50 focus:outline-hidden;
+  }
+  .cog {
+    @apply block px-4 py-2 text-sm text-gray-700 dark:text-gray-100;
+  }
+  .navbar-cog-dark-mode {
+    @apply relative inline-flex items-center cursor-pointer;
+  }
+
+  .navbar-locale {
+    @apply relative cursor-pointer;
+  }
+  .navbar-locale-dropdown {
+    @apply absolute right-0 z-10 mt-2 w-50 origin-top-right rounded-md bg-white dark:bg-[#000000] shadow-lg ring-1 ring-blue-100/50 focus:outline-hidden;
+  }
+  .locale {
+    @apply block px-4 py-2 text-sm text-gray-700 dark:text-gray-100;
+  }
+  .selected {
+    @apply font-bold;
+  }
+
+  .fi-id {
+    @apply mr-2 box-border! border bg-cover!;
+  }
+  .fi-gb {
+    @apply mr-2 box-border! border bg-cover!;
   }
 }

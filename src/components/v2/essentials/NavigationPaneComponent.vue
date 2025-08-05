@@ -11,32 +11,42 @@
       @mouseleave="isHovered = false"
     >
       <i
+        id="1"
+        @click="togglePane"
         :class="[
-          'visible',
+          'navigation-bullet',
           currentIndex === 0 ? 'fa-solid fa-circle' : 'fa-regular fa-circle',
         ]"
       ></i>
       <i
+        id="2"
+        @click="togglePane"
         :class="[
-          'visible',
+          'navigation-bullet',
           currentIndex === 1 ? 'fa-solid fa-circle' : 'fa-regular fa-circle',
         ]"
       ></i>
       <i
+        id="3"
+        @click="togglePane"
         :class="[
-          'visible',
+          'navigation-bullet',
           currentIndex === 2 ? 'fa-solid fa-circle' : 'fa-regular fa-circle',
         ]"
       ></i>
       <i
+        id="4"
+        @click="togglePane"
         :class="[
-          'visible',
+          'navigation-bullet',
           currentIndex === 3 ? 'fa-solid fa-circle' : 'fa-regular fa-circle',
         ]"
       ></i>
       <i
+        id="5"
+        @click="togglePane"
         :class="[
-          'visible',
+          'navigation-bullet',
           currentIndex === 4 ? 'fa-solid fa-circle' : 'fa-regular fa-circle',
         ]"
       ></i>
@@ -54,5 +64,21 @@ export default {
       isHovered: false,
     };
   },
+  methods: {
+    togglePane(event) {
+      this.$emit("pane", event.target.id);
+    },
+  },
 };
 </script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

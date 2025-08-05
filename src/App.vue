@@ -1,16 +1,19 @@
 <template>
-  <Navbar />
+  <Navbar @locale="switchLanguage" />
 
   <transition name="fade" mode="out-in">
     <router-view />
   </transition>
 
   <transition name="fade">
-    <div
-      v-if="isLoading"
-      class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center"
-    >
-      <div class="text-white text-xl animate-pulse">Loading...</div>
+    <div v-if="isLoading" class="loading-screen">
+      <div class="loading-screen-icon"></div>
+      <div v-if="!isLoadingLocale" class="loading-screen-text">
+        {{ $t("message.loading") }}
+      </div>
+      <div v-if="isLoadingLocale" class="loading-screen-text">
+        {{ $t("message.loading_locale") }}
+      </div>
     </div>
   </transition>
 </template>
@@ -19,15 +22,27 @@
 import "./assets/v2/css/main.css";
 import Navbar from "./components/v2/essentials/NavbarComponent.vue";
 import router from "./router/v2";
+import store from "./store/v2";
+
+import { useI18n } from "vue-i18n";
+import { loadLanguageAsync } from "./i18n";
 
 export default {
   name: "App",
   components: {
     Navbar,
   },
+  setup() {
+    const { t, locale } = useI18n();
+
+    locale.value = store.getters.currentLocale;
+
+    return { t, locale };
+  },
   data: function () {
     return {
       isLoading: false,
+      isLoadingLocale: false,
     };
   },
   mounted() {
@@ -39,8 +54,26 @@ export default {
     router.afterEach(() => {
       setTimeout(() => {
         this.isLoading = false;
-      }, 500);
+      }, 1000);
     });
+  },
+  methods: {
+    async switchLanguage(val) {
+      var lang = val;
+      const current = store.getters.currentLocale;
+      const newLang = current != lang ? lang : current;
+
+      this.isLoading = true;
+      this.isLoadingLocale = true;
+      setTimeout(() => {
+        loadLanguageAsync(newLang);
+        store.dispatch("changeLocale", newLang);
+        setTimeout(() => {
+          this.isLoading = false;
+          this.isLoadingLocale = false;
+        }, 1000);
+      }, 150);
+    },
   },
 };
 </script>

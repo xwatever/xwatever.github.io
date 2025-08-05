@@ -12,7 +12,7 @@
       <ClosingAboutPage />
     </div>
   </div>
-  <NavigationPane :currentIndex="currentIndex" />
+  <NavigationPane :currentIndex="currentIndex" @pane="toggleViewedSection" />
 </template>
 
 <script>
@@ -83,6 +83,10 @@ export default {
       }
       this.isScrolling = true;
       setTimeout(() => (this.isScrolling = false), 2500);
+    },
+    toggleViewedSection(index) {
+      this.$refs.sections.style.transform = `translateY(-${index * 100}vh)`;
+      this.currentIndex = parseInt(index) - 1;
     },
   },
 };
