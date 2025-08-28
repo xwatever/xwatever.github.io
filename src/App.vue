@@ -7,11 +7,11 @@
 
   <transition name="fade">
     <div v-if="isLoading" class="loading-screen">
-      <div class="loading-screen-icon"></div>
-      <div v-if="!isLoadingLocale" class="loading-screen-text">
+      <div class="loading-spinner"></div>
+      <div v-if="!isLoadingLocale" class="loading-text">
         {{ $t("message.loading") }}
       </div>
-      <div v-if="isLoadingLocale" class="loading-screen-text">
+      <div v-if="isLoadingLocale" class="loading-text">
         {{ $t("message.loading_locale") }}
       </div>
     </div>
@@ -51,10 +51,16 @@ export default {
       next();
     });
 
-    router.afterEach(() => {
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 1000);
+    router.afterEach((to, from, next) => {
+      if (to.name != "portfolio") {
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 750);
+      } else {
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 50);
+      }
     });
   },
   methods: {
@@ -71,7 +77,7 @@ export default {
         setTimeout(() => {
           this.isLoading = false;
           this.isLoadingLocale = false;
-        }, 1000);
+        }, 750);
       }, 150);
     },
   },

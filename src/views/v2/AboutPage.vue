@@ -72,7 +72,7 @@ export default {
 
       setTimeout(() => {
         this.isScrolling = false;
-      }, 2500); // debounce scroll
+      }, 1500); // debounce scroll
     },
     handleKeydown(e) {
       if (this.isScrolling) return;
@@ -82,7 +82,7 @@ export default {
         this.currentIndex = Math.max(this.currentIndex - 1, 0);
       }
       this.isScrolling = true;
-      setTimeout(() => (this.isScrolling = false), 2500);
+      setTimeout(() => (this.isScrolling = false), 1500);
     },
     toggleViewedSection(index) {
       this.$refs.sections.style.transform = `translateY(-${index * 100}vh)`;

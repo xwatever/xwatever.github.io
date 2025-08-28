@@ -1,7 +1,12 @@
 <template>
-  <div class="min-h-screen w-full flex items-center justify-center">
-    <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
-      <p class="text-gray-700">
+  <div class="h-dvh w-full border-4 border-red flex flex-row items-center">
+    <div class="p-8 rounded-2xl shadow-lg text-center">
+      <p class="text-left mb-10 text-[24px] leading-[1.6]">
+        {{ $t("message.about.introduction_photography") }}
+      </p>
+    </div>
+    <div class="w-[2100px] p-[5em] p-8 rounded-2xl shadow-lg text-center">
+      <p class="text-left mb-10 text-[21px]">
         {{ $t("message.about.introduction_photography") }}
       </p>
     </div>
@@ -9,5 +14,6 @@
 </template>
 
 <script>
+// import "./../../../assets/v2/css/about-pages.css";
 export default {};
 </script>

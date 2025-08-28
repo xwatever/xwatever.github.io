@@ -1,15 +1,13 @@
 <template>
-  <div id="projects" class="bg-white text-gray-900 py-20 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-        Latest Projects
-      </h2>
+  <div id="projects" class="projects">
+    <div class="card-container">
+      <h2 class="">Latest Projects</h2>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-12">
         <div
           v-for="project in projects"
           :key="project.id"
-          class="bg-gray-50 rounded-lg shadow hover:shadow-lg transition duration-300"
+          class="rounded-lg shadow hover:shadow-lg transition duration-300"
         >
           <img
             :src="project.image"
@@ -18,12 +16,12 @@
           />
           <div class="p-6 space-y-3">
             <h3 class="text-xl font-semibold">{{ project.title }}</h3>
-            <p class="text-sm text-gray-600">{{ project.description }}</p>
+            <p class="text-sm">{{ project.description }}</p>
             <div class="flex gap-2 flex-wrap text-sm">
               <span
                 v-for="tag in project.tech"
                 :key="tag"
-                class="bg-indigo-100 text-indigo-600 px-2 py-0.5 rounded-full"
+                class="text-indigo-600 px-2 py-0.5 rounded-full"
               >
                 {{ tag }}
               </span>
@@ -45,6 +43,7 @@
 </template>
 
 <script setup>
+import "./../../assets/v2/css/portfolio.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 const projects = [
   {

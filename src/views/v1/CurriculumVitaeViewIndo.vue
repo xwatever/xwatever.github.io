@@ -142,7 +142,7 @@
             <li class="project">
               Dinas Kependudukan dan Pencatatan Sipil - Karyawan Back Office
             </li>
-            <li class="date">September 2022 - Sekarang</li>
+            <li class="date">September 2022 - Juli 2025</li>
             <li class="details"></li>
           </ul>
           <ul>
@@ -186,7 +186,7 @@
 </template>
 
 <script>
-import cv_image from "./../assets/img/cv_img.png";
+import cv_image from "./../../assets/v1/img/cv_img.png";
 
 export default {
   data: function () {

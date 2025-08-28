@@ -108,7 +108,7 @@
                 >Pekanbaru City, Riau Province, Indonesia</span
               >
               <div class="right">
-                <span class="date">September 2022 - Present</span>
+                <span class="date">September 2022 - July 2025</span>
               </div>
             </div>
           </li>

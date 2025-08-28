@@ -120,6 +120,18 @@
       >
         Resume
       </router-link> -->
+
+      <router-link
+        title="More to come, probably still having my assignments from my college days as projects"
+        to="/v1/cv"
+        @click="toggleMenu"
+        class="link"
+        :class="{
+          active: viewedPage == 'cv',
+        }"
+      >
+        Curriculum Vitae
+      </router-link>
     </div>
 
     <div

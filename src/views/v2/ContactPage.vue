@@ -5,7 +5,7 @@
   >
     <div class="max-w-2xl mx-auto text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
-      <p class="text-gray-400">
+      <p class="">
         Have a question or want to work together? Send me a message!
       </p>
     </div>

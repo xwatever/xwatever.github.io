@@ -2,12 +2,14 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const HomeView = () => import("./../../views/v1/HomeView.vue");
 const AboutView = () => import("./../../views/v1/AboutView.vue");
-const AccomplishmentView = () => import("./../../views/v1/AccomplishmentView.vue");
-// const CurriculumVitaeView = () =>
-//   import("./../../views/v1/CurriculumVitaeViewIndo.vue");
-const CurriculumVitaeView = () => import("./../../views/v1/CurriculumVitaeView.vue");
+const AccomplishmentView = () =>
+  import("./../../views/v1/AccomplishmentView.vue");
+const CurriculumVitaeView = () =>
+  import("./../../views/v1/CurriculumVitaeViewIndo.vue");
+// const CurriculumVitaeView = () => import("./../../views/v1/CurriculumVitaeView.vue");
 const ResumeView = () => import("./../../views/v1/ResumeView.vue");
-const CarouselComponent = () => import("./../../components/v1/CarouselComponent.vue");
+const CarouselComponent = () =>
+  import("./../../components/v1/CarouselComponent.vue");
 
 const routes = [
   {

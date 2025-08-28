@@ -6,7 +6,7 @@
       <!-- <h1 class="text-xl font-bold">MyApp</h1> -->
       <div>
         <h1 :class="[isScrolled ? 'invisible' : 'visible text-xl font-bold']">
-          <a href="/">MyApp</a>
+          <a href="/">MD</a>
         </h1>
       </div>
       <div>
@@ -32,7 +32,7 @@
               >{{ $t("message.navbar.contact") }}</a
             >
           </li>
-          <li ref="dropdownCog" class="navbar-cog" @click="toggleCogDropdown">
+          <li class="navbar-cog" @click="toggleCogDropdown">
             <i class="fa-solid fa-gear"></i>
 
             <transition name="slide-fade">
@@ -65,15 +65,15 @@
                     <label class="navbar-cog-dark-mode">
                       <input
                         type="checkbox"
-                        class="sr-only peer"
+                        class="navbar-cog-dark-mode-container peer"
                         v-model="isDark"
                         @change="toggleDark"
                       />
                       <div
-                        class="w-5 h-3 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-600 peer-checked:bg-blue-600"
+                        class="navbar-cog-dark-mode-button peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 dark:peer-focus:ring-blue-800 peer peer-checked:bg-blue-600"
                       ></div>
                       <div
-                        class="absolute left-0.5 top-0.5 bg-white w-1.75 h-1.75 rounded-full transition-transform peer-checked:translate-x-full dark:bg-gray-200"
+                        class="navbar-cog-dark-mode-toggle peer-checked:translate-x-full"
                       ></div>
                     </label>
                     <i

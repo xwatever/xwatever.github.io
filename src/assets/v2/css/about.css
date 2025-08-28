@@ -7,7 +7,7 @@
     @apply h-screen w-screen overflow-hidden;
   }
 
-  .section-transition {
-    @apply transition-transform duration-400 ease-in-out;
+  .about-container .section-transition {
+    @apply transition-transform duration-250 ease-in-out;
   }
 }

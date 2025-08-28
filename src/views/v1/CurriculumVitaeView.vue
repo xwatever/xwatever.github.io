@@ -139,7 +139,7 @@
               Department of Population and Civil Registration - Back Office
               Employee
             </li>
-            <li class="date">September 2022 - Present</li>
+            <li class="date">September 2022 - July 2025</li>
             <li class="details"></li>
           </ul>
           <ul>
@@ -186,7 +186,7 @@
 </template>
 
 <script>
-import cv_image from "./../assets/img/cv_img.png";
+import cv_image from "./../../assets/v1/img/cv_img.png";
 
 export default {
   data: function () {
