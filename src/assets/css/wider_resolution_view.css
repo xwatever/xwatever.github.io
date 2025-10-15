@@ -1,0 +1,649 @@
+@media (min-width: 1538px) {
+  #scrollbar {
+    overflow-y: scroll;
+    top: 0;
+    right: 0;
+    display: none;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .navbar {
+    height: calc(5em + 1.5vw);
+    padding: calc(1em + 0.35vw) calc(2em + 1.5vw);
+  }
+
+  .redirecting-menu {
+    padding: calc(2em + 0.35vw) calc(1em + 0.95vw);
+  }
+
+  .back_button {
+    padding: calc(0.3em + 0.05vw);
+    margin-left: calc(0.3em + 2vw);
+    font-size: calc(1.1em + 0.5vw);
+    border-radius: calc(5px + 0.3vw);
+  }
+
+  .title {
+    font-size: calc(1.35em + 0.5vw);
+    width: calc(265px + 6.75vw);
+  }
+
+  .menu .link {
+    font-size: calc(1.15em + 0.5vw);
+  }
+
+  .menu .link.active {
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  }
+
+  #home .content {
+    height: calc(100vh - (5em + 1.5vw));
+  }
+
+  #home .content .img {
+    top: calc(50% - (97px + 1.75vw));
+    left: 10% - 3.75vw;
+    width: calc(195px + 4.75vw);
+    height: calc(195px + 4.75vw);
+  }
+
+  #home .content #introduction {
+    font-size: calc(40px + 0.35vw);
+    left: calc(13.5% + (195px + 5vw));
+    top: calc(50% - (60px + 0.3vw));
+  }
+
+  #home .content #introduction .details {
+    font-size: calc(20px + 0.65vw);
+    padding: 0 2em 0 0;
+  }
+
+  #home .content #introduction .contacts i {
+    font-size: calc(45px + 1.2vw);
+    margin-right: calc(24px + 0.35vw);
+  }
+
+  #about .section-transition #about-me {
+    padding: 0 calc(4em + 2.5vw) 0 calc(4em + 2.5vw);
+  }
+
+  #about .section-transition #about-me .content,
+  #about .section-transition #education .content,
+  #about .section-transition #work .content {
+    height: auto;
+    padding: 0;
+  }
+
+  #about .section-transition #about-me .title,
+  #about .section-transition #education .title,
+  #about .section-transition #work .title {
+    font-size: calc(24pt + 0.5vw);
+  }
+
+  #about .section-transition #about-me p {
+    font-size: calc(18pt + 0.275vw);
+  }
+
+  #about .section-transition #about-me .content p,
+  #about .section-transition #education .content .institute,
+  #about .section-transition #work .content .job {
+    font-size: calc(19pt + 0.275vw);
+  }
+
+  #about .section-transition #education .content .institute .left .location,
+  #about .section-transition #work .content .cv-n-resume .left .resume,
+  #about .section-transition #education .content .institute .right .date,
+  #about .section-transition #work .content .cv-n-resume .right .cv {
+    font-size: calc(18pt + 0.275vw);
+  }
+
+  #about .section-transition #education .content .institute .details {
+    font-size: calc(15pt + 0.275vw);
+  }
+
+  #about .section-transition #education .content .last {
+    padding-bottom: 0em;
+  }
+
+  #about .section-transition #about-me .about,
+  #about .section-transition #education .institute,
+  #about .section-transition #work .job {
+    font-size: calc(19pt + 0.65vw);
+    text-align: left;
+    padding: calc(0.75em + 0.5vw) calc(2em + 0.5vw) 0 calc(2em + 0.5vw);
+  }
+
+  #about .section-transition #education .institute .left {
+    font-size: calc(24px + 0.55vw);
+  }
+
+  #about .section-transition #education .institute .right {
+    font-size: calc(24px + 0.55vw);
+  }
+
+  #about .section-transition #education .details {
+    font-size: calc(20px + 0.55vw);
+  }
+
+  #about .section-transition #work .cv-n-resume .resume,
+  #about .section-transition #work .cv-n-resume .cv {
+    padding: calc(0.15em + 0.05vw) calc(0.9em + 1.775vw);
+    font-size: calc(24px + 0.5vw);
+  }
+
+  #projects #introduction {
+    font-size: calc(26px + 0.65vw);
+  }
+
+  #projects .card-contents .card {
+    flex: 0 1 calc(424px + 0.35vw);
+  }
+
+  #projects .card-contents .card .header {
+    font-size: calc(1.42em + 0.5vw);
+    max-width: calc(424px + 7vw);
+    max-height: calc(250px + 7vw);
+  }
+
+  #projects .card-contents .card .header img {
+    max-width: calc(424px + 7vw);
+    max-height: calc(250px + 7vw);
+  }
+
+  #projects .card-contents .card .header .title {
+    font-size: calc(18px + 0.35vw);
+  }
+
+  #projects .card-contents .card .header .name {
+    font-size: calc(21px + 0.35vw);
+  }
+
+  #projects .card-contents .card .header.head {
+    font-size: calc(4em + 0.35vw);
+  }
+
+  #projects .card-contents .card .description center {
+    font-size: calc(1em + 0.35vw);
+  }
+
+  #projects .card-contents .card .description.active {
+    max-height: calc(500px + 0.35vw);
+  }
+
+  #projects #content {
+    padding: calc(3em + 0.35vw) calc(10.5em + 7vw);
+  }
+
+  #projects .redirecting-menu .project-name {
+    padding: 0 2em;
+    font-size: calc(26px + 0.75vw);
+  }
+
+  #projects #content p {
+    font-size: calc(18px + 0.35vw);
+  }
+
+  #projects #carousel .prev,
+  #projects #carousel .next {
+    font-size: calc(18px + 1vw);
+    border-radius: 0 calc(3px + 0.3vw) calc(3px + 0.3vw) 0;
+    border: #000000 solid calc(1px + 0.05vw);
+    margin-top: calc(-22px - 0.35vw);
+    padding: calc(16px + 0.35vw);
+  }
+
+  #projects #carousel .text {
+    font-size: calc(15px + 0.5vw);
+  }
+
+  #projects #carousel .numbertext {
+    border: #000000 solid calc(1px + 0.05vw);
+    border-radius: calc(5px + 0.3vw);
+    font-size: calc(1em + 0.5vw);
+    padding: calc(5px + 0.15vw) calc(8px + 0.15vw);
+  }
+
+  #projects #carousel .dot {
+    height: calc(15px + 0.35vw);
+    width: calc(15px + 0.35vw);
+    margin: calc(1em + 0.35vw) calc(2px + 0.15vw);
+  }
+}
+
+@media (min-width: 2560px) {
+  #scrollbar {
+    overflow-y: scroll;
+    top: 0;
+    right: 0;
+    display: none;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .navbar {
+    height: calc(5em + 3vw);
+    padding: calc(1em + 0.5vw) calc(2em + 3vw);
+  }
+
+  .redirecting-menu {
+    padding: calc(2em + 0.5vw) calc(1em + 0.95vw);
+  }
+
+  .back_button {
+    padding: calc(0.3em + 0.05vw);
+    margin-left: calc(0.3em + 2vw);
+    font-size: calc(1.1em + 0.5vw);
+    border-radius: calc(5px + 0.3vw);
+  }
+
+  .title {
+    font-size: calc(1.35em + 0.85vw);
+    width: calc(265px + 10vw);
+  }
+
+  .menu .link {
+    font-size: calc(1.15em + 0.5vw);
+  }
+
+  .menu .link.active {
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  }
+
+  #home .content {
+    height: calc(100vh - (5em + 3vw));
+  }
+
+  #home .content .img {
+    top: calc(50% - (97px + 1.75vw));
+    left: 10% - 3.75vw;
+    width: calc(195px + 7.75vw);
+    height: calc(195px + 7.75vw);
+  }
+
+  #home .content #introduction {
+    font-size: calc(40px + 1.05vw);
+    left: calc(13.5% + (195px + 7vw));
+    top: calc(50% - (60px + 0.3vw));
+  }
+
+  #home .content #introduction .details {
+    font-size: calc(20px + 0.95vw);
+    padding: 0 2em 0 0;
+  }
+
+  #home .content #introduction .contacts i {
+    font-size: calc(45px + 2vw);
+    margin-right: calc(24px + 0.5vw);
+  }
+
+  #about .section-transition #about-me {
+    padding: 0 calc(4em + 2.5vw) 0 calc(4em + 2.5vw);
+  }
+
+  #about .section-transition #about-me .content,
+  #about .section-transition #education .content,
+  #about .section-transition #work .content {
+    height: auto;
+    padding: 0;
+  }
+
+  #about .section-transition #about-me .title,
+  #about .section-transition #education .title,
+  #about .section-transition #work .title {
+    font-size: calc(24pt + 0.95vw);
+  }
+
+  #about .section-transition #about-me p {
+    font-size: calc(18pt + 0.85vw);
+  }
+
+  #about .section-transition #about-me .content p,
+  #about .section-transition #education .content .institute,
+  #about .section-transition #work .content .job {
+    font-size: calc(19pt + 0.85vw);
+  }
+
+  #about .section-transition #education .content .institute .left .location,
+  #about .section-transition #work .content .cv-n-resume .left .resume,
+  #about .section-transition #education .content .institute .right .date,
+  #about .section-transition #work .content .cv-n-resume .right .cv {
+    font-size: calc(18pt + 0.85vw);
+  }
+
+  #about .section-transition #education .content .institute .details {
+    font-size: calc(15pt + 0.85vw);
+  }
+
+  #about .section-transition #education .content .last {
+    padding-bottom: 0em;
+  }
+
+  #about .section-transition #about-me .about,
+  #about .section-transition #education .institute,
+  #about .section-transition #work .job {
+    font-size: calc(19pt + 0.65vw);
+    text-align: left;
+    padding: calc(0.75em + 0.95vw) calc(2em + 0.95vw) 0 calc(2em + 0.95vw);
+  }
+
+  #about .section-transition #education .institute .left {
+    font-size: calc(24px + 0.55vw);
+  }
+
+  #about .section-transition #education .institute .right {
+    font-size: calc(24px + 0.55vw);
+  }
+
+  #about .section-transition #education .details {
+    font-size: calc(20px + 0.55vw);
+  }
+
+  #about .section-transition #work .cv-n-resume .resume,
+  #about .section-transition #work .cv-n-resume .cv {
+    padding: calc(0.15em + 0.05vw) calc(0.9em + 1.775vw);
+    font-size: calc(24px + 0.95vw);
+  }
+
+  #projects #introduction {
+    font-size: calc(26px + 1.35vw);
+  }
+
+  #projects .card-contents .card {
+    flex: 0 1 calc(424px + 0.5vw);
+  }
+
+  #projects .card-contents .card .header {
+    font-size: calc(1.42em + 0.95vw);
+    max-width: calc(424px + 7vw);
+    max-height: calc(250px + 7vw);
+  }
+
+  #projects .card-contents .card .header img {
+    max-width: calc(424px + 7vw);
+    max-height: calc(250px + 7vw);
+  }
+
+  #projects .card-contents .card .header .title {
+    font-size: calc(18px + 0.5vw);
+  }
+
+  #projects .card-contents .card .header .name {
+    font-size: calc(21px + 0.5vw);
+  }
+
+  #projects .card-contents .card .header.head {
+    font-size: calc(4em + 0.5vw);
+  }
+
+  #projects .card-contents .card .description center {
+    font-size: calc(1em + 0.5vw);
+  }
+
+  #projects .card-contents .card .description.active {
+    max-height: calc(500px + 0.5vw);
+  }
+
+  #projects #content {
+    padding: calc(3em + 0.5vw) calc(10.5em + 7vw);
+  }
+
+  #projects .redirecting-menu .project-name {
+    padding: 0 2em;
+    font-size: calc(26px + 1vw);
+  }
+
+  #projects #content p {
+    font-size: calc(18px + 0.5vw);
+  }
+
+  #projects #carousel .prev,
+  #projects #carousel .next {
+    font-size: calc(18px + 1vw);
+    border-radius: 0 calc(3px + 0.3vw) calc(3px + 0.3vw) 0;
+    border: #000000 solid calc(1px + 0.05vw);
+    margin-top: calc(-22px - 0.5vw);
+    padding: calc(16px + 0.35vw);
+  }
+
+  #projects #carousel .text {
+    font-size: calc(15px + 0.95vw);
+  }
+
+  #projects #carousel .numbertext {
+    border: #000000 solid calc(1px + 0.05vw);
+    border-radius: calc(5px + 0.3vw);
+    font-size: calc(1em + 0.95vw);
+    padding: calc(5px + 0.15vw) calc(8px + 0.15vw);
+  }
+
+  #projects #carousel .dot {
+    height: calc(15px + 0.5vw);
+    width: calc(15px + 0.5vw);
+    margin: calc(1em + 0.5vw) calc(2px + 0.15vw);
+  }
+}
+
+@media (min-width: 3840px) {
+  #scrollbar {
+    overflow-y: scroll;
+    top: 0;
+    right: 0;
+    display: none;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .navbar {
+    height: calc(5em + 4.5vw);
+    padding: calc(1em + 0.5vw) calc(2em + 4.5vw);
+  }
+
+  .redirecting-menu {
+    padding: calc(2em + 0.5vw) calc(1em + 1.4vw);
+  }
+
+  .back_button {
+    padding: calc(0.3em + 0.075vw);
+    margin-left: calc(0.3em + 3vw);
+    font-size: calc(1.1em + 1.05vw);
+    border-radius: calc(5px + 0.45vw);
+  }
+
+  .title {
+    font-size: calc(1.35em + 1.2vw);
+    width: calc(265px + 15vw);
+  }
+
+  .menu .link {
+    font-size: calc(1.15em + 1.05vw);
+  }
+
+  .menu .link.active {
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  }
+
+  #home .content {
+    height: calc(100vh - (5em + 4.5vw));
+  }
+
+  #home .content .img {
+    top: calc(50% - (97px + 5.5vw));
+    left: 10% - 4.95vw;
+    width: calc(195px + 11.75vw);
+    height: calc(195px + 11.75vw);
+  }
+
+  #home .content #introduction {
+    font-size: calc(40px + 1.65vw);
+    left: calc(13.5% + (195px + 11vw));
+    top: calc(50% - (60px + 3.5vw));
+  }
+
+  #home .content #introduction .details {
+    font-size: calc(20px + 1.5vw);
+    padding: 0 2em 0 0;
+  }
+
+  #home .content #introduction .contacts i {
+    font-size: calc(45px + 3vw);
+    margin-right: calc(24px + 1.05vw);
+  }
+
+  #about .section-transition #about-me {
+    padding: 0 calc(4em + 2.5vw) 0 calc(4em + 2.5vw);
+  }
+
+  #about .section-transition #about-me .content,
+  #about .section-transition #education .content,
+  #about .section-transition #work .content {
+    height: auto;
+    padding: 0;
+  }
+
+  #about .section-transition #about-me .title,
+  #about .section-transition #education .title,
+  #about .section-transition #work .title {
+    font-size: calc(24pt + 1.4vw);
+  }
+
+  #about .section-transition #about-me p {
+    font-size: calc(18pt + 1.2vw);
+  }
+
+  #about .section-transition #about-me .content p,
+  #about .section-transition #education .content .institute,
+  #about .section-transition #work .content .job {
+    font-size: calc(19pt + 1.2vw);
+  }
+
+  #about .section-transition #education .content .institute .left .location,
+  #about .section-transition #work .content .cv-n-resume .left .resume,
+  #about .section-transition #education .content .institute .right .date,
+  #about .section-transition #work .content .cv-n-resume .right .cv {
+    font-size: calc(18pt + 1.2vw);
+  }
+
+  #about .section-transition #education .content .institute .details {
+    font-size: calc(15pt + 1.2vw);
+  }
+
+  #about .section-transition #education .content .last {
+    padding-bottom: 0em;
+  }
+
+  #about .section-transition #about-me .about,
+  #about .section-transition #education .institute,
+  #about .section-transition #work .job {
+    font-size: calc(19pt + 0.65vw);
+    text-align: left;
+    padding: calc(0.75em + 1.4vw) calc(2em + 1.4vw) 0 calc(2em + 1.4vw);
+  }
+
+  #about .section-transition #education .institute .left {
+    font-size: calc(24px + 0.55vw);
+  }
+
+  #about .section-transition #education .institute .right {
+    font-size: calc(24px + 0.55vw);
+  }
+
+  #about .section-transition #education .details {
+    font-size: calc(20px + 0.55vw);
+  }
+
+  #about .section-transition #work .cv-n-resume .resume,
+  #about .section-transition #work .cv-n-resume .cv {
+    padding: calc(0.15em + 0.075vw) calc(0.9em + 1.775vw);
+    font-size: calc(24px + 1.4vw);
+  }
+
+  #projects #introduction {
+    font-size: calc(26px + 1.5vw);
+  }
+
+  #projects .card-contents .card {
+    flex: 0 1 calc(424px + 1.05vw);
+  }
+
+  #projects .card-contents .card .header {
+    font-size: calc(1.42em + 1.4vw);
+    max-width: calc(424px + 11vw);
+    max-height: calc(250px + 11vw);
+  }
+
+  #projects .card-contents .card .header img {
+    max-width: calc(424px + 11vw);
+    max-height: calc(250px + 11vw);
+  }
+
+  #projects .card-contents .card .header .title {
+    font-size: calc(18px + 1.05vw);
+  }
+
+  #projects .card-contents .card .header .name {
+    font-size: calc(21px + 1.05vw);
+  }
+
+  #projects .card-contents .card .header.head {
+    font-size: calc(4em + 1.05vw);
+  }
+
+  #projects .card-contents .card .description center {
+    font-size: calc(1em + 0.95vw);
+  }
+
+  #projects .card-contents .card .description.active {
+    max-height: calc(500px + 0.95vw);
+  }
+
+  #projects #content {
+    padding: calc(3em + 1.05vw) calc(10.5em + 11vw);
+  }
+
+  #projects .redirecting-menu .project-name {
+    padding: 0 2em;
+    font-size: calc(26px + 1.5vw);
+  }
+
+  #projects #content p {
+    font-size: calc(18px + 1.05vw);
+  }
+
+  #projects #carousel .prev,
+  #projects #carousel .next {
+    font-size: calc(18px + 1.75vw);
+    border-radius: 0 calc(3px + 0.45vw) calc(3px + 0.45vw) 0;
+    border: #000000 solid calc(1px + 0.075vw);
+    margin-top: calc(-22px - 1.35vw);
+    padding: calc(16px + 0.5vw);
+  }
+
+  #projects #carousel .text {
+    font-size: calc(15px + 1.4vw);
+  }
+
+  #projects #carousel .numbertext {
+    border: #000000 solid calc(1px + 0.075vw);
+    border-radius: calc(5px + 0.45vw);
+    font-size: calc(1em + 1.4vw);
+    padding: calc(5px + 0.15vw) calc(8px + 0.15vw);
+  }
+
+  #projects #carousel .dot {
+    height: calc(15px + 1.05vw);
+    width: calc(15px + 1.05vw);
+    margin: calc(1em + 1.05vw) calc(2px + 0.15vw);
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  #projects .prev,
+  #projects .next,
+  #projects .text {
+    font-size: 11px;
+  }
+}
